@@ -40,10 +40,9 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 90% 70% at 15% 5%, rgba(255, 56, 49, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 90% at 85% 25%, rgba(120, 40, 180, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 50% 85%, rgba(255, 56, 49, 0.14) 0%, transparent 45%),
-    radial-gradient(ellipse 60% 70% at 10% 60%, rgba(80, 20, 160, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 85% 65% at 18% 8%, rgba(255, 56, 49, 0.10) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 80% at 82% 28%, rgba(255, 56, 49, 0.07) 0%, transparent 52%),
+    radial-gradient(ellipse 75% 55% at 50% 88%, rgba(255, 56, 49, 0.09) 0%, transparent 48%);
   animation: ambient-shift 25s ease-in-out infinite alternate;
 }
 @keyframes ambient-shift {
