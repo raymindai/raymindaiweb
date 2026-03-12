@@ -1,0 +1,145 @@
+.stage {
+  padding: 6rem var(--page-pad) 2rem;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: 1px solid var(--border);
+}
+.section {
+  position: relative;
+  padding: 6rem var(--page-pad) 12rem;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.section:global(.visible) { opacity: 1; transform: translateY(0); }
+.section + .section { border-top: 1px solid var(--border); }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+.header h3 {
+  font-family: var(--serif);
+  font-size: clamp(4rem, 6vw, 7.2rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.header h3 em { font-style: italic; color: var(--accent); }
+
+.meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+.domain { font-size: 1.2rem; color: var(--dim); letter-spacing: 0.06em; }
+.status { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.desc {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: var(--dim);
+  line-height: 1.8;
+  max-width: 48rem;
+}
+
+.visual {
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.visualLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 3.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 251, 219, 0.06);
+}
+
+.visualPastlife {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(120, 40, 180, 0.3), transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 56, 49, 0.2), transparent 50%),
+    linear-gradient(160deg, #1a0a2e 0%, #0c0b0b 40%, #1a0505 100%);
+}
+.visualScreenstyler {
+  background:
+    radial-gradient(ellipse at 60% 30%, rgba(255, 200, 50, 0.15), transparent 50%),
+    radial-gradient(ellipse at 30% 70%, rgba(56, 180, 255, 0.12), transparent 50%),
+    linear-gradient(135deg, #0a0a1a 0%, #0c0b0b 50%, #0a1a0a 100%);
+}
+.visualStiqs {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255, 150, 50, 0.15), transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 56, 49, 0.1), transparent 50%),
+    linear-gradient(180deg, #1a1005 0%, #0c0b0b 100%);
+}
+.visualDdalggak {
+  background:
+    radial-gradient(ellipse at 40% 50%, rgba(80, 180, 80, 0.12), transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(255, 200, 100, 0.1), transparent 50%),
+    linear-gradient(200deg, #0a1a0a 0%, #0c0b0b 60%, #1a1005 100%);
+}
+
+.section:nth-child(even) .body { direction: rtl; }
+.section:nth-child(even) .body > * { direction: ltr; }
+
+/* Ideas */
+.ideasGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.ideaCard {
+  padding: 3.2rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: border-color 0.4s var(--ease), opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  opacity: 0;
+  transform: translateY(24px);
+}
+.ideaCard:global(.visible) { opacity: 1; transform: translateY(0); }
+.ideaCard:hover { border-color: rgba(255, 251, 219, 0.15); }
+.ideaName { margin-bottom: 1.2rem; }
+.ideaName a {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  transition: color 0.3s var(--ease);
+}
+.ideaName a:hover { color: var(--accent); }
+.ideaDesc { font-size: 1.5rem; font-weight: 300; color: var(--dim); line-height: 1.7; }
+.ideaDescDim { font-size: 1.5rem; font-weight: 300; font-style: italic; color: rgba(255, 251, 219, 0.12); line-height: 1.7; }
+.ideaMore { display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 949px) {
+  .body { grid-template-columns: 1fr; gap: 3rem; }
+  .section { padding: 6rem var(--page-pad-mobile) 8rem; }
+  .section:nth-child(even) .body { direction: ltr; }
+}
+@media (max-width: 749px) { .ideasGrid { grid-template-columns: 1fr; } }
+@media (max-width: 649px) {
+  .stage { padding: 4rem var(--page-pad-mobile) 1.5rem; }
+  .header { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
+  .meta { text-align: left; align-items: flex-start; }
+}

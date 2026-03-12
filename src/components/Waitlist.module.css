@@ -1,0 +1,80 @@
+.waitlist {
+  padding: 20rem var(--page-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.inner {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.inner:global(.visible) { opacity: 1; transform: translateY(0); }
+
+.waitlist h2 {
+  font-family: var(--serif);
+  font-size: clamp(3.6rem, 6vw, 7rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 2.4rem;
+}
+.waitlist h2 em { font-style: italic; color: var(--accent); }
+.sub {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: var(--dim);
+  max-width: 42rem;
+  line-height: 1.75;
+  margin-bottom: 5rem;
+}
+
+.form {
+  display: flex;
+  gap: 0;
+  max-width: 46rem;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.4s;
+  margin: 0 auto;
+}
+.form:focus-within { border-color: var(--accent); }
+.form input {
+  flex: 1;
+  padding: 1.8rem 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.form input::placeholder { color: rgba(255, 251, 219, 0.15); }
+.form button {
+  padding: 1.8rem 2.4rem;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: opacity 0.3s;
+}
+.form button:hover { opacity: 0.7; }
+.form button:disabled { opacity: 0.5; }
+
+.message {
+  margin-top: 1.6rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.success { color: #4ade80; }
+.error { color: var(--accent); }
+.note { font-size: 1.15rem; color: var(--muted); margin-top: 2rem; font-weight: 300; }
+
+@media (max-width: 649px) { .waitlist { padding: 12rem var(--page-pad-mobile); } }

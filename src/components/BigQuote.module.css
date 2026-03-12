@@ -1,0 +1,18 @@
+.quote { padding: 24rem var(--page-pad); text-align: center; }
+.inner {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.inner:global(.visible) { opacity: 1; transform: translateY(0); }
+
+.quote blockquote {
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 7vw, 9rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 649px) { .quote { padding: 14rem var(--page-pad-mobile); } }
