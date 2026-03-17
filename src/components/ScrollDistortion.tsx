@@ -17,6 +17,11 @@ export default function ScrollDistortion() {
     // Base chromatic always on
     wrapper.style.filter = "url(#chromatic)";
 
+    let mouseX = window.innerWidth / 2;
+
+    const onMouseMove = (e: MouseEvent) => { mouseX = e.clientX; };
+    const onTouchStart = (e: TouchEvent) => { mouseX = e.touches[0].clientX; };
+
     const onScroll = () => {
       const current = window.scrollY;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -29,11 +34,16 @@ export default function ScrollDistortion() {
         return;
       }
 
+      // Side factor: -1 (left) to +1 (right)
+      const side = (mouseX / window.innerWidth - 0.5) * 2;
       const absDelta = Math.abs(delta);
-      const scaled = delta * absDelta * 0.008;
+      const scaled = delta * absDelta * -0.008 * side;
       targetSkew.current = Math.max(-8, Math.min(8, scaled));
       targetChroma.current = Math.min(absDelta * 0.2, 4);
     };
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("touchstart", onTouchStart, { passive: true });
 
     const animate = () => {
       currentSkew.current += (targetSkew.current - currentSkew.current) * 0.08;
@@ -62,6 +72,8 @@ export default function ScrollDistortion() {
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("touchstart", onTouchStart);
       cancelAnimationFrame(animId.current);
       wrapper.style.transform = "";
       wrapper.style.filter = "";

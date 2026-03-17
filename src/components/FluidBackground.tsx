@@ -177,20 +177,15 @@ export default function FluidBackground() {
       scrollTimer = window.setTimeout(() => { scrolling = false; }, 150);
     }
 
-    function onMouseMove(e: MouseEvent) {
+    function handleInput(x: number, y: number, prevX: number, prevY: number) {
       if (scrolling) return;
 
-      prevMouseX = mouseX;
-      prevMouseY = mouseY;
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-
-      const i = Math.floor((mouseX / w) * GRID) + 1;
-      const j = Math.floor((mouseY / h) * GRID) + 1;
+      const i = Math.floor((x / w) * GRID) + 1;
+      const j = Math.floor((y / h) * GRID) + 1;
       if (i < 1 || i > GRID || j < 1 || j > GRID) return;
 
-      const dx = mouseX - prevMouseX;
-      const dy = mouseY - prevMouseY;
+      const dx = x - prevX;
+      const dy = y - prevY;
       const speed = Math.sqrt(dx * dx + dy * dy);
       if (speed < 2) return;
 
@@ -201,10 +196,28 @@ export default function FluidBackground() {
       inputDens += Math.min(speed * 0.005, 0.1);
     }
 
+    function onMouseMove(e: MouseEvent) {
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      handleInput(mouseX, mouseY, prevMouseX, prevMouseY);
+    }
+
+    function onTouchMove(e: TouchEvent) {
+      const touch = e.touches[0];
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
+      handleInput(mouseX, mouseY, prevMouseX, prevMouseY);
+    }
+
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("touchmove", onTouchMove, { passive: true });
     animId = requestAnimationFrame(render);
 
     return () => {
@@ -212,6 +225,7 @@ export default function FluidBackground() {
       window.removeEventListener("resize", resize);
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("touchmove", onTouchMove);
     };
   }, []);
 

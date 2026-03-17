@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(curl -s http://localhost:8080/ | head -20)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/css/style.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/js/main.js)",
+      "Bash(kill %1 2>/dev/null; true)",
+      "Read(//Users/hyunsangcho/Desktop/Projects/**)",
+      "Bash(npm create:*)",
+      "Bash(cd /Users/hyunsangcho/Desktop/Projects/raymindaiweb-new && npm install && npm install @supabase/supabase-js 2>&1 | tail -5)",
+      "Bash(cd /Users/hyunsangcho/Desktop/Projects/raymindaiweb-new && npx tsc --noEmit 2>&1)",
+      "Bash(npm run:*)",
+      "Bash(cd /Users/hyunsangcho/Desktop/Projects/raymindaiweb && rm -rf css js index.html package.json vercel.json supabase-setup.sql .gitignore)",
+      "Bash(cd /Users/hyunsangcho/Desktop/Projects/raymindaiweb-new && cp -r index.html package.json package-lock.json tsconfig.json tsconfig.app.json tsconfig.node.json vite.config.ts vercel.json src/ /Users/hyunsangcho/Desktop/Projects/raymindaiweb/)",
+      "Bash(cd /Users/hyunsangcho/Desktop/Projects/raymindaiweb && npm install 2>&1 | tail -3)",
+      "Bash(npx vite:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \\\\\n  -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1Z2d4cWlxYnZ4b3NwdWppYmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMTY2NTYsImV4cCI6MjA4ODg5MjY1Nn0.5mT8PO9S45lh8MKy-My1cZ53N0sqhqA0i0uRt_mD3Ko\" \\\\\n  -H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1Z2d4cWlxYnZ4b3NwdWppYmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMTY2NTYsImV4cCI6MjA4ODg5MjY1Nn0.5mT8PO9S45lh8MKy-My1cZ53N0sqhqA0i0uRt_mD3Ko\" \\\\\n  \"https://buggxqiqbvxospujibji.supabase.co/rest/v1/waitlist?select=id&limit=1\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \\\\\n  -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1Z2d4cWlxYnZ4b3NwdWppYmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMTY2NTYsImV4cCI6MjA4ODg5MjY1Nn0.5mT8PO9S45lh8MKy-My1cZ53N0sqhqA0i0uRt_mD3Ko\" \\\\\n  -H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1Z2d4cWlxYnZ4b3NwdWppYmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMTY2NTYsImV4cCI6MjA4ODg5MjY1Nn0.5mT8PO9S45lh8MKy-My1cZ53N0sqhqA0i0uRt_mD3Ko\" \\\\\n  \"https://buggxqiqbvxospujibji.supabase.co/rest/v1/inquiries?select=id&limit=1\")",
+      "Bash(curl -s -w \"\\\\n%{http_code}\" \\\\\n  -X POST \\\\\n  -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1Z2d4cWlxYnZ4b3NwdWppYmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMTY2NTYsImV4cCI6MjA4ODg5MjY1Nn0.5mT8PO9S45lh8MKy-My1cZ53N0sqhqA0i0uRt_mD3Ko\" \\\\\n  -H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1Z2d4cWlxYnZ4b3NwdWppYmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMTY2NTYsImV4cCI6MjA4ODg5MjY1Nn0.5mT8PO9S45lh8MKy-My1cZ53N0sqhqA0i0uRt_mD3Ko\" \\\\\n  -H \"Content-Type: application/json\" \\\\\n  -H \"Prefer: return=minimal\" \\\\\n  -d '{\"email\":\"test@raymind.ai\",\"subscribed_at\":\"2026-03-14T00:00:00Z\",\"source\":\"test\"}' \\\\\n  \"https://buggxqiqbvxospujibji.supabase.co/rest/v1/waitlist\")",
+      "Bash(lsof:*)",
+      "Bash(npx tsc:*)",
+      "Bash(curl:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:screenstyler.ai)",
+      "WebFetch(domain:ddalggak.ai)"
+    ]
+  }
+}

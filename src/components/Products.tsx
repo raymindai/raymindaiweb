@@ -52,7 +52,6 @@ const ideas = [
   { domain: "mdcore.ai", desc: "AI-first markdown editor that thinks with you. Write, organize, and publish — all from one surface." },
   { domain: "mdfy.cc", desc: "Instant web content to clean markdown. Paste a URL, get structured text. No fluff." },
   { domain: "superplane.ai", desc: "AI-native presentation tool. Think it, say it, present it — slides that build themselves." },
-  { domain: "vpn4korean.com", desc: "VPN service built for Koreans abroad. Fast, simple, no-nonsense access to Korean content." },
   { domain: "nkdtxt.com", desc: "Strip it down. Raw text, nothing else." },
 ];
 

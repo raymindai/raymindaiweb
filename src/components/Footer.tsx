@@ -20,7 +20,6 @@ export default function Footer() {
           <a href="https://mdcore.ai">mdcore.ai</a>
           <a href="https://mdfy.cc">mdfy.cc</a>
           <a href="https://superplane.ai">superplane.ai</a>
-          <a href="https://vpn4korean.com">vpn4korean.com</a>
           <a href="https://nkdtxt.com">nkdtxt.com</a>
         </div>
         <div className={styles.col}>
