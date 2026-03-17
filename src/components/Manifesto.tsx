@@ -6,7 +6,7 @@ const MANIFESTO_TEXT =
   "I keep making things. Some for clients, some for myself, most because the idea wouldn't leave me alone. AI showed up and the gap between \"I should build that\" and \"it's live\" shrank to almost nothing. That's dangerous for someone like me. I have too many *ideas.* And now, not enough *excuses.*";
 
 const MANIFESTO_KO =
-  "나는 계속 만든다. 어떤 건 클라이언트를 위해, 어떤 건 나를 위해, 대부분은 아이디어가 머릿속을 떠나지 않아서. AI가 나타나고 \"이거 만들어야지\"와 \"출시됐다\" 사이의 간극이 거의 사라졌다. 나 같은 사람에게는 위험한 일이다. 아이디어가 너무 많고, 이제 핑계가 부족하다.";
+  "나는 계속 만든다. 어떤 건 클라이언트를 위해, 어떤 건 나를 위해, 대부분은 머릿속에서 아이디어가 떠나지 않아서. AI가 등장한 뒤로 \"이거 만들어야지\"와 \"이미 출시됐다\" 사이의 거리는 거의 사라졌다. 나 같은 사람에게는 꽤 위험한 변화다. 아이디어는 넘치는데, 이제는 핑계가 없다.";
 
 export default function Manifesto() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ export default function Manifesto() {
 
   return (
     <section className={styles.manifesto} id="manifesto">
-      <Ko ko={MANIFESTO_KO} position="bottom-left" font="serif" block>
+      <Ko ko={MANIFESTO_KO} position="bottom-left" block>
         <div ref={containerRef} className={styles.text}>
           {words}
         </div>

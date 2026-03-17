@@ -36,9 +36,9 @@ export default function Contact() {
     <section className={styles.contact} id="contact">
       <div className={styles.grid}>
         <div ref={leftRef} className={styles.left}>
-          <h2><Ko ko="안녕하세요.">Say <em>hello.</em></Ko></h2>
+          <h2>Say <em>hello.</em></h2>
           <p>
-            <Ko ko="프로젝트든, 파트너십이든, 그냥 좋은 대화든 — 다른 사람이 만드는 것에 늘 관심이 있습니다.">
+            <Ko ko="프로젝트든 파트너십이든, 그냥 좋은 대화든 좋다. 다른 사람들이 무엇을 만들고 있는지 늘 궁금하다." position="bottom-left" reserve="tight" block>
               Whether it's a project, a partnership, or just a good conversation — I'm
               always interested in what other people are making.
             </Ko>

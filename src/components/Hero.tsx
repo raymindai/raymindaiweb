@@ -3,11 +3,13 @@ import Ko from "./Ko";
 import styles from "./Hero.module.css";
 
 const MAX_DISPLACE = 60;
+const HERO_KO = "한 사람이 멈추지 않기로 하면, 어떤 일이 벌어질까.";
 
 export default function Hero() {
   const linesRef = useRef<HTMLSpanElement[]>([]);
   const charsRef = useRef<HTMLSpanElement[]>([]);
   const heroRef = useRef<HTMLElement>(null);
+  const resetTimerRef = useRef<number | null>(null);
 
   const shuffleBlur = useCallback(() => {
     for (const char of charsRef.current) {
@@ -87,6 +89,10 @@ export default function Hero() {
   }, []);
 
   const explodeChars = useCallback(() => {
+    if (resetTimerRef.current !== null) {
+      window.clearTimeout(resetTimerRef.current);
+    }
+
     for (const char of charsRef.current) {
       if (!char) continue;
       const tx = (Math.random() - 0.5) * 300;
@@ -102,7 +108,7 @@ export default function Hero() {
       applyTransform(char);
     }
 
-    setTimeout(() => {
+    resetTimerRef.current = window.setTimeout(() => {
       for (const char of charsRef.current) {
         if (!char) continue;
         char.dataset.tx = "0";
@@ -114,6 +120,7 @@ export default function Hero() {
       }
       // Restore random blur after return
       setTimeout(shuffleBlur, 1300);
+      resetTimerRef.current = null;
     }, 2000);
   }, []);
 
@@ -123,6 +130,9 @@ export default function Hero() {
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("click", explodeChars);
+      if (resetTimerRef.current !== null) {
+        window.clearTimeout(resetTimerRef.current);
+      }
     };
   }, [onMouseMove, explodeChars]);
 
@@ -161,7 +171,7 @@ export default function Hero() {
               {renderText("when one person")}
             </span>
           </span>
-          <Ko ko="한 사람이 멈추기를 거부하면, 무슨 일이 일어날까." position="bottom-left" block>
+          <Ko ko={renderText(HERO_KO)} position="bottom-left" block>
             <span className={styles.line}>
               <span ref={(el) => { if (el) linesRef.current[2] = el; }} className={styles.lineInner}>
                 <em>{renderText("refuses to")}</em> <em className="accent">{renderText("stop.")}</em>

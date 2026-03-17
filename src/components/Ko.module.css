@@ -4,17 +4,24 @@
 }
 .block {
   display: block;
+  width: 100%;
+}
+.reserve {
+  padding-bottom: 3.6rem;
+}
+.reserveTight {
+  padding-bottom: 1.4rem;
 }
 
 .annotation {
   position: absolute;
   font-family: inherit;
-  font-size: max(0.18em, 1.3rem);
+  font-size: max(0.18em, 1.6rem);
   font-weight: 400;
-  font-style: italic;
+  font-style: inherit;
   color: var(--accent);
   letter-spacing: 0;
-  line-height: 1.4;
+  line-height: 1.58;
   white-space: normal;
   max-width: 100%;
   word-break: keep-all;
@@ -24,20 +31,43 @@
   pointer-events: none;
   text-wrap: balance;
 }
-
-.serif { font-family: var(--serif); }
-.sans { font-family: var(--sans); }
+.nowrap {
+  white-space: nowrap;
+  width: max-content;
+  max-width: none;
+}
 
 .bottomRight {
   right: 0;
-  top: 100%;
+  top: calc(100% + 0.8rem);
 }
 .bottomLeft {
   left: 0;
-  top: 100%;
+  top: calc(100% + 0.8rem);
+}
+.bottomCenter {
+  left: 50%;
+  top: calc(100% + 0.25rem);
+  transform: translate(-50%, -4px);
+  max-width: min(100%, 56rem);
+  width: max-content;
+  text-align: center;
+}
+.right {
+  left: calc(100% + 1rem);
+  top: 50%;
+  transform: translate(-6px, -50%);
+  max-width: 28rem;
+  text-wrap: pretty;
 }
 
 .visible {
   opacity: 0.5;
   transform: translateY(2px);
+}
+.bottomCenter.visible {
+  transform: translate(-50%, 2px);
+}
+.right.visible {
+  transform: translate(0, -50%);
 }

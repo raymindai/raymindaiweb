@@ -26,8 +26,9 @@
   font-size: 1.7rem;
   font-weight: 300;
   color: var(--dim);
-  max-width: 42rem;
+  max-width: 56rem;
   line-height: 1.75;
+  text-wrap: pretty;
   margin-bottom: 5rem;
 }
 

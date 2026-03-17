@@ -2,23 +2,43 @@ import { useKorean } from "../hooks/useKorean";
 import styles from "./Ko.module.css";
 
 interface KoProps {
-  ko: string;
+  ko: React.ReactNode;
   children: React.ReactNode;
   block?: boolean;
-  position?: "bottom-right" | "bottom-left";
-  font?: "serif" | "sans" | "inherit";
+  position?: "bottom-right" | "bottom-left" | "bottom-center" | "right";
+  reserve?: "auto" | "tight" | "none";
+  nowrap?: boolean;
 }
 
-export default function Ko({ ko, children, block, position = "bottom-right", font = "inherit" }: KoProps) {
+export default function Ko({ ko, children, block, position = "bottom-right", reserve = "auto", nowrap = false }: KoProps) {
   const { show } = useKorean();
 
-  const posClass = position === "bottom-left" ? styles.bottomLeft : styles.bottomRight;
-  const fontClass = font === "serif" ? styles.serif : font === "sans" ? styles.sans : "";
+  const posClass = position === "bottom-left"
+    ? styles.bottomLeft
+    : position === "bottom-center"
+      ? styles.bottomCenter
+    : position === "right"
+      ? styles.right
+      : styles.bottomRight;
+
+  const reserveClass = show && block
+    ? reserve === "none"
+      ? ""
+      : reserve === "tight"
+        ? styles.reserveTight
+        : position === "bottom-center"
+          ? styles.reserveTight
+          : position !== "right"
+            ? styles.reserve
+            : ""
+    : "";
+
+  const nowrapClass = nowrap ? styles.nowrap : "";
 
   return (
-    <span className={`${styles.wrap} ${block ? styles.block : ""}`}>
+    <span className={`${styles.wrap} ${block ? styles.block : ""} ${reserveClass}`}>
       {children}
-      <span className={`${styles.annotation} ${posClass} ${fontClass} ${show ? styles.visible : ""}`}>
+      <span className={`${styles.annotation} ${posClass} ${nowrapClass} ${show ? styles.visible : ""}`}>
         {ko}
       </span>
     </span>

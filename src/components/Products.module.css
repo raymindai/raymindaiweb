@@ -136,6 +136,13 @@
 .ideaName a:hover { color: var(--accent); }
 .ideaDesc { font-size: 1.5rem; font-weight: 300; color: var(--dim); line-height: 1.7; }
 .ideaDescDim { font-size: 1.5rem; font-weight: 300; font-style: italic; color: rgba(213, 216, 224, 0.22); line-height: 1.7; }
+.ideaKo {
+  margin-top: 1.8rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1.58;
+}
 .ideaMore { display: flex; align-items: center; justify-content: center; }
 
 @media (max-width: 949px) {

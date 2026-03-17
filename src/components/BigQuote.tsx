@@ -9,7 +9,7 @@ export default function BigQuote() {
     <section className={styles.quote}>
       <div ref={ref} className={styles.inner}>
         <blockquote>
-          <Ko ko="작업이 곧 증명이다.">
+          <Ko ko="결과물이 가장 강한 증거다." position="bottom-center" reserve="tight" block>
             The work is the <span className="accent">argument.</span>
           </Ko>
         </blockquote>
