@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { subscribeEmail } from "../lib/supabase";
+import Ko from "./Ko";
 import styles from "./Waitlist.module.css";
 
 export default function Waitlist() {
@@ -30,9 +31,11 @@ export default function Waitlist() {
   return (
     <section className={styles.waitlist}>
       <div ref={ref} className={styles.inner}>
-        <h2>Stay <em>close.</em></h2>
+        <h2><Ko ko="가까이.">Stay <em>close.</em></Ko></h2>
         <p className={styles.sub}>
-          I send updates when there's something worth your time. Rarely. But when I do, it's because something shipped.
+          <Ko ko="뭔가 출시되면 그때 알려드립니다. 자주는 아닙니다.">
+            I send updates when there's something worth your time. Rarely. But when I do, it's because something shipped.
+          </Ko>
         </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <input

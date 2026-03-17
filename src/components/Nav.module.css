@@ -47,6 +47,25 @@
 }
 .links a:hover { color: var(--text); }
 
+.langToggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--dim);
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  cursor: none;
+  transition: color 0.3s, border-color 0.3s;
+}
+.langToggle:hover { color: var(--text); border-color: var(--text); }
+.langActive {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 @media (max-width: 649px) {
   .nav { padding: 2rem var(--page-pad-mobile); }
   .links { gap: 1.2rem; }

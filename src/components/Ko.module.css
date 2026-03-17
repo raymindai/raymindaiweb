@@ -1,0 +1,43 @@
+.wrap {
+  position: relative;
+  display: inline;
+}
+.block {
+  display: block;
+}
+
+.annotation {
+  position: absolute;
+  font-family: inherit;
+  font-size: max(0.18em, 1.3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 0;
+  line-height: 1.4;
+  white-space: normal;
+  max-width: 100%;
+  word-break: keep-all;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  pointer-events: none;
+  text-wrap: balance;
+}
+
+.serif { font-family: var(--serif); }
+.sans { font-family: var(--sans); }
+
+.bottomRight {
+  right: 0;
+  top: 100%;
+}
+.bottomLeft {
+  left: 0;
+  top: 100%;
+}
+
+.visible {
+  opacity: 0.5;
+  transform: translateY(2px);
+}

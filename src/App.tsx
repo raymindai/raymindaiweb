@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { KoreanProvider } from "./hooks/useKorean";
 import FluidBackground from "./components/FluidBackground";
 import ScrollDistortion from "./components/ScrollDistortion";
 import Cursor from "./components/Cursor";
@@ -23,7 +24,7 @@ export default function App() {
   if (!fontsReady) return null;
 
   return (
-    <>
+    <KoreanProvider>
       <FluidBackground />
       <ScrollDistortion />
       <Cursor />
@@ -42,6 +43,6 @@ export default function App() {
         <Contact />
         <Footer />
       </div>
-    </>
+    </KoreanProvider>
   );
 }

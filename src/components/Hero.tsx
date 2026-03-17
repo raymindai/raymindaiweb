@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from "react";
+import Ko from "./Ko";
 import styles from "./Hero.module.css";
 
 const MAX_DISPLACE = 60;
@@ -160,11 +161,13 @@ export default function Hero() {
               {renderText("when one person")}
             </span>
           </span>
-          <span className={styles.line}>
-            <span ref={(el) => { if (el) linesRef.current[2] = el; }} className={styles.lineInner}>
-              <em>{renderText("refuses to")}</em> <em className="accent">{renderText("stop.")}</em>
+          <Ko ko="한 사람이 멈추기를 거부하면, 무슨 일이 일어날까." position="bottom-left" block>
+            <span className={styles.line}>
+              <span ref={(el) => { if (el) linesRef.current[2] = el; }} className={styles.lineInner}>
+                <em>{renderText("refuses to")}</em> <em className="accent">{renderText("stop.")}</em>
+              </span>
             </span>
-          </span>
+          </Ko>
         </h1>
       </div>
     </section>

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useKorean } from "../hooks/useKorean";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const { show, toggle } = useKorean();
 
   useEffect(() => {
     const onScroll = () => {
@@ -24,6 +26,9 @@ export default function Nav() {
         <a href="#products" onClick={(e) => handleClick(e, "#products")}>Products</a>
         <a href="#about" onClick={(e) => handleClick(e, "#about")}>About</a>
         <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>Contact</a>
+        <button className={`${styles.langToggle} ${show ? styles.langActive : ""}`} onClick={toggle}>
+          KO
+        </button>
       </div>
     </nav>
   );

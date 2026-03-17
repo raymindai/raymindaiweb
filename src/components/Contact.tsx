@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { submitInquiry } from "../lib/supabase";
+import Ko from "./Ko";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
@@ -35,10 +36,12 @@ export default function Contact() {
     <section className={styles.contact} id="contact">
       <div className={styles.grid}>
         <div ref={leftRef} className={styles.left}>
-          <h2>Say <em>hello.</em></h2>
+          <h2><Ko ko="안녕하세요.">Say <em>hello.</em></Ko></h2>
           <p>
-            Whether it's a project, a partnership, or just a good conversation — I'm
-            always interested in what other people are making.
+            <Ko ko="프로젝트든, 파트너십이든, 그냥 좋은 대화든 — 다른 사람이 만드는 것에 늘 관심이 있습니다.">
+              Whether it's a project, a partnership, or just a good conversation — I'm
+              always interested in what other people are making.
+            </Ko>
           </p>
           <a href="mailto:hi@raymind.ai" className={styles.email}>hi@raymind.ai</a>
         </div>

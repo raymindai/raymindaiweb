@@ -1,4 +1,5 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import Ko from "./Ko";
 import styles from "./BigQuote.module.css";
 
 export default function BigQuote() {
@@ -8,7 +9,9 @@ export default function BigQuote() {
     <section className={styles.quote}>
       <div ref={ref} className={styles.inner}>
         <blockquote>
-          The work is the <span className="accent">argument.</span>
+          <Ko ko="작업이 곧 증명이다.">
+            The work is the <span className="accent">argument.</span>
+          </Ko>
         </blockquote>
       </div>
     </section>
