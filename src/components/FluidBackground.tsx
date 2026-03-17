@@ -110,8 +110,8 @@ export default function FluidBackground() {
     function resize() {
       w = window.innerWidth;
       h = window.innerHeight;
-      canvas.width = w;
-      canvas.height = h;
+      canvas!.width = w;
+      canvas!.height = h;
     }
 
     let totalFrames = 0;
