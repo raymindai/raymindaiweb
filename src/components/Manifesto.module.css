@@ -8,11 +8,18 @@
   max-width: 100rem;
 }
 .word {
-  display: inline;
-  color: rgba(255, 251, 219, 0.06);
-  transition: color 0.5s var(--ease);
+  display: inline-block;
+  margin-right: 0.25em;
+  color: rgba(213, 216, 224, 0.04);
+  filter: blur(6px);
+  transform: translateY(4px);
+  transition: color 1.2s var(--ease), filter 1.5s var(--ease), transform 1.5s var(--ease);
 }
-.lit { color: var(--text); }
+.lit {
+  color: var(--text);
+  filter: blur(0);
+  transform: translateY(0);
+}
 .emphasis { font-style: italic; }
 .emphasis.lit { color: var(--accent); }
 

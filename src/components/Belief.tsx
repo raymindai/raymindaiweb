@@ -4,18 +4,18 @@ import styles from "./Belief.module.css";
 const beliefs = [
   {
     num: "01",
-    title: <>AI is not a tool.<br />It's a <em>co-founder.</em></>,
-    desc: "I don't use AI to speed things up. I use it to do things that were never possible alone. Strategy, design, engineering, marketing — the entire stack, reimagined for a team of one.",
+    title: <><em>Make</em> it.</>,
+    desc: "If an idea sticks around long enough, it earns the right to exist. I'd rather build a rough version today than a perfect pitch deck next quarter.",
   },
   {
     num: "02",
-    title: <>Experience is the<br /><em>unfair advantage.</em></>,
-    desc: "Two decades of building products across three continents taught me what matters. AI handles the execution. I bring the taste, the instinct, and the scars from shipping real things to real people.",
+    title: <><em>Kill</em> it.</>,
+    desc: "Most of what I start doesn't ship. That's not failure — that's editing. The hard part was never starting. It's knowing when to stop.",
   },
   {
     num: "03",
-    title: <>Ship it. Learn.<br /><em>Ship again.</em></>,
-    desc: "Every product starts as a question: what if one person could? No pitch decks, no committees, no waiting. An idea in the morning, a prototype by night, users by the weekend.",
+    title: <><em>Again.</em></>,
+    desc: "Every project I finish leaves behind two new questions. I've learned to trust that rhythm. The work feeds the work.",
   },
 ];
 

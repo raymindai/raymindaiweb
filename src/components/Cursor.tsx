@@ -21,8 +21,8 @@ export default function Cursor() {
     };
 
     const animate = () => {
-      ringX += (mouseX - ringX) * 0.09;
-      ringY += (mouseY - ringY) * 0.09;
+      ringX += (mouseX - ringX) * 0.25;
+      ringY += (mouseY - ringY) * 0.25;
       ring.style.left = ringX + "px";
       ring.style.top = ringY + "px";
       animId = requestAnimationFrame(animate);
@@ -31,34 +31,22 @@ export default function Cursor() {
     const onEnter = () => ring.classList.add(styles.hovering);
     const onLeave = () => ring.classList.remove(styles.hovering);
 
+    // Use event delegation instead of MutationObserver
     document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseover", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a, button, select, [data-hover]")) onEnter();
+    });
+    document.addEventListener("mouseout", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a, button, select, [data-hover]")) onLeave();
+    });
+
     animId = requestAnimationFrame(animate);
-
-    const interactives = document.querySelectorAll("a, button, select, [data-hover]");
-    interactives.forEach((el) => {
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
-    });
-
-    // Re-observe on DOM changes for dynamically added elements
-    const mutationObs = new MutationObserver(() => {
-      document.querySelectorAll("a, button, select, [data-hover]").forEach((el) => {
-        el.removeEventListener("mouseenter", onEnter);
-        el.removeEventListener("mouseleave", onLeave);
-        el.addEventListener("mouseenter", onEnter);
-        el.addEventListener("mouseleave", onLeave);
-      });
-    });
-    mutationObs.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
       cancelAnimationFrame(animId);
-      mutationObs.disconnect();
-      interactives.forEach((el) => {
-        el.removeEventListener("mouseenter", onEnter);
-        el.removeEventListener("mouseleave", onLeave);
-      });
     };
   }, []);
 

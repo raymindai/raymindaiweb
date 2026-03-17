@@ -7,28 +7,24 @@ export default function About() {
   const col2Ref = useScrollReveal<HTMLParagraphElement>();
 
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <div ref={headerRef} className={styles.header}>
-        <h2>I'm not limited.<br />I'm <em>proving something.</em></h2>
+        <h2>About <em>Raymind.AI</em></h2>
       </div>
       <div className={styles.body}>
         <p ref={col1Ref} className={styles.col}>
-          20+ years across three continents. I've led product and design at{" "}
-          <strong>Humain</strong>, <strong>Saudi Aramco</strong>, <strong>Kakao</strong>, and{" "}
-          <strong>Devsisters</strong>. Built experiences for <strong>Nike</strong>,{" "}
-          <strong>Volvo</strong>, and <strong>Barclays</strong> at AKQA. Shipped a spatial computing
-          product with <strong>Meta</strong>. Studied at <strong>Central Saint Martins</strong> and{" "}
-          <strong>Goldsmiths</strong> in London. Then I chose to build alone.{" "}
+          Raymind.AI is just me. <strong>Ray</strong> is how I see things.{" "}
+          <strong>Mind</strong> is what I can't turn off. <strong>AI</strong> is what finally let me
+          keep up with my own head. I've spent most of my career building products — sometimes for
+          others, sometimes with others, always learning what works and what just looks like it does.
+          This is where all of that goes now.{" "}
           <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
-            See my earlier work
+            Previous work
           </a>.
         </p>
         <p ref={col2Ref} className={styles.col} style={{ transitionDelay: "0.1s" }}>
-          Incorporated in both the US and South Korea, global from day one. This isn't about doing
-          more with less. It's about{" "}
-          <strong>proving that one person with AI can build an entire company.</strong> Products
-          launched, more in the pipeline — not because it's easy, but because AI finally let me push
-          that far.
+          Incorporated in the US and South Korea. Open to the right conversation — whether
+          that's a partnership, a project, or something I haven't thought of yet.
         </p>
       </div>
     </section>

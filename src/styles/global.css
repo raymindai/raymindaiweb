@@ -5,12 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-  --bg: #0c0b0b;
-  --text: #FFFBDB;
-  --accent: #FF3831;
-  --dim: rgba(255, 251, 219, 0.28);
-  --muted: rgba(255, 251, 219, 0.10);
-  --border: rgba(255, 251, 219, 0.07);
+  --bg: #0b0c10;
+  --text: #D5D8E0;
+  --accent: #7B9FD4;
+  --dim: rgba(213, 216, 224, 0.50);
+  --muted: rgba(213, 216, 224, 0.22);
+  --border: rgba(213, 216, 224, 0.08);
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Inter', -apple-system, Helvetica Neue, sans-serif;
@@ -40,26 +40,9 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 85% 65% at 18% 8%, rgba(255, 56, 49, 0.10) 0%, transparent 58%),
-    radial-gradient(ellipse 70% 80% at 82% 28%, rgba(255, 56, 49, 0.07) 0%, transparent 52%),
-    radial-gradient(ellipse 75% 55% at 50% 88%, rgba(255, 56, 49, 0.09) 0%, transparent 48%);
-  animation: ambient-shift 25s ease-in-out infinite alternate;
-}
-@keyframes ambient-shift {
-  0%   { opacity: 1; filter: hue-rotate(0deg); }
-  50%  { opacity: 0.8; filter: hue-rotate(15deg); }
-  100% { opacity: 1; filter: hue-rotate(-8deg); }
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  pointer-events: none;
-  opacity: 0.018;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 128px;
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(123, 159, 212, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(180, 160, 130, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 90%, rgba(100, 130, 180, 0.10) 0%, transparent 50%);
 }
 
 body > * { position: relative; z-index: 1; }
@@ -69,6 +52,13 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 768px) {
   body { cursor: auto; }
+}
+
+/* Chromatic aberration SVG filter */
+svg.chromatic-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
 /* Shared utilities */

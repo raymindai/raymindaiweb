@@ -3,7 +3,7 @@ import styles from "./Products.module.css";
 
 interface Product {
   name: React.ReactNode;
-  domain: string;
+  domains: string[];
   status: string;
   desc: string;
   visualClass: string;
@@ -12,39 +12,39 @@ interface Product {
 
 const launched: Product[] = [
   {
-    name: "PastLife",
-    domain: "pastlife.app",
+    name: "pastlife.app",
+    domains: ["pastlife.app", "jeonsaeng.com"],
     status: "Launched",
     desc: "I built Mir — an AI seer who reads your soul through tarot and reveals the past life you never knew you lived. Cinematic narratives, painted portraits, and 30-second films of who you used to be.",
     visualClass: styles.visualPastlife,
-    label: "PastLife",
+    label: "pastlife.app",
   },
   {
-    name: <>Screen<em>Styler</em></>,
-    domain: "screenstyler.ai",
+    name: "screenstyler.ai",
+    domains: ["screenstyler.ai"],
     status: "Launched",
-    desc: "An AI tool for crafting phone wallpapers that actually feel like yours. Describe your mood, your aesthetic, your vibe — and get gallery-worthy results in seconds.",
+    desc: "A Mac app that unlocks peak brightness up to 1600 nits and lets you customize your display like editing a photo. Professional HDR controls, beyond what Apple gives you out of the box.",
     visualClass: styles.visualScreenstyler,
-    label: "ScreenStyler",
+    label: "screenstyler.ai",
   },
 ];
 
 const inDev: Product[] = [
   {
-    name: "Stiqs",
-    domain: "stiqs.ai",
+    name: "stiqs.ai",
+    domains: ["stiqs.ai"],
     status: "In Development",
     desc: "An AI-powered sticker system that turns your selfies and pets into expressive, endlessly usable sticker packs. Your face, your cat, your energy — in sticker form.",
     visualClass: styles.visualStiqs,
-    label: "Stiqs",
+    label: "stiqs.ai",
   },
   {
-    name: <><em>Ddal</em>ggak</>,
-    domain: "ddalggak.ai",
+    name: "ddalggak.ai",
+    domains: ["ddalggak.ai", "taptap.studio"],
     status: "In Development",
-    desc: "AI that transforms chicken breast into something you actually want to eat. Korean-rooted, health-first recipes that make meal prep feel like cooking, not surviving.",
+    desc: "AI-powered marketing image generator for small business owners. Upload a product photo, pick from 100+ styling presets, and get platform-ready images for Coupang, Instagram, Naver, and more — in under 20 seconds. No photographer, no studio.",
     visualClass: styles.visualDdalggak,
-    label: "Ddalggak",
+    label: "ddalggak.ai",
   },
 ];
 
@@ -52,9 +52,8 @@ const ideas = [
   { domain: "mdcore.ai", desc: "AI-first markdown editor that thinks with you. Write, organize, and publish — all from one surface." },
   { domain: "mdfy.cc", desc: "Instant web content to clean markdown. Paste a URL, get structured text. No fluff." },
   { domain: "superplane.ai", desc: "AI-native presentation tool. Think it, say it, present it — slides that build themselves." },
-  { domain: "castiq.ai", desc: "AI podcast production. Script, voice, edit, publish — a full studio in a single interface." },
-  { domain: "storiq.ai", desc: "AI interactive children's books. Stories that adapt, illustrations that evolve, endings your child chooses." },
-  { domain: "kairoscore.ai", desc: "AI personal time auditor. Understand where your hours go and reclaim the ones that matter." },
+  { domain: "vpn4korean.com", desc: "VPN service built for Koreans abroad. Fast, simple, no-nonsense access to Korean content." },
+  { domain: "nkdtxt.com", desc: "Strip it down. Raw text, nothing else." },
 ];
 
 function ProductCard({ product }: { product: Product }) {
@@ -64,15 +63,18 @@ function ProductCard({ product }: { product: Product }) {
       <div className={styles.header}>
         <h3>{product.name}</h3>
         <div className={styles.meta}>
-          <div className={styles.domain}>{product.domain}</div>
+          <div className={styles.domains}>
+            {product.domains.map((d, i) => (
+              <span key={d} className={styles.domain}>
+                {d}{i < product.domains.length - 1 && <span className={styles.domainSep}> · </span>}
+              </span>
+            ))}
+          </div>
           <div className={styles.status}>{product.status}</div>
         </div>
       </div>
       <div className={styles.body}>
         <p className={styles.desc}>{product.desc}</p>
-        <div className={`${styles.visual} ${product.visualClass}`}>
-          <div className={styles.visualLabel}>{product.label}</div>
-        </div>
       </div>
     </section>
   );

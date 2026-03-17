@@ -37,8 +37,8 @@ export default function Contact() {
         <div ref={leftRef} className={styles.left}>
           <h2>Say <em>hello.</em></h2>
           <p>
-            Whether you're an investor, a potential partner, or someone who looked at this
-            and thought — I want to do something like this too. Let's talk.
+            Whether it's a project, a partnership, or just a good conversation — I'm
+            always interested in what other people are making.
           </p>
           <a href="mailto:hi@raymind.ai" className={styles.email}>hi@raymind.ai</a>
         </div>
@@ -66,9 +66,10 @@ export default function Contact() {
             <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })}>
               <option value="" disabled>Select</option>
               <option value="Investment">Investment</option>
+              <option value="Acquisition">Acquisition</option>
               <option value="Partnership">Partnership</option>
               <option value="Press">Press</option>
-              <option value="General">General</option>
+              <option value="General">Just saying hi</option>
             </select>
           </div>
           <div className={styles.field}>

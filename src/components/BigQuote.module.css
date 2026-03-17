@@ -1,10 +1,22 @@
-.quote { padding: 24rem var(--page-pad); text-align: center; }
+.quote { padding: 12rem var(--page-pad); text-align: center; }
 .inner {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  filter: blur(10px);
+  transition: opacity 2s var(--ease), transform 2s var(--ease), filter 2.5s var(--ease);
 }
-.inner:global(.visible) { opacity: 1; transform: translateY(0); }
+.inner:global(.visible) { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+.mark {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(8rem, 15vw, 18rem);
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 0.5;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
 .quote blockquote {
   font-family: var(--serif);
@@ -15,4 +27,4 @@
   letter-spacing: -0.02em;
 }
 
-@media (max-width: 649px) { .quote { padding: 14rem var(--page-pad-mobile); } }
+@media (max-width: 649px) { .quote { padding: 8rem var(--page-pad-mobile); } }

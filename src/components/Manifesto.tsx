@@ -2,13 +2,14 @@ import { useEffect, useRef } from "react";
 import styles from "./Manifesto.module.css";
 
 const MANIFESTO_TEXT =
-  "A year ago, shipping this many projects alone would have been *delusional.* Now it's just how I work. AI changed the math. Not by replacing humans — by removing the walls around what one person can do. I design, I code, I ship. The only bottleneck left is *how fast I can think.*";
+  "I keep making things. Some for clients, some for myself, most because the idea wouldn't leave me alone. AI showed up and the gap between \"I should build that\" and \"it's live\" shrank to almost nothing. That's dangerous for someone like me. I have too many *ideas.* And now, not enough *excuses.*";
 
 export default function Manifesto() {
   const containerRef = useRef<HTMLDivElement>(null);
   const wordsRef = useRef<HTMLSpanElement[]>([]);
 
   useEffect(() => {
+    let ticking = false;
     const update = () => {
       const threshold = window.innerHeight * 0.75;
       wordsRef.current.forEach((span) => {
@@ -16,10 +17,18 @@ export default function Manifesto() {
           span.classList.add(styles.lit);
         }
       });
+      ticking = false;
     };
 
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const words = MANIFESTO_TEXT.split(" ").map((word, i) => {

@@ -8,16 +8,17 @@
   position: relative;
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  filter: blur(6px);
+  transition: opacity 1.5s var(--ease), transform 1.5s var(--ease), filter 2s var(--ease);
 }
-.item:global(.visible) { opacity: 1; transform: translateY(0); }
+.item:global(.visible) { opacity: 1; transform: translateY(0); filter: blur(0); }
 
 .number {
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-style: italic;
   color: var(--accent);
-  opacity: 0.5;
+  opacity: 1;
   margin-bottom: 2.4rem;
   letter-spacing: 0.04em;
 }

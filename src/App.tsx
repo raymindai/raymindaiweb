@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import FluidBackground from "./components/FluidBackground";
+import ScrollDistortion from "./components/ScrollDistortion";
 import Cursor from "./components/Cursor";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -11,25 +14,34 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const [fontsReady, setFontsReady] = useState(false);
+
+  useEffect(() => {
+    document.fonts.ready.then(() => setFontsReady(true));
+  }, []);
+
+  if (!fontsReady) return null;
+
   return (
     <>
+      <FluidBackground />
+      <ScrollDistortion />
       <Cursor />
       <Nav />
-      <Hero />
-      <Manifesto />
-      <div className="divider" />
-      <Belief />
-      <div className="divider" />
-      <Products />
-      <div className="divider" />
-      <BigQuote />
-      <div className="divider" />
-      <About />
-      <div className="divider" style={{ marginTop: "16rem" }} />
-      <Waitlist />
-      <div className="divider" />
-      <Contact />
-      <Footer />
+      <div id="scroll-content">
+        <Hero />
+        <Manifesto />
+        <Belief />
+        <div className="divider" />
+        <Products />
+        <BigQuote />
+        <div className="divider" />
+        <About />
+        <Waitlist />
+        <div className="divider" />
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }

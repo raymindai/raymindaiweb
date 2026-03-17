@@ -10,16 +10,18 @@ export default function Footer() {
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Products</div>
-          <a href="https://pastlife.app">PastLife</a>
-          <a href="https://screenstyler.ai">ScreenStyler</a>
-          <a href="https://stiqs.ai">Stiqs</a>
-          <a href="https://ddalggak.ai">Ddalggak</a>
+          <a href="https://pastlife.app">pastlife.app</a>
+          <a href="https://screenstyler.ai">screenstyler.ai</a>
+          <a href="https://stiqs.ai">stiqs.ai</a>
+          <a href="https://ddalggak.ai">ddalggak.ai</a>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Ideas</div>
           <a href="https://mdcore.ai">mdcore.ai</a>
           <a href="https://mdfy.cc">mdfy.cc</a>
           <a href="https://superplane.ai">superplane.ai</a>
+          <a href="https://vpn4korean.com">vpn4korean.com</a>
+          <a href="https://nkdtxt.com">nkdtxt.com</a>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Connect</div>

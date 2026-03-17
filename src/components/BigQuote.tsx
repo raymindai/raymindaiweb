@@ -8,7 +8,7 @@ export default function BigQuote() {
     <section className={styles.quote}>
       <div ref={ref} className={styles.inner}>
         <blockquote>
-          I stopped waiting for a<br />team. AI <span className="accent">is</span> the team.
+          The work is the <span className="accent">argument.</span>
         </blockquote>
       </div>
     </section>

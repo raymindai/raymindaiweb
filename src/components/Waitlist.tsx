@@ -30,10 +30,9 @@ export default function Waitlist() {
   return (
     <section className={styles.waitlist}>
       <div ref={ref} className={styles.inner}>
-        <h2>Watch it <em>happen.</em></h2>
+        <h2>Stay <em>close.</em></h2>
         <p className={styles.sub}>
-          I'm building everything in public. Subscribe for early access, honest updates,
-          and the real story behind pushing my limits with AI.
+          I send updates when there's something worth your time. Rarely. But when I do, it's because something shipped.
         </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <input

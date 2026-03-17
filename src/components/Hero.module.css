@@ -1,74 +1,63 @@
 .hero {
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: 90vh;
+  min-height: 90svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
-.glow {
-  position: absolute;
-  width: 50vw; height: 50vw;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 56, 49, 0.07) 0%, transparent 70%);
-  pointer-events: none;
-  filter: blur(60px);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
+
 .content {
   position: relative;
   z-index: 2;
   padding: 0 var(--page-pad);
+  overflow: visible;
 }
 .content h1 {
+  overflow: visible;
   font-family: var(--serif);
   font-size: clamp(5.5rem, 11.5vw, 15rem);
   font-weight: 300;
-  line-height: 0.95;
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 .content h1 em { font-style: italic; }
 
-.slideLine { display: block; overflow: hidden; }
-.slideInner {
+.line { display: block; overflow: visible; padding-bottom: 0.15em; }
+.lineInner {
   display: block;
-  transform: translateY(120%);
+  transform: translateY(110%);
   opacity: 0;
+  filter: blur(8px);
 }
 .slideVisible {
   animation: slide-up 1.2s var(--ease) forwards;
 }
-@keyframes slide-up { to { transform: translateY(0); opacity: 1; } }
-
-.footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 0 var(--page-pad);
-  margin-top: 5rem;
-  opacity: 0;
-  transform: translateY(15px);
-  flex-wrap: wrap;
-  gap: 3rem;
+@keyframes slide-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
 }
-.footerVisible {
-  animation: fade-up 0.7s 0.15s var(--ease) forwards;
-}
-@keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
 
-.sub {
-  font-size: 1.7rem;
-  font-weight: 300;
-  color: var(--dim);
-  max-width: 36rem;
-  line-height: 1.75;
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.25em;
+}
+.word:last-child { margin-right: 0; }
+
+.char {
+  display: inline-block;
+  will-change: transform;
 }
 
 @media (max-width: 649px) {
-  .content, .footer { padding: 0 var(--page-pad-mobile); }
+  .hero { min-height: 85vh; min-height: 85svh; }
+  .content { padding: 0 var(--page-pad-mobile); }
+}
+@media (max-width: 768px) {
+  .char { pointer-events: none; }
 }

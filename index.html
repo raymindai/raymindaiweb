@@ -12,6 +12,19 @@
     <link rel="canonical" href="https://raymind.ai">
   </head>
   <body>
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <filter id="chromatic" color-interpolation-filters="sRGB">
+          <feOffset id="r-shift" in="SourceGraphic" dx="1.2" dy="0" result="r-shift"/>
+          <feColorMatrix in="r-shift" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="r"/>
+          <feOffset id="b-shift" in="SourceGraphic" dx="-1.2" dy="0" result="b-shift"/>
+          <feColorMatrix in="b-shift" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" result="b"/>
+          <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" result="g"/>
+          <feBlend in="r" in2="g" mode="screen" result="rg"/>
+          <feBlend in="rg" in2="b" mode="screen"/>
+        </filter>
+      </defs>
+    </svg>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
