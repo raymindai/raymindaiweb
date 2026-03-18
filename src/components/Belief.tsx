@@ -6,23 +6,23 @@ const beliefs = [
   {
     num: "01",
     title: <><em>Make</em> it.</>,
-    titleKo: "일단 만들어.",
+    titleKo: "일단 만들자.",
     desc: "If an idea sticks around long enough, it earns the right to exist. I'd rather build a rough version today than a perfect pitch deck next quarter.",
-    descKo: "머릿속에서 오래 버티는 아이디어라면 일단 만들어볼 가치가 있다. 다음 분기에 완벽한 기획서를 쓰기보다 오늘 투박한 프로토타입을 내는 쪽을 택한다.",
+    descKo: "계속해서 생각나는 아이디어라면 일단 만들어볼 가치가 있다. 언제가 될지 모르는 다음을 위해서 완벽한 계획을 하는것 보다 지금, 오늘 투박한 프로토타입을 만드는게 좋다.",
   },
   {
     num: "02",
     title: <><em>Kill</em> it.</>,
-    titleKo: "과감히 접어.",
-    desc: "Most of what I start doesn't ship. That's not failure — that's editing. The hard part was never starting. It's knowing when to stop.",
-    descKo: "시작한 것 대부분은 출시까지 가지 않는다. 실패라기보다 편집에 가깝다. 진짜 어려운 건 시작이 아니라 멈출 타이밍을 아는 일이다.",
+    titleKo: "과감히 접어!",
+    desc: "Most of what I start doesn't ship. That's not failure, that's editing. The hard part was never starting. It's knowing when to stop.",
+    descKo: "시작한 것 대부분은 출시까지 가지 않는다. 이건 실패라기보다 일종의 편집에 가깝다. 진짜 어려운 건 시작이 아니라 멈출 타이밍을 아는 것이다.",
   },
   {
     num: "03",
     title: <><em>Again.</em></>,
     titleKo: "그리고 다시.",
     desc: "Every project I finish leaves behind two new questions. I've learned to trust that rhythm. The work feeds the work.",
-    descKo: "하나를 끝내면 늘 새로운 질문 두 개가 남는다. 나는 그 리듬을 믿는다. 작업은 다음 작업을 부른다.",
+    descKo: "하나를 끝내면 늘 새로운 질문들이 생긴다. 나는 그 질문들이 이끄는 흐름을 믿고 다음 작업을 자연스럽게 임하도록 하도록 해준다.",
   },
 ];
 

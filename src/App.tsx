@@ -18,7 +18,14 @@ export default function App() {
   const [fontsReady, setFontsReady] = useState(false);
 
   useEffect(() => {
-    document.fonts.ready.then(() => setFontsReady(true));
+    // Wait for specific fonts to actually load, not just the ready promise
+    Promise.all([
+      document.fonts.load("300 1em Cormorant Garamond"),
+      document.fonts.load("italic 300 1em Cormorant Garamond"),
+      document.fonts.load("300 1em Inter"),
+      document.fonts.load("500 1em Inter"),
+    ]).then(() => setFontsReady(true))
+      .catch(() => setFontsReady(true)); // fallback if fonts fail
   }, []);
 
   if (!fontsReady) return null;

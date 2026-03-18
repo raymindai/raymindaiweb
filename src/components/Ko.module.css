@@ -94,15 +94,18 @@
   .bottomLeft {
     top: calc(100% + 1.4rem);
   }
-  /* Prevent horizontal overflow on mobile when KO is toggled */
+  /* On mobile, show Korean title inline after English */
   .right {
-    left: 0;
-    top: calc(100% + 1rem);
-    transform: translateY(-4px);
-    max-width: 100%;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    display: inline;
+    max-width: none;
     text-align: left;
+    margin-left: 0.5em;
   }
   .right.visible {
-    transform: translateY(2px);
+    transform: none;
   }
 }

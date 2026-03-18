@@ -1,0 +1,19 @@
+Section,Key,English,Korean (현재)
+Hero,hero_main,"What happens when one person refuses to stop.","한 사람이 멈추지 않기로 하면, 어떤 일이 벌어질까."
+Manifesto,manifesto_text,"I keep making things. Some for clients, some for myself, most because the idea wouldn't leave me alone. AI showed up and the gap between ""I should build that"" and ""it's live"" shrank to almost nothing. That's dangerous for someone like me. I have too many ideas. And now, not enough excuses.","나는 계속 만든다. 어떤 건 클라이언트를 위해, 어떤 건 나를 위해, 대부분은 머릿속에서 아이디어가 떠나지 않아서. AI가 등장한 뒤로 ""이거 만들어야지""와 ""이미 출시됐다"" 사이의 거리는 거의 사라졌다. 나 같은 사람에게는 꽤 위험한 변화다. 아이디어는 넘치는데, 이제는 핑계가 없다."
+Belief,belief_01_title,Make it.,일단 만들어.
+Belief,belief_01_desc,"If an idea sticks around long enough, it earns the right to exist. I'd rather build a rough version today than a perfect pitch deck next quarter.","머릿속에서 오래 버티는 아이디어라면 일단 만들어볼 가치가 있다. 다음 분기에 완벽한 기획서를 쓰기보다 오늘 투박한 프로토타입을 내는 쪽을 택한다."
+Belief,belief_02_title,Kill it.,과감히 접어.
+Belief,belief_02_desc,"Most of what I start doesn't ship. That's not failure — that's editing. The hard part was never starting. It's knowing when to stop.","시작한 것 대부분은 출시까지 가지 않는다. 실패라기보다 편집에 가깝다. 진짜 어려운 건 시작이 아니라 멈출 타이밍을 아는 일이다."
+Belief,belief_03_title,Again.,그리고 다시.
+Belief,belief_03_desc,"Every project I finish leaves behind two new questions. I've learned to trust that rhythm. The work feeds the work.","하나를 끝내면 늘 새로운 질문 두 개가 남는다. 나는 그 리듬을 믿는다. 작업은 다음 작업을 부른다."
+Products,pastlife_desc,"I built Mir — an AI seer who reads your soul through tarot and reveals the past life you never knew you lived. Cinematic narratives, painted portraits, and 30-second films of who you used to be.","Mir는 타로를 바탕으로 당신의 영혼을 읽고, 당신도 몰랐던 전생을 그려 주는 AI 점술가다. 시네마틱 서사, 회화풍 초상, 30초 영상까지 한 번에 만든다."
+Products,screenstyler_desc,"A Mac app that unlocks peak brightness up to 1600 nits and lets you customize your display like editing a photo. Professional HDR controls, beyond what Apple gives you out of the box.","Mac 디스플레이의 잠긴 최대 밝기를 1600니트까지 열고, 사진 보정하듯 화면을 세밀하게 조정할 수 있는 앱이다. 애플 기본 설정을 넘어서는 전문가용 HDR 컨트롤을 제공한다."
+Products,stiqs_desc,"An AI-powered sticker system that turns your selfies and pets into expressive, endlessly usable sticker packs. Your face, your cat, your energy — in sticker form.","셀피와 반려동물을 감정이 살아 있는 스티커 팩으로 바꿔 주는 AI 스티커 엔진. 내 얼굴, 내 반려동물, 내 분위기를 그대로 담아낸다."
+Products,ddalggak_desc,"AI-powered marketing image generator for small business owners. Upload a product photo, pick from 100+ styling presets, and get platform-ready images for Coupang, Instagram, Naver, and more — in under 20 seconds. No photographer, no studio.","소상공인을 위한 AI 마케팅 이미지 생성기. 제품 사진 한 장을 올리고 100개 이상의 스타일 프리셋에서 고르면, 쿠팡·인스타그램·네이버용 이미지를 20초 안에 만든다. 촬영도 스튜디오도 필요 없다."
+BigQuote,big_quote,The work is the argument.,결과물이 가장 강한 증거다.
+About,about_heading,About Raymind.AI,Raymind.AI 소개
+About,about_col1,"Raymind.AI is just me. Ray is how I see things. Mind is what I can't turn off. AI is what finally let me keep up with my own head. Everything here is self-initiated — no clients, no briefs, no one asking for it. Just things I wanted to exist.","Raymind.AI는 나 혼자다. Ray는 내가 보는 방식, Mind는 안 꺼지는 머릿속, AI는 그 속도를 따라잡게 해준 것. 여기 있는 건 전부 내가 만들고 싶어서 시작한 것들이다. 시킨 사람은 없다."
+About,about_col2,"I've spent most of my career building products for others — sometimes for big names, sometimes for small ones. That work still lives somewhere. See it if you're curious. Now I build my own — incorporated in the US and South Korea, open to the right conversation if you have one.","오랫동안 다양한 팀과 회사를 위해 제품을 만들어 왔다. 그 작업물은 아직 어딘가에 있다. 궁금하면 봐도 좋다. 이제는 내 이름으로 만든다. 맥이 맞는 대화라면 언제든 함께할 수 있다."
+Waitlist,waitlist_sub,"I send updates when there's something worth your time. Rarely. But when I do, it's because something shipped.","뭔가를 출시하면 그때 알려드릴게요. 자주 보내진 않습니다."
+Contact,contact_desc,"Whether it's a project, a partnership, or just a good conversation — I'm always interested in what other people are making.","프로젝트든 파트너십이든, 그냥 좋은 대화든 좋다. 다른 사람들이 무엇을 만들고 있는지 늘 궁금하다."

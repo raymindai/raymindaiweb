@@ -24,13 +24,13 @@ export default function About() {
           </p>
           {show && (
             <p className={styles.koCopy}>
-              Raymind.AI는 결국 나 혼자 운영하는 작업실이다. 이곳의 모든 프로젝트는 누가 시켜서가 아니라, 내가 존재하길 바랐기 때문에 시작됐다. 클라이언트도, 브리프도, 요청도 없다.
+              Raymind.AI는 개인의 작업들이다. Ray는 내가 보는 방식, Mind는 꺼지지 않는 나의 생각들, AI는 그 속도를 따라잡게 해준 것. 여기 있는 건 전부 그렇게 시작한 것 들이다. 클라이언트도, 브리프도, 부탁도 없다. 그냥 존재했으면 하는 것들이다.
             </p>
           )}
         </div>
         <div ref={col2Ref} className={styles.col} style={{ transitionDelay: "0.1s" }}>
           <p>
-            I've spent most of my career building products for others — sometimes for big names,
+            I've spent most of my career building products for others, sometimes for big names,
             sometimes for small ones. That work still lives somewhere.{" "}
             <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
               See it if you're curious
@@ -40,7 +40,7 @@ export default function About() {
           </p>
           {show && (
             <p className={styles.koCopy}>
-              오랫동안 다양한 팀과 회사를 위해 제품을 만들어 왔다. 이제는 내 이름으로 만든다. 맥이 맞는 대화라면 언제든 함께할 수 있다.
+              오랜시간 다양한 팀과 회사를 위해 제품을 만들어 왔다. 그 중 일부는 알려진 제품이기도 하고 그렇지 않은 것들도 있다. 일부는 아직 사용되고 있기도 하다. 궁금하면 내가 AI를 본격적으로 사용하기 이전 작업들을 확인해봐. 이제는 미국과 한국에 법인을 두고 나의 작업들을 하고있다. 결이 맞다고 생각되면 이야기 해보자.
             </p>
           )}
         </div>

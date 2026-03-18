@@ -38,7 +38,7 @@ export default function Contact() {
         <div ref={leftRef} className={styles.left}>
           <h2>Say <em>hello.</em></h2>
           <p>
-            <Ko ko="프로젝트든 파트너십이든, 그냥 좋은 대화든 좋다. 다른 사람들이 무엇을 만들고 있는지 늘 궁금하다." position="bottom-left" reserve="tight" block>
+            <Ko ko="프로젝트든 파트너십이든, 그냥 좋은 대화든. 다른 사람들이 무엇을 만들고 있는지 늘 궁금하다." position="bottom-left" reserve="tight" block>
               Whether it's a project, a partnership, or just a good conversation — I'm
               always interested in what other people are making.
             </Ko>

@@ -3,7 +3,7 @@ import Ko from "./Ko";
 import styles from "./Hero.module.css";
 
 const MAX_DISPLACE = 60;
-const HERO_KO = "한 사람이 멈추지 않기로 하면, 어떤 일이 벌어질까.";
+const HERO_KO = "한 사람이 멈추지 않는다면, 어떤 일이 벌어질까.";
 
 export default function Hero() {
   const linesRef = useRef<HTMLSpanElement[]>([]);

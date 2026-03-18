@@ -25,7 +25,8 @@
       "Bash(curl:*)",
       "Bash(grep:*)",
       "WebFetch(domain:screenstyler.ai)",
-      "WebFetch(domain:ddalggak.ai)"
+      "WebFetch(domain:ddalggak.ai)",
+      "Bash(git checkout:*)"
     ]
   }
 }
