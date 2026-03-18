@@ -94,8 +94,15 @@
   .bottomLeft {
     top: calc(100% + 1.4rem);
   }
+  /* Prevent horizontal overflow on mobile when KO is toggled */
   .right {
-    left: calc(100% + 0.7rem);
-    max-width: 20rem;
+    left: 0;
+    top: calc(100% + 1rem);
+    transform: translateY(-4px);
+    max-width: 100%;
+    text-align: left;
+  }
+  .right.visible {
+    transform: translateY(2px);
   }
 }
