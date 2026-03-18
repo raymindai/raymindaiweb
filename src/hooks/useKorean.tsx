@@ -5,8 +5,8 @@ const KoreanContext = createContext({ show: false, toggle: () => {} });
 export function KoreanProvider({ children }: { children: ReactNode }) {
   const [show, setShow] = useState(() => {
     if (typeof navigator === "undefined") return false;
-    const langs = navigator.languages?.length ? navigator.languages : [navigator.language];
-    return langs.some((lang) => lang.toLowerCase().startsWith("ko"));
+    // Keep default deterministic: only UI language "ko*" enables KO mode automatically.
+    return navigator.language.toLowerCase().startsWith("ko");
   });
   const toggle = () => setShow((s) => !s);
   return (
