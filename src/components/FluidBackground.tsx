@@ -221,11 +221,33 @@ export default function FluidBackground() {
       handleInput(mouseX, mouseY, prevMouseX, prevMouseY, allowWhileScrolling, minSpeed);
     }
 
+    function onTouchStart(e: TouchEvent) {
+      const touch = e.touches[0];
+      if (!touch) return;
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+    }
+
+    function onTouchMove(e: TouchEvent) {
+      const touch = e.touches[0];
+      if (!touch) return;
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
+      // Touch scroll gesture should still feed fluid movement.
+      handleInput(mouseX, mouseY, prevMouseX, prevMouseY, true, 0.05);
+    }
+
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("pointerdown", onPointerDown, { passive: true });
     document.addEventListener("pointermove", onPointerMove, { passive: true });
+    document.addEventListener("touchstart", onTouchStart, { passive: true });
+    document.addEventListener("touchmove", onTouchMove, { passive: true });
     animId = requestAnimationFrame(render);
 
     return () => {
@@ -234,6 +256,8 @@ export default function FluidBackground() {
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("pointermove", onPointerMove);
+      document.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("touchmove", onTouchMove);
     };
   }, []);
 
