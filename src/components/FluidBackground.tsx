@@ -177,8 +177,15 @@ export default function FluidBackground() {
       scrollTimer = window.setTimeout(() => { scrolling = false; }, 150);
     }
 
-    function handleInput(x: number, y: number, prevX: number, prevY: number) {
-      if (scrolling) return;
+    function handleInput(
+      x: number,
+      y: number,
+      prevX: number,
+      prevY: number,
+      allowWhileScrolling = false,
+      minSpeed = 2
+    ) {
+      if (scrolling && !allowWhileScrolling) return;
 
       const i = Math.floor((x / w) * GRID) + 1;
       const j = Math.floor((y / h) * GRID) + 1;
@@ -187,7 +194,7 @@ export default function FluidBackground() {
       const dx = x - prevX;
       const dy = y - prevY;
       const speed = Math.sqrt(dx * dx + dy * dy);
-      if (speed < 2) return;
+      if (speed < minSpeed) return;
 
       inputI = i;
       inputJ = j;
@@ -196,36 +203,37 @@ export default function FluidBackground() {
       inputDens += Math.min(speed * 0.005, 0.1);
     }
 
-    function onMouseMove(e: MouseEvent) {
+    function onPointerDown(e: PointerEvent) {
+      if (e.pointerType === "mouse") return;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+    }
+
+    function onPointerMove(e: PointerEvent) {
       prevMouseX = mouseX;
       prevMouseY = mouseY;
       mouseX = e.clientX;
       mouseY = e.clientY;
-      handleInput(mouseX, mouseY, prevMouseX, prevMouseY);
-    }
-
-    function onTouchMove(e: TouchEvent) {
-      const touch = e.touches[0];
-      prevMouseX = mouseX;
-      prevMouseY = mouseY;
-      mouseX = touch.clientX;
-      mouseY = touch.clientY;
-      handleInput(mouseX, mouseY, prevMouseX, prevMouseY);
+      const allowWhileScrolling = e.pointerType !== "mouse";
+      const minSpeed = e.pointerType === "mouse" ? 2 : 0.35;
+      handleInput(mouseX, mouseY, prevMouseX, prevMouseY, allowWhileScrolling, minSpeed);
     }
 
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("scroll", onScroll, { passive: true });
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("touchmove", onTouchMove, { passive: true });
+    document.addEventListener("pointerdown", onPointerDown, { passive: true });
+    document.addEventListener("pointermove", onPointerMove, { passive: true });
     animId = requestAnimationFrame(render);
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
       window.removeEventListener("scroll", onScroll);
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("touchmove", onTouchMove);
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("pointermove", onPointerMove);
     };
   }, []);
 

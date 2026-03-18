@@ -130,7 +130,7 @@ export default function Products() {
       {inDev.map((p) => <ProductCard key={p.label} product={p} />)}
 
       <div className={styles.stage}><span>Ideas / Domains Secured</span></div>
-      <section ref={ideasRef} className={styles.section}>
+      <section ref={ideasRef} className={`${styles.section} ${styles.ideasSection}`}>
         <div className={styles.ideasGrid}>
           {ideas.map((idea, i) => (
             <IdeaCard key={idea.domain} {...idea} delay={i * 0.06} />

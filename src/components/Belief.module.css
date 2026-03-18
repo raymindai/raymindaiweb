@@ -38,5 +38,5 @@
   line-height: 1.8;
 }
 
-@media (max-width: 949px) { .grid { grid-template-columns: 1fr; gap: 9rem; } }
+@media (max-width: 949px) { .grid { grid-template-columns: 1fr; gap: 12rem; } }
 @media (max-width: 649px) { .belief { padding: 16rem var(--page-pad-mobile) 10rem; } }

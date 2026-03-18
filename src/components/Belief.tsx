@@ -34,7 +34,7 @@ function BeliefItem({ num, title, titleKo, desc, descKo, delay }: {
     <div ref={ref} className={styles.item} style={{ transitionDelay: `${delay}s` }}>
       <div className={styles.number}>{num}</div>
       <h3><Ko ko={titleKo} position="right" nowrap>{title}</Ko></h3>
-      <p><Ko ko={descKo} position="bottom-left" block>{desc}</Ko></p>
+      <p><Ko ko={descKo} position="bottom-left" reserve="loose" block>{desc}</Ko></p>
     </div>
   );
 }

@@ -15,6 +15,9 @@
   filter: blur(6px);
   transition: opacity 1.5s var(--ease), transform 1.5s var(--ease), filter 2s var(--ease);
 }
+.ideasSection {
+  padding-bottom: 4rem;
+}
 .section:global(.visible) { opacity: 1; transform: translateY(0); filter: blur(0); }
 .section + .section { border-top: 1px solid var(--border); }
 
@@ -47,8 +50,8 @@
 
 .body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: start;
 }
 .desc {
@@ -160,8 +163,9 @@
 .ideaMore { display: flex; align-items: center; justify-content: center; }
 
 @media (max-width: 949px) {
-  .body { grid-template-columns: 1fr; gap: 3rem; }
+  .body { grid-template-columns: 1fr; gap: 0; }
   .section { padding: 6rem var(--page-pad-mobile) 8rem; }
+  .ideasSection { padding-bottom: 2rem; }
   .section:nth-child(even) .body { direction: ltr; }
   .descKo { margin-top: 1.6rem; }
 }

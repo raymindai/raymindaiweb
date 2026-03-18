@@ -1,9 +1,5 @@
 .quote {
-  min-height: 44rem;
-  padding: 0 var(--page-pad);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 4rem var(--page-pad) 28rem;
   text-align: center;
 }
 .inner {
@@ -47,7 +43,6 @@
 
 @media (max-width: 649px) {
   .quote {
-    min-height: 36rem;
-    padding: 0 var(--page-pad-mobile);
+    padding: 2rem var(--page-pad-mobile) 20rem;
   }
 }
