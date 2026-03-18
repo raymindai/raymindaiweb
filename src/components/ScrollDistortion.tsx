@@ -9,13 +9,17 @@ export default function ScrollDistortion() {
   const animId = useRef(0);
 
   useEffect(() => {
-    const wrapper = document.getElementById("scroll-content");
+    const scrollContent = document.getElementById("scroll-content");
+    const skewWrapper = document.getElementById("skew-wrapper");
     const rShift = document.getElementById("r-shift");
     const bShift = document.getElementById("b-shift");
-    if (!wrapper || !rShift || !bShift) return;
+    if (!scrollContent || !skewWrapper || !rShift || !bShift) return;
 
-    // Base chromatic always on
-    wrapper.style.filter = "url(#chromatic)";
+    // Chromatic on scroll-content (doesn't affect layout)
+    scrollContent.style.filter = "url(#chromatic)";
+
+    // Skew wrapper should not affect scroll height
+    skewWrapper.style.willChange = "transform";
 
     let mouseX = window.innerWidth / 2;
 
@@ -34,7 +38,6 @@ export default function ScrollDistortion() {
         return;
       }
 
-      // Side factor: -1 (left) to +1 (right)
       const side = (mouseX / window.innerWidth - 0.5) * 2;
       const absDelta = Math.abs(delta);
       const scaled = delta * absDelta * -0.008 * side;
@@ -51,15 +54,14 @@ export default function ScrollDistortion() {
       targetSkew.current *= 0.92;
       targetChroma.current *= 0.75;
 
-      // Skew
+      // Skew on inner wrapper only — doesn't affect scroll height
       if (Math.abs(currentSkew.current) > 0.05) {
-        wrapper.style.transform = `skewY(${currentSkew.current}deg)`;
+        skewWrapper.style.transform = `skewY(${currentSkew.current}deg)`;
       } else {
         currentSkew.current = 0;
-        wrapper.style.transform = "";
+        skewWrapper.style.transform = "";
       }
 
-      // Chromatic: base 1.2 + scroll-based boost
       const offset = 1.2 + currentChroma.current;
       rShift.setAttribute("dx", String(offset));
       bShift.setAttribute("dx", String(-offset));
@@ -75,8 +77,8 @@ export default function ScrollDistortion() {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("touchstart", onTouchStart);
       cancelAnimationFrame(animId.current);
-      wrapper.style.transform = "";
-      wrapper.style.filter = "";
+      skewWrapper.style.transform = "";
+      scrollContent.style.filter = "";
       rShift.setAttribute("dx", "1.2");
       bShift.setAttribute("dx", "-1.2");
     };

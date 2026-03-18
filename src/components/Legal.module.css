@@ -1,0 +1,102 @@
+.page {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 16rem var(--page-pad) 10rem;
+}
+
+.page h1 {
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 5vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.updated {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 5rem;
+}
+
+.page section {
+  margin-bottom: 4rem;
+}
+
+.page h2 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+  color: var(--text);
+}
+
+.page p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--dim);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.page ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.2rem;
+}
+
+.page li {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--dim);
+  line-height: 1.8;
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+.page li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.page li strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.page a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease);
+}
+.page a:hover {
+  border-color: var(--accent);
+}
+
+.ko {
+  color: #7B9FD4 !important;
+  opacity: 0.6;
+  font-size: 1.4rem !important;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  word-break: keep-all;
+}
+
+ul.ko {
+  list-style: none;
+  padding: 0;
+}
+ul.ko li {
+  color: #7B9FD4;
+  opacity: 0.6;
+  font-size: 1.4rem;
+}
+ul.ko li::before {
+  color: #7B9FD4;
+  opacity: 0.4;
+}
+
+@media (max-width: 649px) {
+  .page { padding: 12rem var(--page-pad-mobile) 8rem; }
+}

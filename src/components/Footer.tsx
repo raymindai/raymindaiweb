@@ -27,11 +27,21 @@ export default function Footer() {
           <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer">hyunsangcho.com</a>
         </div>
       </div>
+
       <div className={styles.bottom}>
         <div className={styles.legal}>
-          <p>&copy; 2026 Raymind.AI Inc. All rights reserved.</p>
-          <p>Registered in the United States and South Korea.</p>
+          <p>&copy; 2026 Raymind.AI LLC All rights reserved.</p>
         </div>
+        <div className={styles.links}>
+          <a href="/privacy">Privacy Policy</a>
+          <span className={styles.sep}>&middot;</span>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+
+      <div className={styles.bizInfo}>
+        <p>Raymind.AI LLC &middot; Wyoming, USA</p>
+        <p>주식회사 레이마인드에이아이 &middot; 대표: 조현상 &middot; 사업자등록번호: 492-10-03068 &middot; (13544) 경기도 성남시 분당구 판교대장로7길 15-15</p>
       </div>
     </footer>
   );

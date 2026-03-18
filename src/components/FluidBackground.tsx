@@ -182,10 +182,10 @@ export default function FluidBackground() {
       y: number,
       prevX: number,
       prevY: number,
-      allowWhileScrolling = false,
+      _allowWhileScrolling = false,
       minSpeed = 2
     ) {
-      if (scrolling && !allowWhileScrolling) return;
+      if (scrolling) return;
 
       const i = Math.floor((x / w) * GRID) + 1;
       const j = Math.floor((y / h) * GRID) + 1;
