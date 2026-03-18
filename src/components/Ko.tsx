@@ -6,7 +6,7 @@ interface KoProps {
   children: React.ReactNode;
   block?: boolean;
   position?: "bottom-right" | "bottom-left" | "bottom-center" | "right";
-  reserve?: "auto" | "tight" | "none";
+  reserve?: "auto" | "tight" | "loose" | "none";
   nowrap?: boolean;
 }
 
@@ -24,6 +24,8 @@ export default function Ko({ ko, children, block, position = "bottom-right", res
   const reserveClass = show && block
     ? reserve === "none"
       ? ""
+      : reserve === "loose"
+        ? styles.reserveLoose
       : reserve === "tight"
         ? styles.reserveTight
         : position === "bottom-center"

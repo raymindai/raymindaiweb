@@ -80,4 +80,21 @@
 .error { color: var(--accent); }
 .note { font-size: 1.15rem; color: var(--muted); margin-top: 2rem; font-weight: 300; }
 
-@media (max-width: 649px) { .waitlist { padding: 12rem var(--page-pad-mobile); } }
+@media (max-width: 649px) {
+  .waitlist { padding: 12rem var(--page-pad-mobile); }
+  .sub { margin-bottom: 6rem; }
+  .form {
+    flex-direction: column;
+    gap: 1.4rem;
+    border-bottom: none;
+    max-width: 100%;
+  }
+  .form input {
+    border-bottom: 1px solid var(--border);
+    padding: 1.6rem 0;
+  }
+  .form button {
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+}

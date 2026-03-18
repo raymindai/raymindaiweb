@@ -6,7 +6,6 @@ export default function Footer() {
       <div className={styles.grid}>
         <div className={styles.col}>
           <div className={styles.logo}>Raymind.AI</div>
-          <p className={styles.tagline}>Vision &middot; Mind &middot; AI</p>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Products</div>

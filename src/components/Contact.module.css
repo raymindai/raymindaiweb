@@ -28,7 +28,7 @@
   font-weight: 300;
   color: var(--dim);
   line-height: 1.75;
-  margin-bottom: 6.6rem;
+  margin-bottom: 9rem;
   max-width: 36rem;
 }
 
@@ -69,7 +69,8 @@
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(213, 216, 224, 0.68);
+  font-weight: 500;
   display: block;
   margin-bottom: 1rem;
 }
@@ -81,10 +82,10 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--border);
-  color: var(--text);
+  color: rgba(232, 236, 244, 0.95);
   font-family: var(--sans);
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.6rem;
+  font-weight: 400;
   outline: none;
   resize: none;
   transition: border-color 0.3s;
@@ -98,7 +99,7 @@
 .field textarea:focus,
 .field select:focus { border-color: var(--accent); }
 .field input::placeholder,
-.field textarea::placeholder { color: rgba(213, 216, 224, 0.22); }
+.field textarea::placeholder { color: rgba(213, 216, 224, 0.45); }
 .field select { -webkit-appearance: none; }
 @media (min-width: 769px) { .field select { cursor: none; } }
 .field select option { background: var(--bg); color: var(--text); }
@@ -126,4 +127,7 @@
 .error { color: var(--accent); }
 
 @media (max-width: 849px) { .grid { grid-template-columns: 1fr; gap: 6rem; } }
-@media (max-width: 649px) { .contact { padding: 10rem var(--page-pad-mobile); } }
+@media (max-width: 649px) {
+  .contact { padding: 10rem var(--page-pad-mobile); }
+  .left p { margin-bottom: 10.5rem; }
+}

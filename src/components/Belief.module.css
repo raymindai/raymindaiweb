@@ -1,4 +1,4 @@
-.belief { padding: 16rem var(--page-pad); }
+.belief { padding: 24rem var(--page-pad) 16rem; }
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -38,5 +38,5 @@
   line-height: 1.8;
 }
 
-@media (max-width: 949px) { .grid { grid-template-columns: 1fr; gap: 8rem; } }
-@media (max-width: 649px) { .belief { padding: 10rem var(--page-pad-mobile); } }
+@media (max-width: 949px) { .grid { grid-template-columns: 1fr; gap: 9rem; } }
+@media (max-width: 649px) { .belief { padding: 16rem var(--page-pad-mobile) 10rem; } }

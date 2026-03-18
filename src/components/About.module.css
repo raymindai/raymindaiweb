@@ -39,6 +39,16 @@
 }
 .col:global(.visible) { opacity: 1; transform: translateY(0); filter: blur(0); }
 .col strong { color: var(--text); font-weight: 400; }
+.koCopy {
+  margin-top: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1.62;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
 
 .link {
   color: var(--text);
@@ -80,4 +90,5 @@
 @media (max-width: 649px) {
   .about { padding: 10rem var(--page-pad-mobile); }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .koCopy { margin-top: 1.4rem; font-size: 1.5rem; }
 }

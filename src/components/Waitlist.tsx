@@ -41,7 +41,7 @@ export default function Waitlist() {
       <div ref={ref} className={styles.inner}>
         <h2>Stay <em>close.</em></h2>
         <p className={styles.sub}>
-          <Ko ko="뭔가를 출시하면 그때 알려드릴게요. 자주 보내진 않습니다." position="bottom-center" block>
+          <Ko ko="뭔가를 출시하면 그때 알려드릴게요. 자주 보내진 않습니다." position="bottom-center" reserve="loose" block>
             I send updates when there's something worth your time. Rarely. But when I do, it's because something shipped.
           </Ko>
         </p>

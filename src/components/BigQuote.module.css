@@ -1,4 +1,11 @@
-.quote { padding: 12rem var(--page-pad); text-align: center; }
+.quote {
+  min-height: 44rem;
+  padding: 0 var(--page-pad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .inner {
   opacity: 0;
   transform: translateY(24px);
@@ -25,6 +32,22 @@
   font-style: italic;
   line-height: 1.08;
   letter-spacing: -0.02em;
+  cursor: none;
+}
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.22em;
+}
+.word:last-child { margin-right: 0; }
+.char {
+  display: inline-block;
+  will-change: transform;
 }
 
-@media (max-width: 649px) { .quote { padding: 8rem var(--page-pad-mobile); } }
+@media (max-width: 649px) {
+  .quote {
+    min-height: 36rem;
+    padding: 0 var(--page-pad-mobile);
+  }
+}

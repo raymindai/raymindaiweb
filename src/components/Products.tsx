@@ -1,6 +1,5 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useKorean } from "../hooks/useKorean";
-import Ko from "./Ko";
 import styles from "./Products.module.css";
 
 interface Product {
@@ -80,6 +79,7 @@ const ideas = [
 
 function ProductCard({ product }: { product: Product }) {
   const ref = useScrollReveal<HTMLElement>();
+  const { show } = useKorean();
   return (
     <section ref={ref} className={styles.section} data-hover>
       <div className={styles.header}>
@@ -96,9 +96,8 @@ function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
       <div className={styles.body}>
-        <p className={styles.desc}>
-          <Ko ko={product.descKo} block>{product.desc}</Ko>
-        </p>
+        <p className={styles.desc}>{product.desc}</p>
+        {show && <p className={styles.descKo}>{product.descKo}</p>}
       </div>
     </section>
   );
