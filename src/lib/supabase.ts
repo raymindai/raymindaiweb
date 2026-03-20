@@ -53,5 +53,5 @@ export async function submitInquiry(data: InquiryData) {
       inquiry_type: data.type,
       message: data.message,
     },
-  }).catch(() => {});
+  }).catch((err) => console.warn("notify-inquiry failed:", err));
 }
