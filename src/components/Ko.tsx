@@ -8,9 +8,10 @@ interface KoProps {
   position?: "bottom-right" | "bottom-left" | "bottom-center" | "right";
   reserve?: "auto" | "tight" | "loose" | "none";
   nowrap?: boolean;
+  koStyle?: React.CSSProperties;
 }
 
-export default function Ko({ ko, children, block, position = "bottom-right", reserve = "auto", nowrap = false }: KoProps) {
+export default function Ko({ ko, children, block, position = "bottom-right", reserve = "auto", nowrap = false, koStyle }: KoProps) {
   const { show } = useKorean();
 
   const posClass = position === "bottom-left"
@@ -40,7 +41,10 @@ export default function Ko({ ko, children, block, position = "bottom-right", res
   return (
     <span className={`${styles.wrap} ${block ? styles.block : ""} ${reserveClass}`}>
       {children}
-      <span className={`${styles.annotation} ${posClass} ${nowrapClass} ${show ? styles.visible : ""}`}>
+      <span
+        className={`${styles.annotation} ${posClass} ${nowrapClass} ${show ? styles.visible : ""}`}
+        style={koStyle}
+      >
         {ko}
       </span>
     </span>

@@ -26,7 +26,11 @@
       "Bash(grep:*)",
       "WebFetch(domain:screenstyler.ai)",
       "WebFetch(domain:ddalggak.ai)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(which supabase:*)",
+      "Bash(supabase link:*)",
+      "Bash(supabase secrets:*)",
+      "Bash(supabase functions:*)"
     ]
   }
 }

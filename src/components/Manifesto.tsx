@@ -53,7 +53,7 @@ export default function Manifesto() {
 
   return (
     <section className={styles.manifesto} id="manifesto">
-      <Ko ko={MANIFESTO_KO} position="bottom-left" block>
+      <Ko ko={MANIFESTO_KO} position="bottom-left" block koStyle={{ maxWidth: "60rem" }}>
         <div ref={containerRef} className={styles.text}>
           {words}
         </div>

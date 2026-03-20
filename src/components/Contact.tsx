@@ -22,7 +22,7 @@ export default function Contact() {
     try {
       await submitInquiry(form);
       setStatus("success");
-      setMessage("Sent. We'll be in touch.");
+      setMessage("Got it. I'll get back to you.");
       setForm({ name: "", email: "", type: "", message: "" });
     } catch (err) {
       setStatus("error");

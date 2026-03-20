@@ -5,6 +5,7 @@ import styles from "./Products.module.css";
 interface Product {
   name: React.ReactNode;
   domains: string[];
+  url?: string;
   status: string;
   desc: string;
   descKo: string;
@@ -16,6 +17,7 @@ const launched: Product[] = [
   {
     name: "pastlife.app",
     domains: ["pastlife.app", "jeonsaeng.com"],
+    url: "https://pastlife.app",
     status: "Launched",
     desc: "I built Mir, an AI seer who reads your soul through tarot and reveals the past life you never knew you lived. Cinematic narratives, painted portraits, and 30-second films of who you used to be.",
     descKo: "미르는 타로를 바탕으로 당신의 영혼을 읽고, 당신도 몰랐던 전생을 그려 주는 AI 점술가다. 시네마틱 서사, 회화풍 초상, 30초 영상까지 한 번에 만들고 당신의 전생과 대화를 통해 미래를 볼수 있도록 돕는다.",
@@ -25,6 +27,7 @@ const launched: Product[] = [
   {
     name: "screenstyler.ai",
     domains: ["screenstyler.ai"],
+    url: "https://screenstyler.ai",
     status: "Launched",
     desc: "A Mac app that unlocks peak brightness up to 1600 nits and lets you customize your display like editing a photo. Professional HDR controls, beyond what Apple gives you out of the box.",
     descKo: "맥북이나 일부 애플 디스플레이의 잠긴 최대 밝기를 1600니트까지 열고, 사진 보정하듯 화면을 세밀하게 조정할 수 있는 앱이다. 애플 기본 설정에서 불가능한 전문가수준의 HDR 컨트롤을 제공한다.",
@@ -35,6 +38,16 @@ const launched: Product[] = [
 
 const inDev: Product[] = [
   {
+    name: "ddalggak.ai",
+    domains: ["ddalggak.ai", "taptap.studio"],
+    url: "https://ddalggak.ai",
+    status: "In Development",
+    desc: "AI-powered product, marketing image generator for small business owners. Upload a product photo, pick from 100+ styling presets, and get platform-ready images for Coupang, Instagram, Naver, and more — in under 20 seconds. No photographer, no studio.",
+    descKo: "소상공인을 위한 AI 마케팅 이미지 생성기. 제품 사진 한 장을 올리고 100개 이상의 스타일 프리셋에서 고르면, 쿠팡·인스타그램·네이버용 최고 수준의 제품 이미지를 20초 안에 만들어준다.",
+    visualClass: styles.visualDdalggak,
+    label: "ddalggak.ai",
+  },
+  {
     name: "stiqs.ai",
     domains: ["stiqs.ai"],
     status: "In Development",
@@ -42,15 +55,6 @@ const inDev: Product[] = [
     descKo: "진짜 포스트잇처럼 던지고, 구기고, 벽에 붙이는 macOS 노트 앱. 메모, PDF, 이미지, 코드, 투두, 테이블, 스티커 등 8가지 노트를 하나의 캔버스에 자유롭게 펼치고, 커넥터로 아이디어를 이어 붙이면 AI가 요약, 확장까지 해준다. 복잡한 도구 없이, 손끝 감각만으로 생각을 정리한다.",
     visualClass: styles.visualStiqs,
     label: "stiqs.ai",
-  },
-  {
-    name: "ddalggak.ai",
-    domains: ["ddalggak.ai", "taptap.studio"],
-    status: "In Development",
-    desc: "AI-powered product, marketing image generator for small business owners. Upload a product photo, pick from 100+ styling presets, and get platform-ready images for Coupang, Instagram, Naver, and more — in under 20 seconds. No photographer, no studio.",
-    descKo: "소상공인을 위한 AI 마케팅 이미지 생성기. 제품 사진 한 장을 올리고 100개 이상의 스타일 프리셋에서 고르면, 쿠팡·인스타그램·네이버용 최고 수준의 제품 이미지를 20초 안에 만들어준다.",
-    visualClass: styles.visualDdalggak,
-    label: "ddalggak.ai",
   },
 ];
 
@@ -83,7 +87,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <section ref={ref} className={styles.section} data-hover>
       <div className={styles.header}>
-        <h3>{product.name}</h3>
+        <h3>{product.url ? <a href={product.url} target="_blank" rel="noopener noreferrer">{product.name}</a> : product.name}</h3>
         <div className={styles.meta}>
           <div className={styles.domains}>
             {product.domains.map((d, i) => (

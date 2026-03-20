@@ -44,4 +44,14 @@ export async function submitInquiry(data: InquiryData) {
   if (error) {
     throw new Error("Something went wrong. Please try again.");
   }
+
+  // Send email notification (fire and forget)
+  supabase.functions.invoke("notify-inquiry", {
+    body: {
+      name: data.name,
+      email: data.email,
+      inquiry_type: data.type,
+      message: data.message,
+    },
+  }).catch(() => {});
 }
