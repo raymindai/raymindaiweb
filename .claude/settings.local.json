@@ -32,7 +32,11 @@
       "Bash(supabase secrets:*)",
       "Bash(supabase functions:*)",
       "Bash(npm install:*)",
-      "Bash(find /Users/hyunsangcho/Desktop/Projects -name *duo* -o -name *past*life* -o -name *portrait*)"
+      "Bash(find /Users/hyunsangcho/Desktop/Projects -name *duo* -o -name *past*life* -o -name *portrait*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//Users/hyunsangcho/Desktop/Projects/raymindaiweb/src/components/**)",
+      "Bash(done)"
     ]
   }
 }
