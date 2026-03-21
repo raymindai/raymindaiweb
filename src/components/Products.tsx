@@ -34,6 +34,16 @@ const launched: Product[] = [
     visualClass: styles.visualScreenstyler,
     label: "screenstyler.ai",
   },
+  {
+    name: "mdfy.cc",
+    domains: ["mdfy.cc"],
+    url: "https://mdfy.cc",
+    status: "Launched",
+    desc: "You've seen what AI writes. You've also seen what it looks like when you paste it somewhere. mdfy.cc fixes that — paste any Markdown, from any AI, and get a document that looks like someone actually designed it. One link, zero friction.",
+    descKo: "모든 LLM의 기본 출력 포맷은 마크다운이다. 그러나 마크다운 원문은 비개발자에게 전달할 수 없고, 플랫폼마다 렌더링이 다르며, 수식·다이어그램·코드 하이라이팅을 일관되게 처리하는 도구가 없다. mdfy.cc는 임의의 마크다운을 붙여넣으면 MD flavor를 자동 감지하고 완전한 렌더링을 수행하여, 단일 공유 URL로 제공한다. 계정 불필요.",
+    visualClass: styles.visualScreenstyler,
+    label: "mdfy.cc",
+  },
 ];
 
 const inDev: Product[] = [
@@ -48,9 +58,18 @@ const inDev: Product[] = [
     label: "ddalggak.ai",
   },
   {
+    name: "mdcore.ai",
+    domains: ["mdcore.ai"],
+    status: "In Development · Site Pending",
+    desc: "Markdown is becoming the language between AI and everything else. mdcore is the engine that makes that language work — parsing every flavor, rendering on any surface, converting both ways. The infrastructure that should exist by now.",
+    descKo: "마크다운은 AI 시대의 사실상 교환 포맷이 되었으나, GFM·Obsidian·MDX·Pandoc 등 방언이 파편화되어 있고 양방향 변환을 단일 파이프라인으로 처리하는 인프라는 존재하지 않는다. mdcore는 모든 flavor의 파싱, 임의 런타임 대응 렌더링, 양방향 포맷 변환을 하나의 엔진으로 통합한다. mdfy.cc의 기반 기술이자, 오픈소스 엔진 + API 플랫폼으로 확장 예정.",
+    visualClass: styles.visualScreenstyler,
+    label: "mdcore.ai",
+  },
+  {
     name: "stiqs.ai",
     domains: ["stiqs.ai"],
-    status: "In Development",
+    status: "In Development · Site Pending",
     desc: "A macOS note app that feels like real sticky notes — toss, crumple, and pin them to your wall. Lay out memos, PDFs, images, code, and to-dos on one canvas, connect ideas visually, and let AI do the rest. No complex tools, just instinct.",
     descKo: "진짜 포스트잇처럼 던지고, 구기고, 벽에 붙이는 macOS 노트 앱. 메모, PDF, 이미지, 코드, 투두, 테이블, 스티커 등 8가지 노트를 하나의 캔버스에 자유롭게 펼치고, 커넥터로 아이디어를 이어 붙이면 AI가 요약, 확장까지 해준다. 복잡한 도구 없이, 손끝 감각만으로 생각을 정리한다.",
     visualClass: styles.visualStiqs,
@@ -59,16 +78,6 @@ const inDev: Product[] = [
 ];
 
 const ideas = [
-  {
-    domain: "mdcore.ai",
-    desc: "AI-first markdown editor that thinks with you. Write, organize, and publish — all from one surface.",
-    descKo: "생각을 함께 정리해 주는 AI 중심 마크다운 에디터. 한 화면에서 작성, 정리, 발행까지 끝낸다.",
-  },
-  {
-    domain: "mdfy.cc",
-    desc: "Instant web content to clean markdown. Paste a URL, get structured text. No fluff.",
-    descKo: "웹 콘텐츠를 즉시 깔끔한 마크다운으로 바꿔 준다. URL만 붙여 넣으면 구조화된 텍스트가 나온다.",
-  },
   {
     domain: "superplane.ai",
     desc: "AI-native presentation tool. Think it, say it, present it — slides that build themselves.",

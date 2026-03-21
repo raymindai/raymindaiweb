@@ -30,7 +30,8 @@
       "Bash(which supabase:*)",
       "Bash(supabase link:*)",
       "Bash(supabase secrets:*)",
-      "Bash(supabase functions:*)"
+      "Bash(supabase functions:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

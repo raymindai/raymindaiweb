@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { KoreanProvider } from "./hooks/useKorean";
 import FluidBackground from "./components/FluidBackground";
 import ScrollDistortion from "./components/ScrollDistortion";
@@ -65,6 +66,7 @@ export default function App() {
 
   return (
     <KoreanProvider>
+      <Analytics />
       <FluidBackground />
       {!isLegal && <ScrollDistortion />}
       <Cursor />
