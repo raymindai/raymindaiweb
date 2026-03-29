@@ -39,7 +39,9 @@ export default function Nav() {
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-      <a href="/" className={styles.logo} onClick={handleLogo}>Raymind.AI</a>
+      <a href="/" className={styles.logo} onClick={handleLogo}>
+        <img src="/logo.svg" alt="Raymind.AI" className={styles.logoImg} />
+      </a>
       <div className={styles.links}>
         <a href="#products" onClick={(e) => handleClick(e, "#products")}>Products</a>
         <a href="#about" onClick={(e) => handleClick(e, "#about")}>About</a>

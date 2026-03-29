@@ -67,6 +67,16 @@ const inDev: Product[] = [
     label: "mdcore.ai",
   },
   {
+    name: "jolong.ai",
+    domains: ["jolong.ai", "roastengine.ai"],
+    url: "https://jolong.ai",
+    status: "Teaser Launched",
+    desc: "A roast training platform — Duolingo for wit. Analyze any content for clichés, pretension, and AI slop, get a score, and train your ability to give and take sharp feedback. Powered by Roast Engine.",
+    descKo: "조롱 훈련 플랫폼 — 위트의 듀오링고. 콘텐츠의 뻔함, 허세, AI슬롭을 분석하고 점수를 매기며, 날카로운 피드백을 주고받는 능력을 훈련한다. Roast Engine 기반.",
+    visualClass: styles.visualStiqs,
+    label: "jolong.ai",
+  },
+  {
     name: "stiqs.ai",
     domains: ["stiqs.ai"],
     status: "In Development · Site Pending",

@@ -5,7 +5,8 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.grid}>
         <div className={styles.col}>
-          <div className={styles.logo}>Raymind.AI</div>
+          <img src="/logo.svg" alt="Raymind.AI" className={styles.logoImg} />
+          <img src="/logo-circle.png" alt="Raymind.AI" className={styles.logoCircle} />
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Products</div>
@@ -15,6 +16,7 @@ export default function Footer() {
           <a href="https://mdcore.ai">mdcore.ai</a>
           <a href="https://stiqs.ai">stiqs.ai</a>
           <a href="https://ddalggak.ai">ddalggak.ai</a>
+          <a href="https://jolong.ai">jolong.ai</a>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Ideas</div>

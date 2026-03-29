@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section className={styles.about} id="about">
       <div ref={headerRef} className={styles.header}>
-        <h2><Ko ko="Raymind.AI 소개" position="bottom-left">About <em>Raymind.AI</em></Ko></h2>
+        <h2><Ko ko="Raymind.AI 소개" position="bottom-left">About <em className={styles.brand}>Raymind.AI</em></Ko></h2>
       </div>
       <div className={styles.body}>
         <div ref={col1Ref} className={styles.col}>

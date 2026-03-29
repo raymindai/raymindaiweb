@@ -36,7 +36,9 @@
       "Bash(for f:*)",
       "Bash(do echo:*)",
       "Read(//Users/hyunsangcho/Desktop/Projects/raymindaiweb/src/components/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(xargs kill:*)",
+      "WebFetch(domain:fonts.google.com)"
     ]
   }
 }

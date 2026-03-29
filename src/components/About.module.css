@@ -20,7 +20,12 @@
   letter-spacing: -0.02em;
   max-width: 60rem;
 }
-.header h2 em { font-style: italic; color: var(--accent); }
+.brand {
+  font-family: 'Google Sans Flex', var(--sans);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--text);
+}
 
 .body {
   display: grid;

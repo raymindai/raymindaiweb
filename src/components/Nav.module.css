@@ -27,10 +27,12 @@
 @keyframes fade-in { to { opacity: 1; } }
 
 .logo {
-  font-family: var(--sans);
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+}
+.logoImg {
+  height: 1.6rem;
+  width: auto;
 }
 .links {
   display: flex;
@@ -38,8 +40,9 @@
   gap: 3.6rem;
 }
 .links a {
+  font-family: 'Google Sans Flex', var(--sans);
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
