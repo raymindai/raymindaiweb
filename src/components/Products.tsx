@@ -102,8 +102,8 @@ const inDev: Product[] = [
 const ideas = [
   {
     domain: "superplane.ai",
-    desc: "AI-native presentation tool. Think it, say it, present it — slides that build themselves.",
-    descKo: "AI 네이티브 프레젠테이션 툴. 생각을 말하면 슬라이드가 스스로 구성된다.",
+    desc: "The control layer for AI agents. See what they do, stop what's risky, keep humans in the loop. Not another agent builder — the OS for running an AI workforce accountably.",
+    descKo: "AI 에이전트 위에 얹히는 통제 레이어. 에이전트가 뭘 하는지 보여주고, 위험하면 멈추고, 사람을 끼워넣는다. 에이전트를 만드는 도구가 아니라, AI 조직을 책임지고 운영하기 위한 OS.",
   },
   {
     domain: "nkdtxt.com",
