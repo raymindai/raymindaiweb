@@ -139,6 +139,11 @@ function ProductCard({ product }: { product: Product }) {
         <div>
           <p className={styles.desc}>{product.desc}</p>
           {show && <p className={styles.descKo}>{product.descKo}</p>}
+          {product.url && (
+            <a href={product.url} target="_blank" rel="noopener noreferrer" className={styles.cta}>
+              {show ? "방문하기" : "Visit"} →
+            </a>
+          )}
         </div>
         {product.image && product.imagePosition !== "left" && (
           <div className={`${styles.productImage} ${styles.productImageRight}`}>
