@@ -208,9 +208,17 @@
 
 @media (max-width: 949px) {
   .body { grid-template-columns: 1fr; gap: 0; }
+  .bodyImageLeft,
+  .bodyImageRight { grid-template-columns: 1fr; }
   .section { padding: 6rem var(--page-pad-mobile) 8rem; }
   .ideasSection { padding-bottom: 2rem; }
   .descKo { margin-top: 1.6rem; }
+  .productImage {
+    max-width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
 }
 @media (max-width: 749px) { .ideasGrid { grid-template-columns: 1fr; } }
 @media (max-width: 649px) {
