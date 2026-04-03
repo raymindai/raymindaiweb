@@ -2,10 +2,17 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useKorean } from "../hooks/useKorean";
 import styles from "./Products.module.css";
 
+interface ProductLink {
+  href: string;
+  label: string;
+  labelKo: string;
+}
+
 interface Product {
   name: React.ReactNode;
   domains: string[];
   url?: string;
+  extraLinks?: ProductLink[];
   status: string;
   desc: string;
   descKo: string;
@@ -44,6 +51,9 @@ const launched: Product[] = [
     name: "mdfy.cc",
     domains: ["mdfy.cc"],
     url: "https://mdfy.cc",
+    extraLinks: [
+      { href: "https://mdfy.cc/about", label: "About", labelKo: "소개" },
+    ],
     status: "Launched",
     desc: "You've seen what AI writes. You've also seen what it looks like when you paste it somewhere. mdfy.cc fixes that — paste any Markdown, from any AI, and get a document that looks like someone actually designed it. One link, zero friction.",
     descKo: "모든 LLM의 기본 출력 포맷은 마크다운이다. 그러나 마크다운 원문은 비개발자에게 전달할 수 없고, 플랫폼마다 렌더링이 다르며, 수식·다이어그램·코드 하이라이팅을 일관되게 처리하는 도구가 없다. mdfy.cc는 임의의 마크다운을 붙여넣으면 MD flavor를 자동 감지하고 완전한 렌더링을 수행하여, 단일 공유 URL로 제공한다. 계정 불필요.",
@@ -140,9 +150,16 @@ function ProductCard({ product }: { product: Product }) {
           <p className={styles.desc}>{product.desc}</p>
           {show && <p className={styles.descKo}>{product.descKo}</p>}
           {product.url && (
-            <a href={product.url} target="_blank" rel="noopener noreferrer" className={styles.cta}>
-              {show ? "방문하기" : "Visit"} →
-            </a>
+            <div className={styles.ctaGroup}>
+              <a href={product.url} target="_blank" rel="noopener noreferrer" className={styles.cta}>
+                {show ? "방문하기" : "Visit"} →
+              </a>
+              {product.extraLinks?.map((link) => (
+                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={styles.cta}>
+                  {show ? link.labelKo : link.label} →
+                </a>
+              ))}
+            </div>
           )}
         </div>
         {product.image && product.imagePosition !== "left" && (

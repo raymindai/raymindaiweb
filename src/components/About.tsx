@@ -36,7 +36,10 @@ export default function About() {
               See it if you're curious
             </a>.{" "}
             Now I build my own — incorporated in the US and South Korea, open to the right
-            conversation if you have one.
+            conversation if you have one.{" "}
+            <a href="/cv" className={styles.link}>
+              Full story here
+            </a>.
           </p>
           {show && (
             <p className={styles.koCopy}>

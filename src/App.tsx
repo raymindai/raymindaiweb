@@ -16,6 +16,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
+import CV from "./components/CV";
 
 function useRoute() {
   const [path, setPath] = useState(window.location.pathname);
@@ -41,7 +42,7 @@ export default function App() {
       const a = (e.target as HTMLElement).closest("a");
       if (!a) return;
       const href = a.getAttribute("href");
-      if (href === "/privacy" || href === "/terms") {
+      if (href === "/privacy" || href === "/terms" || href === "/cv") {
         e.preventDefault();
         navigate(href);
       }
@@ -62,7 +63,7 @@ export default function App() {
 
   if (!fontsReady) return null;
 
-  const isLegal = path === "/privacy" || path === "/terms";
+  const isLegal = path === "/privacy" || path === "/terms" || path === "/cv";
 
   return (
     <KoreanProvider>
@@ -77,6 +78,8 @@ export default function App() {
             <Privacy />
           ) : path === "/terms" ? (
             <Terms />
+          ) : path === "/cv" ? (
+            <CV />
           ) : (
             <>
               <Hero />

@@ -89,9 +89,14 @@
   max-width: 48rem;
   margin-top: 6rem;
 }
+.ctaGroup {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 3rem;
+}
 .cta {
   display: inline-block;
-  margin-top: 3rem;
+  margin-top: 0;
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 0.1em;
