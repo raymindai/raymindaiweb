@@ -15,7 +15,7 @@ export default function CV() {
         </p>
         {show && (
           <p className={styles.summaryKo}>
-            AI를 위해 디자인하는 것이 아니라, AI로 직접 만들고, 출시하고, 회사를 운영한다. 런던, 서울, 리야드를 넘나들며 20년 이상 프로덕트 리더십을 쌓아왔다. 엔터프라이즈 AI 플랫폼, 공간 컴퓨팅, 소비자 제품, 그 사이의 모든 것. 지금은 Raymind.AI를 운영한다 — AI가 기능이 아니라, 방법 그 자체인 곳.
+            AI에 대해 말하는 사람이 아니라, AI로 직접 만들고 출시하는 사람이다. 런던, 서울, 리야드에서 20년 넘게 제품을 만들어 왔다. 대기업 AI 플랫폼부터 공간 컴퓨팅, 소비자 제품까지. 지금은 Raymind.AI를 운영하고 있다 — AI가 기능이 아니라 일하는 방식 자체인 곳.
           </p>
         )}
         <div className={styles.links}>
@@ -33,7 +33,7 @@ export default function CV() {
         </p>
         {show && (
           <p className={styles.signalTextKo}>
-            모든 기업이 곧 AI 기업이 된다. 하지만 실제로 AI 제품을 출시하고, 팀을 만들고, 거버넌스를 정의하고, 국가 규모로 운영해본 사람은 거의 없다. 나는 세 나라에서, 엔터프라이즈와 소비자 양쪽 모두에서 네 가지를 전부 해봤다. 그리고 지금도 만들고 있다.
+            모든 회사가 곧 AI 회사가 된다. 그런데 AI 제품을 실제로 출시해 보고, 팀을 꾸리고, 운영 체계를 세우고, 국가 단위로 돌려본 사람은 거의 없다. 나는 세 나라에서 그 네 가지를 다 해봤고, 지금도 계속 만들고 있다.
           </p>
         )}
       </div>
@@ -46,7 +46,7 @@ export default function CV() {
         </p>
         {show && (
           <p className={styles.nowTextKo}>
-            Raymind.AI 설립자 — 독립 AI 프로덕트 스튜디오. 컨설팅도, 자문도 아니다. 실제 제품을 출시한다: 소비자 앱, 개발자 도구, AI 엔진. 여러 제품이 이미 시장에 나와 있다. 동시에 사우디아라비아 국가 AI 이니셔티브인 Humain에서 AI Product & Experience Lead로 Humain OS의 플랫폼 비전과 엔터프라이즈 거버넌스를 정의하고 있다.
+            Raymind.AI를 만들어서 운영하고 있다. 남의 일을 대신 해주는 게 아니라, 내 제품을 직접 만들어 출시하는 스튜디오다. 소비자 앱, 개발자 도구, AI 엔진까지 여러 제품이 이미 시장에 나와 있다. 동시에 사우디아라비아의 국가 AI 프로젝트인 Humain에서 플랫폼 비전과 운영 체계를 설계하고 있다.
           </p>
         )}
       </div>
@@ -68,7 +68,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                사우디아라비아의 국가 AI 이니셔티브인 Humain OS의 프로덕트 및 경험 조직을 처음부터 구축하고 확장했다. 플랫폼 비전, 엔터프라이즈 거버넌스, 운영 모델을 정의했다. 스타트업이 아니라, 국가 규모의 AI 인프라다.
+                사우디 국가 AI 프로젝트 Humain OS의 제품과 경험 조직을 처음부터 만들었다. 플랫폼 비전, 운영 체계, 거버넌스를 직접 설계했다. 스타트업이 아니라 나라 단위의 AI 인프라다.
               </p>
             )}
             <ul className={styles.highlights}>
@@ -94,7 +94,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                쿠키런 IP 기반 공간 컴퓨팅 제품을 0에서 1까지 주도했다. 팀을 만들고, Meta 파트너십을 확보하고, Quest Store에 출시했다. XR 경험이 전무한 회사를 XR 시장에 진입시키고 프로덕션 레벨의 제품을 완성했다.
+                쿠키런 IP로 공간 컴퓨팅 제품을 처음부터 끝까지 만들었다. 팀을 꾸리고, Meta와 파트너십을 맺고, Quest Store에 출시했다. XR을 해본 적 없는 회사에서 출시 가능한 제품을 완성한 거다.
               </p>
             )}
             <ul className={styles.highlights}>
@@ -119,7 +119,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                카카오 최초의 유럽 법인을 처음부터 설립하고 이끌었다. 카카오톡과 카카오프렌즈 IP의 유럽 확장 — 라이선싱, 리테일, 전략적 파트너십을 총괄했다. IMG와의 전략적 제휴로 IP 글로벌 풋프린트를 확장했다.
+                카카오의 첫 유럽 법인을 직접 세우고 이끌었다. 카카오톡과 카카오프렌즈의 유럽 진출을 총괄했다 — 라이선싱, 리테일, 파트너십 전부. IMG와 손잡고 IP의 글로벌 입지를 넓혔다.
               </p>
             )}
             <ul className={styles.highlights}>
@@ -144,7 +144,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                세계 최대 IPO(2019)를 앞두고 아람코 전사 디지털 생태계에 적용된 엔터프라이즈 UX 표준을 정의했다. 산업 교육용 몰입형 VR을 구축했다. 한 나라의 경제 규모에 해당하는 디지털 인프라를 다뤘다.
+                세계 최대 IPO(2019)를 앞두고 아람코 전체 디지털 시스템에 적용할 UX 표준을 만들었다. 산업 교육용 VR도 구축했다. 한 나라 경제의 중심에 있는 회사의 디지털 인프라를 직접 다뤘다.
               </p>
             )}
             <ul className={styles.highlights}>
@@ -169,7 +169,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                Nike(NRC, NTC), Volvo(글로벌 웹), Barclays(모기지), Virgin Atlantic(온라인 예약) 등 전략적 UX 프로그램을 이끌었다. AI 기반 추천 경험과 데이터 기반 개인화 시스템을 구현했다.
+                Nike(NRC, NTC), Volvo, Barclays, Virgin Atlantic 등의 UX를 이끌었다. AI 추천 시스템과 데이터 기반 개인화 경험을 만들었다.
               </p>
             )}
           </div>
@@ -188,7 +188,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                금융 및 소비자 브랜드의 다중 시장 디지털 프로그램에서 UX 딜리버리를 주도했다. 엔터프라이즈 규모의 UX 팀 관리와 크로스펑셔널 협업을 이끌었다.
+                금융·소비재 브랜드의 여러 시장에 걸친 디지털 프로젝트에서 UX를 이끌었다. 대규모 UX 팀 운영과 부서 간 협업을 직접 했다.
               </p>
             )}
           </div>
@@ -237,17 +237,17 @@ export default function CV() {
           <div className={styles.expertiseArea}>
             <h3>Product & Strategy</h3>
             <p>AI-native product strategy, enterprise AI platform development, zero-to-one product incubation</p>
-            {show && <p className={styles.expertiseAreaKo}>AI 네이티브 프로덕트 전략, 엔터프라이즈 AI 플랫폼 개발, 제로투원 프로덕트 인큐베이션</p>}
+            {show && <p className={styles.expertiseAreaKo}>AI 중심 제품 전략, 대규모 AI 플랫폼 개발, 0→1 제품 인큐베이션</p>}
           </div>
           <div className={styles.expertiseArea}>
             <h3>Experience & Design</h3>
             <p>Human-AI & multimodal interaction, spatial computing & wearable, design governance & system architecture</p>
-            {show && <p className={styles.expertiseAreaKo}>인간-AI 및 멀티모달 인터랙션, 공간 컴퓨팅 및 웨어러블, 디자인 거버넌스 및 시스템 아키텍처</p>}
+            {show && <p className={styles.expertiseAreaKo}>사람과 AI의 상호작용 설계, 공간 컴퓨팅·웨어러블, 디자인 체계 및 시스템 설계</p>}
           </div>
           <div className={styles.expertiseArea}>
             <h3>Leadership & Scale</h3>
             <p>Cross-functional executive leadership, national-scale digital transformation, international market expansion</p>
-            {show && <p className={styles.expertiseAreaKo}>크로스펑셔널 경영 리더십, 국가 규모 디지털 전환, 해외 시장 확장</p>}
+            {show && <p className={styles.expertiseAreaKo}>부서를 넘나드는 경영 리더십, 국가 단위 디지털 전환, 해외 시장 개척</p>}
           </div>
         </div>
       </section>
