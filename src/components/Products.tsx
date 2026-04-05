@@ -143,7 +143,7 @@ function ProductCard({ product }: { product: Product }) {
       <div className={`${styles.body} ${product.image ? (product.imagePosition === "left" ? styles.bodyImageLeft : styles.bodyImageRight) : ""}`}>
         {product.image && product.imagePosition === "left" && (
           <div className={styles.productImage}>
-            <img src={product.image} alt={product.label} loading="lazy" />
+            <img src={product.image} alt={product.label} />
           </div>
         )}
         <div>
@@ -164,7 +164,7 @@ function ProductCard({ product }: { product: Product }) {
         </div>
         {product.image && product.imagePosition !== "left" && (
           <div className={`${styles.productImage} ${styles.productImageRight}`}>
-            <img src={product.image} alt={product.label} loading="lazy" />
+            <img src={product.image} alt={product.label} />
           </div>
         )}
       </div>
