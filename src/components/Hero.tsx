@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from "react";
+
 import Ko from "./Ko";
 import styles from "./Hero.module.css";
 
@@ -11,33 +12,13 @@ export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   const resetTimerRef = useRef<number | null>(null);
 
-  const shuffleBlur = useCallback(() => {
-    for (const char of charsRef.current) {
-      if (!char) continue;
-      const blur = Math.random() > 0.35 ? 0 : 0.5 + Math.random() * 2.5;
-      char.style.filter = `blur(${blur}px)`;
-      char.style.transition = `filter ${2 + Math.random() * 3}s var(--ease)`;
-    }
-  }, []);
-
   useEffect(() => {
-    // Initial random blur (before slide-up, already on chars)
-    for (const char of charsRef.current) {
-      if (!char) continue;
-      const blur = Math.random() > 0.4 ? 0 : 0.5 + Math.random() * 2;
-      char.style.filter = `blur(${blur}px)`;
-    }
-
     setTimeout(() => {
       linesRef.current.forEach((el, i) => {
         setTimeout(() => el?.classList.add(styles.slideVisible), i * 180);
       });
     }, 300);
-
-    // Continuously reshuffle blur
-    const interval = setInterval(shuffleBlur, 4000);
-    return () => clearInterval(interval);
-  }, [shuffleBlur]);
+  }, []);
 
   const applyTransform = (char: HTMLSpanElement) => {
     const tx = parseFloat(char.dataset.tx || "0");
@@ -98,12 +79,10 @@ export default function Hero() {
       const tx = (Math.random() - 0.5) * 300;
       const ty = (Math.random() - 0.5) * 200;
       const rot = (Math.random() - 0.5) * 90;
-      const blur = 1 + Math.random() * 4;
       char.dataset.tx = String(tx);
       char.dataset.ty = String(ty);
       char.dataset.rot = String(rot);
-      char.style.transition = "transform 0.8s var(--ease), filter 0.8s var(--ease), opacity 0.8s";
-      char.style.filter = `blur(${blur}px)`;
+      char.style.transition = "transform 0.8s var(--ease), opacity 0.8s";
       char.style.opacity = String(0.2 + Math.random() * 0.5);
       applyTransform(char);
     }
@@ -114,12 +93,10 @@ export default function Hero() {
         char.dataset.tx = "0";
         char.dataset.ty = "0";
         char.dataset.rot = "0";
-        char.style.transition = "transform 1.2s var(--ease), filter 1.2s var(--ease), opacity 1.2s var(--ease)";
+        char.style.transition = "transform 1.2s var(--ease), opacity 1.2s var(--ease)";
         char.style.opacity = "";
         applyTransform(char);
       }
-      // Restore random blur after return
-      setTimeout(shuffleBlur, 1300);
       resetTimerRef.current = null;
     }, 2000);
   }, []);

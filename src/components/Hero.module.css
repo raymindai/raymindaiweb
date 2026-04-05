@@ -29,7 +29,6 @@
   display: block;
   transform: translateY(110%);
   opacity: 0;
-  filter: blur(8px);
 }
 .slideVisible {
   animation: slide-up 1.2s var(--ease) forwards;
@@ -38,7 +37,6 @@
   to {
     transform: translateY(0);
     opacity: 1;
-    filter: blur(0);
   }
 }
 
