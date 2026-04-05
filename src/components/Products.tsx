@@ -32,7 +32,7 @@ const launched: Product[] = [
     descKo: "미르는 타로를 바탕으로 당신의 영혼을 읽고, 당신도 몰랐던 전생을 그려 주는 AI 점술가다. 시네마틱 서사, 회화풍 초상, 30초 영상까지 한 번에 만들고 당신의 전생과 대화를 통해 미래를 볼수 있도록 돕는다.",
     visualClass: styles.visualPastlife,
     label: "pastlife.app",
-    image: "/productimages/pastlifeapp_01.png",
+    image: "/productimages/pastlifeapp_01.webp",
     imagePosition: "right",
   },
   {
@@ -44,7 +44,7 @@ const launched: Product[] = [
     descKo: "맥북이나 일부 애플 디스플레이의 잠긴 최대 밝기를 1600니트까지 열고, 사진 보정하듯 화면을 세밀하게 조정할 수 있는 앱이다. 애플 기본 설정에서 불가능한 전문가수준의 HDR 컨트롤을 제공한다.",
     visualClass: styles.visualScreenstyler,
     label: "screenstyler.ai",
-    image: "/productimages/screenstyler_01.png",
+    image: "/productimages/screenstyler_01.webp",
     imagePosition: "left",
   },
   {
@@ -59,7 +59,7 @@ const launched: Product[] = [
     descKo: "모든 LLM의 기본 출력 포맷은 마크다운이다. 그러나 마크다운 원문은 비개발자에게 전달할 수 없고, 플랫폼마다 렌더링이 다르며, 수식·다이어그램·코드 하이라이팅을 일관되게 처리하는 도구가 없다. mdfy.cc는 임의의 마크다운을 붙여넣으면 MD flavor를 자동 감지하고 완전한 렌더링을 수행하여, 단일 공유 URL로 제공한다. 계정 불필요.",
     visualClass: styles.visualScreenstyler,
     label: "mdfy.cc",
-    image: "/productimages/mdfycc_01.png",
+    image: "/productimages/mdfycc_01.webp",
     imagePosition: "right",
   },
 ];
@@ -93,7 +93,7 @@ const inDev: Product[] = [
     descKo: "조롱 훈련 플랫폼 — 위트의 듀오링고. 콘텐츠의 뻔함, 허세, AI슬롭을 분석하고 점수를 매기며, 날카로운 피드백을 주고받는 능력을 훈련한다. Roast Engine 기반.",
     visualClass: styles.visualStiqs,
     label: "jolong.ai",
-    image: "/productimages/jolongai_01.png",
+    image: "/productimages/jolongai_01.webp",
     imagePosition: "left",
   },
   {
@@ -104,7 +104,7 @@ const inDev: Product[] = [
     descKo: "진짜 포스트잇처럼 던지고, 구기고, 벽에 붙이는 macOS 노트 앱. 메모, PDF, 이미지, 코드, 투두, 테이블, 스티커 등 8가지 노트를 하나의 캔버스에 자유롭게 펼치고, 커넥터로 아이디어를 이어 붙이면 AI가 요약, 확장까지 해준다. 복잡한 도구 없이, 손끝 감각만으로 생각을 정리한다.",
     visualClass: styles.visualStiqs,
     label: "stiqs.ai",
-    image: "/productimages/stiqsai_01.png",
+    image: "/productimages/stiqsai_01.webp",
     imagePosition: "right",
   },
 ];
@@ -143,7 +143,7 @@ function ProductCard({ product }: { product: Product }) {
       <div className={`${styles.body} ${product.image ? (product.imagePosition === "left" ? styles.bodyImageLeft : styles.bodyImageRight) : ""}`}>
         {product.image && product.imagePosition === "left" && (
           <div className={styles.productImage}>
-            <img src={product.image} alt={product.label} />
+            <img src={product.image} alt={product.label} loading="lazy" />
           </div>
         )}
         <div>
@@ -164,7 +164,7 @@ function ProductCard({ product }: { product: Product }) {
         </div>
         {product.image && product.imagePosition !== "left" && (
           <div className={`${styles.productImage} ${styles.productImageRight}`}>
-            <img src={product.image} alt={product.label} />
+            <img src={product.image} alt={product.label} loading="lazy" />
           </div>
         )}
       </div>

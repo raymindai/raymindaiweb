@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { KoreanProvider } from "./hooks/useKorean";
 import FluidBackground from "./components/FluidBackground";
@@ -14,9 +14,9 @@ import About from "./components/About";
 import Waitlist from "./components/Waitlist";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Privacy from "./components/Privacy";
-import Terms from "./components/Terms";
-import CV from "./components/CV";
+const Privacy = lazy(() => import("./components/Privacy"));
+const Terms = lazy(() => import("./components/Terms"));
+const CV = lazy(() => import("./components/CV"));
 
 function useRoute() {
   const [path, setPath] = useState(window.location.pathname);
@@ -74,6 +74,7 @@ export default function App() {
       <Nav />
       <div id="scroll-content">
         <div id="skew-wrapper">
+          <Suspense fallback={null}>
           {path === "/privacy" ? (
             <Privacy />
           ) : path === "/terms" ? (
@@ -95,6 +96,7 @@ export default function App() {
               <Contact />
             </>
           )}
+          </Suspense>
           <Footer />
         </div>
       </div>
