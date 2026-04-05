@@ -64,7 +64,7 @@ export default function ScrollDistortion() {
         skewWrapper.style.willChange = "";
       }
 
-      const offset = currentChroma.current;
+      const offset = 0.8 + currentChroma.current;
       rShift.setAttribute("dx", String(offset));
       bShift.setAttribute("dx", String(-offset));
 

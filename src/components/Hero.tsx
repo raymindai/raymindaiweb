@@ -28,12 +28,9 @@ export default function Hero() {
       });
     }, 300);
 
-    // Start blur shuffle after initial animation completes
-    const startShuffle = setTimeout(() => {
-      shuffleBlur();
-    }, 2000);
+    shuffleBlur();
     const interval = setInterval(shuffleBlur, 4000);
-    return () => { clearTimeout(startShuffle); clearInterval(interval); };
+    return () => clearInterval(interval);
   }, [shuffleBlur]);
 
   const applyTransform = (char: HTMLSpanElement) => {
