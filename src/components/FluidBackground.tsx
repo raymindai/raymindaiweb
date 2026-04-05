@@ -116,7 +116,6 @@ export default function FluidBackground() {
 
     let totalFrames = 0;
     let idle = false;
-    let skipFrames = 0;
 
     function maxDensity() {
       let max = 0;
@@ -138,7 +137,6 @@ export default function FluidBackground() {
         inputV *= 0.85;
         inputDens *= 0.85;
         idle = false;
-        skipFrames = 0;
       }
 
       // Fully idle — no density left, skip everything
@@ -147,15 +145,7 @@ export default function FluidBackground() {
         return;
       }
 
-      // During scroll: still run simulation at half rate for natural decay
-      if (scrolling) {
-        skipFrames++;
-        if (skipFrames % 2 === 0) {
-          step();
-        }
-      } else {
-        step();
-      }
+      step();
 
       // Check if we can enter idle (density fully decayed)
       if (maxDensity() < 0.0003 && Math.abs(inputU) < 0.001 && Math.abs(inputV) < 0.001) {
