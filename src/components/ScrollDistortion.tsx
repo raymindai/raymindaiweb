@@ -15,8 +15,8 @@ export default function ScrollDistortion() {
     const bShift = document.getElementById("b-shift");
     if (!scrollContent || !skewWrapper || !rShift || !bShift) return;
 
-    // Chromatic on scroll-content (doesn't affect layout)
-    scrollContent.style.filter = "url(#chromatic)";
+    // Chromatic applied only during scroll, removed when idle
+    let chromaActive = false;
 
     // Skew wrapper should not affect scroll height
     skewWrapper.style.willChange = "transform";
@@ -63,8 +63,18 @@ export default function ScrollDistortion() {
       }
 
       const offset = 1.2 + currentChroma.current;
-      rShift.setAttribute("dx", String(offset));
-      bShift.setAttribute("dx", String(-offset));
+      const shouldBeActive = currentChroma.current > 0.05;
+      if (shouldBeActive && !chromaActive) {
+        scrollContent.style.filter = "url(#chromatic)";
+        chromaActive = true;
+      } else if (!shouldBeActive && chromaActive) {
+        scrollContent.style.filter = "";
+        chromaActive = false;
+      }
+      if (chromaActive) {
+        rShift.setAttribute("dx", String(offset));
+        bShift.setAttribute("dx", String(-offset));
+      }
 
       animId.current = requestAnimationFrame(animate);
     };
@@ -78,7 +88,7 @@ export default function ScrollDistortion() {
       document.removeEventListener("touchstart", onTouchStart);
       cancelAnimationFrame(animId.current);
       skewWrapper.style.transform = "";
-      scrollContent.style.filter = "";
+      if (chromaActive) scrollContent.style.filter = "";
       rShift.setAttribute("dx", "1.2");
       bShift.setAttribute("dx", "-1.2");
     };

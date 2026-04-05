@@ -115,6 +115,19 @@ export default function FluidBackground() {
     }
 
     let totalFrames = 0;
+    let idle = false;
+    let idleFrames = 0;
+
+    function hasActivity() {
+      const threshold = 0.0005;
+      // Sample a few cells instead of checking all
+      for (let k = 0; k < 20; k++) {
+        const idx = 1 + Math.floor(Math.random() * GRID) + (1 + Math.floor(Math.random() * GRID)) * SIZE;
+        if (dens[idx] > threshold) return true;
+      }
+      return Math.abs(inputU) > 0.001 || Math.abs(inputV) > 0.001 || inputDens > 0.001;
+    }
+
     function render() {
       totalFrames++;
       // Apply smoothed mouse input
@@ -125,7 +138,27 @@ export default function FluidBackground() {
         inputU *= 0.85;
         inputV *= 0.85;
         inputDens *= 0.85;
+        idle = false;
+        idleFrames = 0;
       }
+
+      if (idle) {
+        animId = requestAnimationFrame(render);
+        return;
+      }
+
+      if (!hasActivity()) {
+        idleFrames++;
+        if (idleFrames > 30) {
+          idle = true;
+          ctx.clearRect(0, 0, w, h);
+          animId = requestAnimationFrame(render);
+          return;
+        }
+      } else {
+        idleFrames = 0;
+      }
+
       step();
       ctx.clearRect(0, 0, w, h);
 
@@ -196,6 +229,8 @@ export default function FluidBackground() {
       const speed = Math.sqrt(dx * dx + dy * dy);
       if (speed < minSpeed) return;
 
+      idle = false;
+      idleFrames = 0;
       inputI = i;
       inputJ = j;
       inputU += dx * 0.02;
