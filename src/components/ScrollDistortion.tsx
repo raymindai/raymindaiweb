@@ -56,19 +56,23 @@ export default function ScrollDistortion() {
 
       // Skew on inner wrapper only — doesn't affect scroll height
       if (Math.abs(currentSkew.current) > 0.05) {
+        if (!skewWrapper.style.willChange) skewWrapper.style.willChange = "transform";
         skewWrapper.style.transform = `skewY(${currentSkew.current}deg)`;
       } else {
         currentSkew.current = 0;
         skewWrapper.style.transform = "";
+        skewWrapper.style.willChange = "";
       }
 
       const offset = 1.2 + currentChroma.current;
       const shouldBeActive = currentChroma.current > 0.05;
       if (shouldBeActive && !chromaActive) {
+        scrollContent.style.willChange = "filter";
         scrollContent.style.filter = "url(#chromatic)";
         chromaActive = true;
       } else if (!shouldBeActive && chromaActive) {
         scrollContent.style.filter = "";
+        scrollContent.style.willChange = "";
         chromaActive = false;
       }
       if (chromaActive) {
@@ -88,7 +92,9 @@ export default function ScrollDistortion() {
       document.removeEventListener("touchstart", onTouchStart);
       cancelAnimationFrame(animId.current);
       skewWrapper.style.transform = "";
-      if (chromaActive) scrollContent.style.filter = "";
+      skewWrapper.style.willChange = "";
+      scrollContent.style.filter = "";
+      scrollContent.style.willChange = "";
       rShift.setAttribute("dx", "1.2");
       bShift.setAttribute("dx", "-1.2");
     };

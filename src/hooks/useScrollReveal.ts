@@ -11,7 +11,15 @@ export function useScrollReveal<T extends HTMLElement>(threshold = 0.25) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            el.style.willChange = "filter, transform, opacity";
+            requestAnimationFrame(() => {
+              entry.target.classList.add("visible");
+            });
+            const onEnd = () => {
+              el.style.willChange = "";
+              el.removeEventListener("transitionend", onEnd);
+            };
+            el.addEventListener("transitionend", onEnd);
           }
         });
       },
