@@ -142,7 +142,7 @@ export default function FluidBackground() {
         idleFrames = 0;
       }
 
-      if (idle) {
+      if (idle || scrolling) {
         animId = requestAnimationFrame(render);
         return;
       }
