@@ -116,16 +116,15 @@ export default function FluidBackground() {
 
     let totalFrames = 0;
     let idle = false;
-    let idleFrames = 0;
+    let skipFrames = 0;
 
-    function hasActivity() {
-      const threshold = 0.0005;
-      // Sample a few cells instead of checking all
-      for (let k = 0; k < 20; k++) {
+    function maxDensity() {
+      let max = 0;
+      for (let k = 0; k < 30; k++) {
         const idx = 1 + Math.floor(Math.random() * GRID) + (1 + Math.floor(Math.random() * GRID)) * SIZE;
-        if (dens[idx] > threshold) return true;
+        if (dens[idx] > max) max = dens[idx];
       }
-      return Math.abs(inputU) > 0.001 || Math.abs(inputV) > 0.001 || inputDens > 0.001;
+      return max;
     }
 
     function render() {
@@ -139,27 +138,33 @@ export default function FluidBackground() {
         inputV *= 0.85;
         inputDens *= 0.85;
         idle = false;
-        idleFrames = 0;
+        skipFrames = 0;
       }
 
-      if (idle || scrolling) {
+      // Fully idle — no density left, skip everything
+      if (idle) {
         animId = requestAnimationFrame(render);
         return;
       }
 
-      if (!hasActivity()) {
-        idleFrames++;
-        if (idleFrames > 30) {
-          idle = true;
-          ctx.clearRect(0, 0, w, h);
-          animId = requestAnimationFrame(render);
-          return;
+      // During scroll: still run simulation at half rate for natural decay
+      if (scrolling) {
+        skipFrames++;
+        if (skipFrames % 2 === 0) {
+          step();
         }
       } else {
-        idleFrames = 0;
+        step();
       }
 
-      step();
+      // Check if we can enter idle (density fully decayed)
+      if (maxDensity() < 0.0003 && Math.abs(inputU) < 0.001 && Math.abs(inputV) < 0.001) {
+        idle = true;
+        ctx.clearRect(0, 0, w, h);
+        animId = requestAnimationFrame(render);
+        return;
+      }
+
       ctx.clearRect(0, 0, w, h);
 
       const cellW = w / GRID;
@@ -230,7 +235,6 @@ export default function FluidBackground() {
       if (speed < minSpeed) return;
 
       idle = false;
-      idleFrames = 0;
       inputI = i;
       inputJ = j;
       inputU += dx * 0.02;
