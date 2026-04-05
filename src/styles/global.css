@@ -73,8 +73,8 @@ svg.chromatic-svg {
 }
 
 /* Scroll wrapper */
-#scroll-content { overflow: hidden; }
-#skew-wrapper { transform-origin: center center; }
+#scroll-content { overflow: hidden; will-change: filter; }
+#skew-wrapper { transform-origin: center center; will-change: transform; }
 
 /* Shared utilities */
 .accent { color: var(--accent); }

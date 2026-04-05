@@ -10,7 +10,9 @@
   opacity: 0;
   transform: translateY(24px);
   filter: blur(6px);
-  transition: opacity 1.5s var(--ease), transform 1.5s var(--ease), filter 2s var(--ease);
+  transition: opacity 1.5s var(--ease), transform 1.5s var(--ease), filter 0.6s var(--ease);
+  will-change: filter, transform, opacity;
+  contain: layout style paint;
 }
 .left:global(.visible) { opacity: 1; transform: translateY(0); filter: blur(0); }
 
@@ -61,7 +63,9 @@
   opacity: 0;
   transform: translateY(24px);
   filter: blur(6px);
-  transition: opacity 1.5s var(--ease), transform 1.5s var(--ease), filter 2s var(--ease);
+  transition: opacity 1.5s var(--ease), transform 1.5s var(--ease), filter 0.6s var(--ease);
+  will-change: filter, transform, opacity;
+  contain: layout style paint;
 }
 .form:global(.visible) { opacity: 1; transform: translateY(0); filter: blur(0); }
 
