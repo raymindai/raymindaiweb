@@ -70,6 +70,7 @@ const content = {
     expertise1: { title: 'Product & Strategy', desc: 'AI-native product strategy, Enterprise AI platform development, Zero-to-one product incubation' },
     expertise2: { title: 'Experience & Design', desc: 'Human-AI & multimodal interaction, Spatial computing & wearable, Design governance & system architecture' },
     expertise3: { title: 'Leadership & Scale', desc: 'Cross-functional executive leadership, National-scale digital transformation, International market expansion' },
+    sectionLang: 'Language',
     langText: '<strong>Korean</strong> Native &nbsp;&nbsp;&nbsp; <strong>English</strong> Full Professional Proficiency',
   },
   ko: {
@@ -116,6 +117,7 @@ const content = {
     expertise1: { title: '프로덕트 & 전략', desc: 'AI 네이티브 프로덕트 전략, 엔터프라이즈 AI 플랫폼 개발, 0→1 프로덕트 인큐베이션' },
     expertise2: { title: '경험 & 디자인', desc: '인간-AI 및 멀티모달 인터랙션, 공간 컴퓨팅 및 웨어러블, 디자인 거버넌스 및 시스템 설계' },
     expertise3: { title: '리더십 & 확장', desc: '부서 간 경영 리더십, 국가 규모 디지털 전환, 해외 시장 확장' },
+    sectionLang: '언어',
     langText: '<strong>한국어</strong> 모국어 &nbsp;&nbsp;&nbsp; <strong>영어</strong> 업무 능통',
   },
 };
@@ -309,7 +311,11 @@ function buildHtml(t, c) {
   <div class="edu-item"><div class="edu-school">Goldsmiths, University of London, UK</div><div class="edu-degree">MFA Computational Studio Arts — Pass with Merit · 2009 — 2011</div></div>
   <div class="edu-item"><div class="edu-school">Central Saint Martins, University of the Arts London, UK</div><div class="edu-degree">BA Hons Graphic Design, Interaction Design — 1st Class Honours · 2007 — 2009</div></div>
   <div class="edu-item"><div class="edu-school">Hongik University, South Korea</div><div class="edu-degree">Visual Arts (incomplete) · 2001 — 2002</div></div>
-  <div style="margin-top: 16px; padding-top: 10px; border-top: 1px solid ${t.langBorder};"><p class="lang-text">${c.langText}</p></div>
+</div>
+
+<div class="section">
+  <div class="section-title">${c.sectionLang}</div>
+  <p class="lang-text">${c.langText}</p>
 </div>
 
 </body>
