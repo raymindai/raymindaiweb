@@ -66,25 +66,6 @@ const launched: Product[] = [
 
 const inDev: Product[] = [
   {
-    name: "ddalggak.ai",
-    domains: ["ddalggak.ai", "taptap.studio"],
-    url: "https://ddalggak.ai",
-    status: "In Development",
-    desc: "AI-powered product, marketing image generator for small business owners. Upload a product photo, pick from 100+ styling presets, and get platform-ready images for Coupang, Instagram, Naver, and more — in under 20 seconds. No photographer, no studio.",
-    descKo: "소상공인을 위한 AI 마케팅 이미지 생성기. 제품 사진 한 장을 올리고 100개 이상의 스타일 프리셋에서 고르면, 쿠팡·인스타그램·네이버용 최고 수준의 제품 이미지를 20초 안에 만들어준다.",
-    visualClass: styles.visualDdalggak,
-    label: "ddalggak.ai",
-  },
-  {
-    name: "mdcore.ai",
-    domains: ["mdcore.ai"],
-    status: "In Development · Site Pending",
-    desc: "Markdown is becoming the language between AI and everything else. mdcore is the engine that makes that language work — parsing every flavor, rendering on any surface, converting both ways. The infrastructure that should exist by now.",
-    descKo: "마크다운은 AI 시대의 사실상 교환 포맷이 되었으나, GFM·Obsidian·MDX·Pandoc 등 방언이 파편화되어 있고 양방향 변환을 단일 파이프라인으로 처리하는 인프라는 존재하지 않는다. mdcore는 모든 flavor의 파싱, 임의 런타임 대응 렌더링, 양방향 포맷 변환을 하나의 엔진으로 통합한다. mdfy.cc의 기반 기술이자, 오픈소스 엔진 + API 플랫폼으로 확장 예정.",
-    visualClass: styles.visualScreenstyler,
-    label: "mdcore.ai",
-  },
-  {
     name: "jolong.ai",
     domains: ["jolong.ai", "roastengine.ai"],
     url: "https://jolong.ai",
@@ -97,6 +78,16 @@ const inDev: Product[] = [
     imagePosition: "left",
   },
   {
+    name: "ddalggak.ai",
+    domains: ["ddalggak.ai", "taptap.studio"],
+    url: "https://ddalggak.ai",
+    status: "In Development",
+    desc: "AI-powered product, marketing image generator for small business owners. Upload a product photo, pick from 100+ styling presets, and get platform-ready images for Coupang, Instagram, Naver, and more — in under 20 seconds. No photographer, no studio.",
+    descKo: "소상공인을 위한 AI 마케팅 이미지 생성기. 제품 사진 한 장을 올리고 100개 이상의 스타일 프리셋에서 고르면, 쿠팡·인스타그램·네이버용 최고 수준의 제품 이미지를 20초 안에 만들어준다.",
+    visualClass: styles.visualDdalggak,
+    label: "ddalggak.ai",
+  },
+  {
     name: "stiqs.ai",
     domains: ["stiqs.ai"],
     status: "In Development · Site Pending",
@@ -106,6 +97,15 @@ const inDev: Product[] = [
     label: "stiqs.ai",
     image: "/productimages/stiqsai_01.webp",
     imagePosition: "right",
+  },
+  {
+    name: "mdcore.ai",
+    domains: ["mdcore.ai"],
+    status: "In Development · Site Pending",
+    desc: "Markdown is becoming the language between AI and everything else. mdcore is the engine that makes that language work — parsing every flavor, rendering on any surface, converting both ways. The infrastructure that should exist by now.",
+    descKo: "마크다운은 AI 시대의 사실상 교환 포맷이 되었으나, GFM·Obsidian·MDX·Pandoc 등 방언이 파편화되어 있고 양방향 변환을 단일 파이프라인으로 처리하는 인프라는 존재하지 않는다. mdcore는 모든 flavor의 파싱, 임의 런타임 대응 렌더링, 양방향 포맷 변환을 하나의 엔진으로 통합한다. mdfy.cc의 기반 기술이자, 오픈소스 엔진 + API 플랫폼으로 확장 예정.",
+    visualClass: styles.visualScreenstyler,
+    label: "mdcore.ai",
   },
 ];
 
