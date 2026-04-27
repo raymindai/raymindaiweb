@@ -13,15 +13,15 @@ export default function Footer() {
           <a href="https://pastlife.app">pastlife.app</a>
           <a href="https://screenstyler.ai">screenstyler.ai</a>
           <a href="https://mdfy.cc">mdfy.cc</a>
-          <a href="https://mdcore.ai">mdcore.ai</a>
-          <a href="https://stiqs.ai">stiqs.ai</a>
           <a href="https://ddalggak.ai">ddalggak.ai</a>
           <a href="https://jolong.ai">jolong.ai</a>
+          <span className={styles.comingSoon}>mdcore.ai — coming soon</span>
+          <span className={styles.comingSoon}>stiqs.ai — coming soon</span>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Ideas</div>
-          <a href="https://superplane.ai">superplane.ai</a>
-          <a href="https://nkdtxt.com">nkdtxt.com</a>
+          <span className={styles.comingSoon}>superplane.ai — coming soon</span>
+          <span className={styles.comingSoon}>nkdtxt.com — coming soon</span>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Connect</div>
