@@ -24,6 +24,21 @@ interface Product {
 
 const launched: Product[] = [
   {
+    name: "mdfy.cc",
+    domains: ["mdfy.cc"],
+    url: "https://mdfy.cc",
+    extraLinks: [
+      { href: "https://mdfy.cc/about", label: "About", labelKo: "소개" },
+    ],
+    status: "Launched",
+    desc: "You've seen what AI writes. You've also seen what it looks like when you paste it somewhere. mdfy.cc fixes that — paste any Markdown, from any AI, and get a document that looks like someone actually designed it. One link, zero friction.",
+    descKo: "모든 LLM의 기본 출력 포맷은 마크다운이다. 그러나 마크다운 원문은 비개발자에게 전달할 수 없고, 플랫폼마다 렌더링이 다르며, 수식·다이어그램·코드 하이라이팅을 일관되게 처리하는 도구가 없다. mdfy.cc는 임의의 마크다운을 붙여넣으면 MD flavor를 자동 감지하고 완전한 렌더링을 수행하여, 단일 공유 URL로 제공한다. 계정 불필요.",
+    visualClass: styles.visualScreenstyler,
+    label: "mdfy.cc",
+    image: "/productimages/mdfycc_01.webp",
+    imagePosition: "right",
+  },
+  {
     name: "pastlife.app",
     domains: ["pastlife.app", "jeonsaeng.com"],
     url: "https://pastlife.app",
@@ -46,21 +61,6 @@ const launched: Product[] = [
     label: "screenstyler.ai",
     image: "/productimages/screenstyler_01.webp",
     imagePosition: "left",
-  },
-  {
-    name: "mdfy.cc",
-    domains: ["mdfy.cc"],
-    url: "https://mdfy.cc",
-    extraLinks: [
-      { href: "https://mdfy.cc/about", label: "About", labelKo: "소개" },
-    ],
-    status: "Launched",
-    desc: "You've seen what AI writes. You've also seen what it looks like when you paste it somewhere. mdfy.cc fixes that — paste any Markdown, from any AI, and get a document that looks like someone actually designed it. One link, zero friction.",
-    descKo: "모든 LLM의 기본 출력 포맷은 마크다운이다. 그러나 마크다운 원문은 비개발자에게 전달할 수 없고, 플랫폼마다 렌더링이 다르며, 수식·다이어그램·코드 하이라이팅을 일관되게 처리하는 도구가 없다. mdfy.cc는 임의의 마크다운을 붙여넣으면 MD flavor를 자동 감지하고 완전한 렌더링을 수행하여, 단일 공유 URL로 제공한다. 계정 불필요.",
-    visualClass: styles.visualScreenstyler,
-    label: "mdfy.cc",
-    image: "/productimages/mdfycc_01.webp",
-    imagePosition: "right",
   },
 ];
 
@@ -88,7 +88,7 @@ const inDev: Product[] = [
     name: "jolong.ai",
     domains: ["jolong.ai", "roastengine.ai"],
     url: "https://jolong.ai",
-    status: "Teaser Launched",
+    status: "Beta Launched",
     desc: "A roast training platform — Duolingo for wit. Analyze any content for clichés, pretension, and AI slop, get a score, and train your ability to give and take sharp feedback. Powered by Roast Engine.",
     descKo: "조롱 훈련 플랫폼 — 위트의 듀오링고. 콘텐츠의 뻔함, 허세, AI슬롭을 분석하고 점수를 매기며, 날카로운 피드백을 주고받는 능력을 훈련한다. Roast Engine 기반.",
     visualClass: styles.visualStiqs,
