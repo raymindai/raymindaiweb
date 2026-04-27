@@ -1,6 +1,8 @@
+import { useKorean } from "../hooks/useKorean";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { show } = useKorean();
   return (
     <footer className={styles.footer}>
       <div className={styles.grid}>
@@ -13,7 +15,7 @@ export default function Footer() {
           <a href="https://pastlife.app">pastlife.app</a>
           <a href="https://screenstyler.ai">screenstyler.ai</a>
           <a href="https://mdfy.cc">mdfy.cc</a>
-          <a href="https://ddalggak.ai">ddalggak.ai</a>
+          <a href="https://ddalggak.ai">{show ? "ddalggak.ai" : "taptap.studio"}</a>
           <a href="https://jolong.ai">jolong.ai</a>
           <span className={styles.comingSoon}>mdcore.ai — coming soon</span>
           <span className={styles.comingSoon}>stiqs.ai — coming soon</span>
