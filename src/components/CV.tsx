@@ -37,11 +37,11 @@ export default function CV() {
       <section className={styles.now}>
         <h2 className={styles.sectionTitle}>Now</h2>
         <p className={styles.nowText}>
-          Founder of <strong>Raymind.AI</strong> — an independent AI product studio shipping consumer apps, developer tools, and AI engines. Products in market include mdfy.cc, pastlife.app, jolong.ai, and screenstyler.ai.
+          Founder of <strong>Raymind.AI</strong> — an independent AI product studio shipping consumer apps, developer tools, and AI engines. Products in market include mdfy.app, pastlife.app, jolong.ai, and screenstyler.ai.
         </p>
         {show && (
           <p className={styles.nowTextKo}>
-            Raymind.AI를 만들어서 운영하고 있다. 소비자 앱, 개발자 도구, AI 엔진을 직접 만들어 출시하는 독립 스튜디오다. mdfy.cc, pastlife.app, jolong.ai, screenstyler.ai 등이 이미 시장에 나와 있다.
+            Raymind.AI를 만들어서 운영하고 있다. 소비자 앱, 개발자 도구, AI 엔진을 직접 만들어 출시하는 독립 스튜디오다. mdfy.app, pastlife.app, jolong.ai, screenstyler.ai 등이 이미 시장에 나와 있다.
           </p>
         )}
       </section>

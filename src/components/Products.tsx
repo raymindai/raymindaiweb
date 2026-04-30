@@ -24,17 +24,17 @@ interface Product {
 
 const launched: Product[] = [
   {
-    name: "mdfy.cc",
-    domains: ["mdfy.cc"],
-    url: "https://mdfy.cc",
+    name: "mdfy.app",
+    domains: ["mdfy.app"],
+    url: "https://mdfy.app",
     extraLinks: [
-      { href: "https://mdfy.cc/about", label: "About", labelKo: "소개" },
+      { href: "https://mdfy.app/about", label: "About", labelKo: "소개" },
     ],
     status: "Launched",
     desc: "One URL for your markdown, everywhere. Capture AI conversations, import any file, edit in WYSIWYG, share with a permanent link. Available on web, Mac, VS Code, CLI, Chrome extension, and MCP server — same document, same URL, every surface.",
     descKo: "마크다운 하나, URL 하나, 어디서든. AI 대화를 캡처하고, 파일을 임포트하고, WYSIWYG로 편집하고, 영구 링크로 공유한다. 웹, Mac 앱, VS Code, CLI, Chrome 확장, MCP 서버 — 같은 문서, 같은 URL, 모든 환경.",
     visualClass: styles.visualScreenstyler,
-    label: "mdfy.cc",
+    label: "mdfy.app",
     image: "/productimages/mdfycc_01.webp",
     imagePosition: "right",
   },
@@ -103,7 +103,7 @@ const inDev: Product[] = [
     domains: ["mdcore.ai"],
     status: "In Development · Site Pending",
     desc: "Markdown is becoming the language between AI and everything else. mdcore is the engine that makes that language work — parsing every flavor, rendering on any surface, converting both ways. The infrastructure that should exist by now.",
-    descKo: "마크다운은 AI 시대의 사실상 교환 포맷이 되었으나, GFM·Obsidian·MDX·Pandoc 등 방언이 파편화되어 있고 양방향 변환을 단일 파이프라인으로 처리하는 인프라는 존재하지 않는다. mdcore는 모든 flavor의 파싱, 임의 런타임 대응 렌더링, 양방향 포맷 변환을 하나의 엔진으로 통합한다. mdfy.cc의 기반 기술이자, 오픈소스 엔진 + API 플랫폼으로 확장 예정.",
+    descKo: "마크다운은 AI 시대의 사실상 교환 포맷이 되었으나, GFM·Obsidian·MDX·Pandoc 등 방언이 파편화되어 있고 양방향 변환을 단일 파이프라인으로 처리하는 인프라는 존재하지 않는다. mdcore는 모든 flavor의 파싱, 임의 런타임 대응 렌더링, 양방향 포맷 변환을 하나의 엔진으로 통합한다. mdfy.app의 기반 기술이자, 오픈소스 엔진 + API 플랫폼으로 확장 예정.",
     visualClass: styles.visualScreenstyler,
     label: "mdcore.ai",
   },
