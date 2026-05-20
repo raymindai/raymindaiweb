@@ -14,7 +14,7 @@ export default function Footer() {
           <div className={styles.label}>Products</div>
           <a href="https://pastlife.app">pastlife.app</a>
           <a href="https://screenstyler.ai">screenstyler.ai</a>
-          <a href="https://mdfy.app">mdfy.app</a>
+          <a href="https://memory.wiki">memory.wiki</a>
           <a href="https://ddalggak.ai">{show ? "ddalggak.ai" : "taptap.studio"}</a>
           <a href="https://jolong.ai">jolong.ai</a>
           <span className={styles.comingSoon}>mdcore.ai — coming soon</span>
