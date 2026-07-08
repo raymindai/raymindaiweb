@@ -46,7 +46,7 @@ export default function Footer() {
 
       <div className={styles.bizInfo}>
         <p>Raymind.AI LLC &middot; Wyoming, USA</p>
-        <p>주식회사 레이마인드에이아이 &middot; 대표: 조현상 &middot; 사업자등록번호: 492-10-03068 &middot; (13544) 경기도 성남시 분당구 판교대장로7길 15-15</p>
+        <p>주식회사 레이마인드에이아이 &middot; 대표: 조현상 &middot; 개인정보관리책임자: 조현상 &middot; 사업자등록번호: 492-10-03068 &middot; 통신판매업신고번호: 2026-성남분당A-0145 &middot; 주소: 경기도 성남시 분당구 판교대장로7길 15-15 &middot; 전화: +82 10-3332-5603 &middot; 이메일: hi@raymind.ai</p>
       </div>
     </footer>
   );

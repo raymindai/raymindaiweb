@@ -17,17 +17,17 @@ export default function CV() {
             {show ? "PDF 다운로드" : "Download PDF"}
           </a>
         </div>
-        <p className={styles.title}>AI Product & Experience Executive</p>
+        <p className={styles.title}>AI Product & Experience Lead</p>
         <div className={styles.summary}>
           <p>
-            I don't just design for AI — I build with it, ship with it, and run a company on it. 20+ years of product leadership across London, Seoul, and Riyadh. Enterprise AI platforms, spatial computing, consumer products, and everything in between.
+            I don't just design for AI — I build with it, ship with it, and run a company on it. 15+ years of product leadership across London, Seoul, and Riyadh. Enterprise AI platforms, spatial computing, consumer products, and everything in between.
           </p>
           <p>
             Every company is about to become an AI company. Most don't have anyone who's actually shipped AI products, built the teams, defined the governance, and operated at national scale. I've done all four — across three countries, in both enterprise and consumer, and I'm still building.
           </p>
           {show && (
             <p className={styles.summaryKo}>
-              AI에 대해 말하는 사람이 아니라, AI로 직접 만들고 출시하는 사람이다. 런던, 서울, 리야드에서 20년 넘게 제품을 만들어 왔다. 대기업 AI 플랫폼부터 공간 컴퓨팅, 소비자 제품까지. 모든 회사가 곧 AI 회사가 된다. 그런데 AI 제품을 실제로 출시해 보고, 팀을 꾸리고, 운영 체계를 세우고, 국가 단위로 돌려본 사람은 거의 없다. 나는 세 나라에서 그 네 가지를 다 해봤고, 지금도 계속 만들고 있다.
+              AI에 대해 말하는 사람이 아니라, AI로 직접 만들고 출시하는 사람이다. 런던, 서울, 리야드에서 15년 넘게 제품을 만들어 왔다. 대기업 AI 플랫폼부터 공간 컴퓨팅, 소비자 제품까지. 모든 회사가 곧 AI 회사가 된다. 그런데 AI 제품을 실제로 출시해 보고, 팀을 꾸리고, 운영 체계를 세우고, 국가 단위로 돌려본 사람은 거의 없다. 나는 세 나라에서 그 네 가지를 다 해봤고, 지금도 계속 만들고 있다.
             </p>
           )}
         </div>
