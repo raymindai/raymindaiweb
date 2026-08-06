@@ -1,7 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { KoreanProvider } from "./hooks/useKorean";
-import FluidBackground from "./components/FluidBackground";
 import ScrollDistortion from "./components/ScrollDistortion";
 import Cursor from "./components/Cursor";
 import Nav from "./components/Nav";
@@ -68,7 +67,6 @@ export default function App() {
   return (
     <KoreanProvider>
       <Analytics />
-      <FluidBackground />
       {!isLegal && <ScrollDistortion />}
       <Cursor />
       <Nav />
