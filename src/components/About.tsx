@@ -20,11 +20,15 @@ export default function About() {
             Raymind.AI is just me. <strong>Ray</strong> is how I see things.{" "}
             <strong>Mind</strong> is what I can't turn off. <strong>AI</strong> is what finally let me
             keep up with my own head. Everything here is self-initiated. No clients, no briefs,
-            no one asking for it. Just things I wanted to exist.
+            no one asking for it. Just things I wanted to exist. I made sculptures the same way,
+            years ago, as{" "}
+            <a href="https://ronincho.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
+              Ronin Cho
+            </a>.
           </p>
           {show && (
             <p className={styles.koCopy}>
-              Raymind.AI는 개인의 작업들이다. Ray는 내가 보는 방식, Mind는 꺼지지 않는 나의 생각들, AI는 그 속도를 따라잡게 해준 것. 여기 있는 건 전부 그렇게 시작한 것 들이다. 클라이언트도, 브리프도, 부탁도 없다. 그냥 존재했으면 하는 것들이다.
+              Raymind.AI는 개인의 작업들이다. Ray는 내가 보는 방식, Mind는 꺼지지 않는 나의 생각들, AI는 그 속도를 따라잡게 해준 것. 여기 있는 건 전부 그렇게 시작한 것 들이다. 클라이언트도, 브리프도, 부탁도 없다. 그냥 존재했으면 하는 것들이다. 예전에 Ronin Cho라는 이름으로 조각을 할 때도 그랬다.
             </p>
           )}
         </div>
