@@ -12,18 +12,27 @@ export default function Footer() {
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Products</div>
+          <a href="https://isekaiplay.com">isekaiplay.com</a>
+          <a href="https://memory.wiki">memory.wiki</a>
           <a href="https://pastlife.app">pastlife.app</a>
           <a href="https://screenstyler.ai">screenstyler.ai</a>
-          <a href="https://memory.wiki">memory.wiki</a>
-          <a href="https://ddalggak.ai">{show ? "ddalggak.ai" : "taptap.studio"}</a>
           <a href="https://jolong.ai">jolong.ai</a>
-          <span className={styles.comingSoon}>mdcore.ai — coming soon</span>
-          <span className={styles.comingSoon}>stiqs.ai — coming soon</span>
+          <a href="https://ddalggak.ai">{show ? "ddalggak.ai" : "taptap.studio"}</a>
+          <span className={styles.comingSoon}>stiqs.ai (coming soon)</span>
+          <span className={styles.comingSoon}>mdcore.ai (coming soon)</span>
+        </div>
+        <div className={styles.col}>
+          <div className={styles.label}>Games</div>
+          <a href="https://dopaplay.io">dopaplay.io</a>
+          <a href="https://3sec.io">3sec.io</a>
+          <a href="https://dopadash.io">dopadash.io</a>
+          <a href="https://www.popchain.io">popchain.io</a>
+          <a href="https://www.greedyloop.com">greedyloop.com</a>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Ideas</div>
-          <span className={styles.comingSoon}>superplane.ai — coming soon</span>
-          <span className={styles.comingSoon}>nkdtxt.com — coming soon</span>
+          <span className={styles.comingSoon}>superplane.ai (coming soon)</span>
+          <span className={styles.comingSoon}>nkdtxt.com (coming soon)</span>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Connect</div>

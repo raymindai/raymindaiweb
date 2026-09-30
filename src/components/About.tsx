@@ -19,7 +19,7 @@ export default function About() {
           <p>
             Raymind.AI is just me. <strong>Ray</strong> is how I see things.{" "}
             <strong>Mind</strong> is what I can't turn off. <strong>AI</strong> is what finally let me
-            keep up with my own head. Everything here is self-initiated — no clients, no briefs,
+            keep up with my own head. Everything here is self-initiated. No clients, no briefs,
             no one asking for it. Just things I wanted to exist.
           </p>
           {show && (
@@ -35,7 +35,7 @@ export default function About() {
             <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
               See it if you're curious
             </a>.{" "}
-            Now I build my own — incorporated in the US and South Korea, open to the right
+            Now I build my own, incorporated in the US and South Korea. Open to the right
             conversation if you have one.{" "}
             <a href="/cv" className={styles.link}>
               Full story here

@@ -20,10 +20,10 @@ export default function CV() {
         <p className={styles.title}>AI Product & Experience Lead</p>
         <div className={styles.summary}>
           <p>
-            I don't just design for AI — I build with it, ship with it, and run a company on it. 15+ years of product leadership across London, Seoul, and Riyadh. Enterprise AI platforms, spatial computing, consumer products, and everything in between.
+            I don't just design for AI. I build with it, ship with it, and run a company on it. 15+ years of product leadership across London, Seoul, and Riyadh. Enterprise AI platforms, spatial computing, consumer products, and everything in between.
           </p>
           <p>
-            Every company is about to become an AI company. Most don't have anyone who's actually shipped AI products, built the teams, defined the governance, and operated at national scale. I've done all four — across three countries, in both enterprise and consumer, and I'm still building.
+            Every company is about to become an AI company. Most don't have anyone who's actually shipped AI products, built the teams, defined the governance, and operated at national scale. I've done all four across three countries, in both enterprise and consumer, and I'm still building.
           </p>
           {show && (
             <p className={styles.summaryKo}>
@@ -37,11 +37,11 @@ export default function CV() {
       <section className={styles.now}>
         <h2 className={styles.sectionTitle}>Now</h2>
         <p className={styles.nowText}>
-          Founder of <strong>Raymind.AI</strong> — an independent AI product studio shipping consumer apps, developer tools, and AI engines. Products in market include memory.wiki, pastlife.app, jolong.ai, and screenstyler.ai.
+          Founder of <strong>Raymind.AI</strong>, an independent AI product studio shipping consumer apps, games, developer tools, and AI engines. Products in market include IsekaiPlay, memory.wiki, pastlife.app, screenstyler.ai, jolong.ai, and four DOPAPLAY games: 3SEC FEED, DOPA DASH, POPCHAIN, and Kai's Greedy Loop.
         </p>
         {show && (
           <p className={styles.nowTextKo}>
-            Raymind.AI를 만들어서 운영하고 있다. 소비자 앱, 개발자 도구, AI 엔진을 직접 만들어 출시하는 독립 스튜디오다. memory.wiki, pastlife.app, jolong.ai, screenstyler.ai 등이 이미 시장에 나와 있다.
+            Raymind.AI를 만들어서 운영하고 있다. 소비자 앱, 게임, 개발자 도구, AI 엔진을 직접 만들어 출시하는 독립 스튜디오다. 이세계플레이, memory.wiki, pastlife.app, screenstyler.ai, jolong.ai, 그리고 DOPAPLAY의 게임 4종(3SEC FEED, DOPA DASH, POPCHAIN, Kai's Greedy Loop)이 이미 시장에 나와 있다.
           </p>
         )}
       </section>
@@ -52,18 +52,18 @@ export default function CV() {
 
         <div className={styles.role}>
           <div className={styles.roleMeta}>
-            <div className={styles.roleDate}>Apr 2025 — Apr 2026</div>
+            <div className={styles.roleDate}>Apr 2025 – Apr 2026</div>
             <div className={styles.roleLocation}>Riyadh, KSA</div>
           </div>
           <div className={styles.roleBody}>
             <h3><a href="https://humain.ai" target="_blank" rel="noopener noreferrer">Humain</a></h3>
             <p className={styles.roleTitle}>AI Product & Experience Lead</p>
             <p className={styles.roleDesc}>
-              Built and scaled the product and experience function for Humain OS — Saudi Arabia's flagship AI initiative. Defined platform vision, enterprise governance, and operating models from scratch.
+              Built and scaled the product and experience function for Humain One, Saudi Arabia's flagship AI initiative. Defined platform vision, enterprise governance, and operating models from scratch.
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                사우디 국가 AI 프로젝트 Humain OS의 제품과 경험 조직을 처음부터 만들었다. 플랫폼 비전, 운영 체계, 거버넌스를 직접 설계했다.
+                사우디 국가 AI 프로젝트 Humain One의 제품과 경험 조직을 처음부터 만들었다. 플랫폼 비전, 운영 체계, 거버넌스를 직접 설계했다.
               </p>
             )}
             <ul className={styles.highlights}>
@@ -77,7 +77,7 @@ export default function CV() {
 
         <div className={styles.role}>
           <div className={styles.roleMeta}>
-            <div className={styles.roleDate}>Sep 2021 — Aug 2024</div>
+            <div className={styles.roleDate}>Sep 2021 – Aug 2024</div>
             <div className={styles.roleLocation}>Seoul, Korea</div>
           </div>
           <div className={styles.roleBody}>
@@ -101,7 +101,7 @@ export default function CV() {
 
         <div className={styles.role}>
           <div className={styles.roleMeta}>
-            <div className={styles.roleDate}>Oct 2018 — Apr 2021</div>
+            <div className={styles.roleDate}>Oct 2018 – Apr 2021</div>
             <div className={styles.roleLocation}>London, UK</div>
           </div>
           <div className={styles.roleBody}>
@@ -125,14 +125,14 @@ export default function CV() {
 
         <div className={styles.role}>
           <div className={styles.roleMeta}>
-            <div className={styles.roleDate}>Apr 2017 — Oct 2018</div>
+            <div className={styles.roleDate}>Apr 2017 – Oct 2018</div>
             <div className={styles.roleLocation}>Dhahran, KSA</div>
           </div>
           <div className={styles.roleBody}>
             <h3><a href="https://aramco.com" target="_blank" rel="noopener noreferrer">Saudi Aramco</a></h3>
             <p className={styles.roleTitle}>UX Lead</p>
             <p className={styles.roleDesc}>
-              Defined enterprise UX standards adopted across Aramco's entire digital ecosystem — ahead of the world's largest IPO (2019). Built immersive VR for industrial education.
+              Defined enterprise UX standards adopted across Aramco's entire digital ecosystem ahead of the world's largest IPO (2019). Built immersive VR for industrial education.
             </p>
             {show && (
               <p className={styles.roleDescKo}>
@@ -144,7 +144,7 @@ export default function CV() {
 
         <div className={styles.role}>
           <div className={styles.roleMeta}>
-            <div className={styles.roleDate}>Jun 2015 — Feb 2017</div>
+            <div className={styles.roleDate}>Jun 2015 – Feb 2017</div>
             <div className={styles.roleLocation}>London, UK</div>
           </div>
           <div className={styles.roleBody}>
@@ -163,7 +163,7 @@ export default function CV() {
 
         <div className={styles.role}>
           <div className={styles.roleMeta}>
-            <div className={styles.roleDate}>Sep 2013 — Jun 2015</div>
+            <div className={styles.roleDate}>Sep 2013 – Jun 2015</div>
             <div className={styles.roleLocation}>London, UK</div>
           </div>
           <div className={styles.roleBody}>
@@ -174,7 +174,7 @@ export default function CV() {
             </p>
             {show && (
               <p className={styles.roleDescKo}>
-                금융·소비재 브랜드의 여러 시장에 걸친 디지털 프로젝트에서 UX를 이끌었다.
+                금융, 소비재 브랜드의 여러 시장에 걸친 디지털 프로젝트에서 UX를 이끌었다.
               </p>
             )}
           </div>
@@ -187,7 +187,7 @@ export default function CV() {
         <div className={styles.earlierGrid}>
           <div className={styles.earlierRole}>
             <p className={styles.earlierName}>Cheil UK</p>
-            <p className={styles.earlierMeta}>Senior Interaction Designer, 2012 — 2013</p>
+            <p className={styles.earlierMeta}>Senior Interaction Designer, 2012 – 2013</p>
           </div>
           <div className={styles.earlierRole}>
             <p className={styles.earlierName}>Native Design</p>
@@ -195,19 +195,19 @@ export default function CV() {
           </div>
           <div className={styles.earlierRole}>
             <p className={styles.earlierName}>EY-Seren</p>
-            <p className={styles.earlierMeta}>Design Consultant, 2010 — 2012</p>
+            <p className={styles.earlierMeta}>Design Consultant, 2010 – 2012</p>
           </div>
           <div className={styles.earlierRole}>
             <p className={styles.earlierName}>Vinyl</p>
-            <p className={styles.earlierMeta}>Interaction Designer, 2005 — 2006</p>
+            <p className={styles.earlierMeta}>Interaction Designer, 2005 – 2006</p>
           </div>
           <div className={styles.earlierRole}>
             <p className={styles.earlierName}>D'strict</p>
-            <p className={styles.earlierMeta}>Interaction Designer, 2004 — 2005</p>
+            <p className={styles.earlierMeta}>Interaction Designer, 2004 – 2005</p>
           </div>
           <div className={styles.earlierRole}>
             <p className={styles.earlierName}>NHN Corp.</p>
-            <p className={styles.earlierMeta}>Junior Designer, 2002 — 2004</p>
+            <p className={styles.earlierMeta}>Junior Designer, 2002 – 2004</p>
           </div>
         </div>
       </section>
@@ -224,7 +224,7 @@ export default function CV() {
           <div className={styles.expertiseArea}>
             <h3>Experience & Design</h3>
             <p>Human-AI & multimodal interaction, spatial computing & wearable, design governance & system architecture</p>
-            {show && <p className={styles.expertiseAreaKo}>사람과 AI의 상호작용 설계, 공간 컴퓨팅·웨어러블, 디자인 체계 및 시스템 설계</p>}
+            {show && <p className={styles.expertiseAreaKo}>사람과 AI의 상호작용 설계, 공간 컴퓨팅, 웨어러블, 디자인 체계 및 시스템 설계</p>}
           </div>
           <div className={styles.expertiseArea}>
             <h3>Leadership & Scale</h3>
@@ -239,15 +239,15 @@ export default function CV() {
         <h2 className={styles.sectionTitle}>Education</h2>
         <div className={styles.eduItem}>
           <p className={styles.eduSchool}>Goldsmiths, University of London</p>
-          <p className={styles.eduDegree}>MFA Computational Studio Arts — Pass with Merit, 2009 — 2011</p>
+          <p className={styles.eduDegree}>MFA Computational Studio Arts, Pass with Merit, 2009 – 2011</p>
         </div>
         <div className={styles.eduItem}>
           <p className={styles.eduSchool}>Central Saint Martins, UAL</p>
-          <p className={styles.eduDegree}>BA Hons Graphic Design, Interaction Design — 1st Class Honours, 2007 — 2009</p>
+          <p className={styles.eduDegree}>BA Hons Graphic Design, Interaction Design, 1st Class Honours, 2007 – 2009</p>
         </div>
         <div className={styles.eduItem}>
           <p className={styles.eduSchool}>Hongik University</p>
-          <p className={styles.eduDegree}>Visual Arts (incomplete), 2001 — 2002</p>
+          <p className={styles.eduDegree}>Visual Arts (incomplete), 2001 – 2002</p>
         </div>
       </section>
 
