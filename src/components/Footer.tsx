@@ -30,10 +30,6 @@ export default function Footer() {
           <a href="https://www.greedyloop.com">greedyloop.com</a>
         </div>
         <div className={styles.col}>
-          <div className={styles.label}>Ideas</div>
-          <span className={styles.comingSoon}>superplane.ai (coming soon)</span>
-        </div>
-        <div className={styles.col}>
           <div className={styles.label}>Connect</div>
           <a href="mailto:hi@raymind.ai">hi@raymind.ai</a>
           <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer">hyunsangcho.com</a>

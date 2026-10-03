@@ -186,14 +186,6 @@ const inDev: Product[] = [
   },
 ];
 
-const ideas = [
-  {
-    domain: "superplane.ai",
-    desc: "The control layer for AI agents. See what they do, stop what's risky, keep humans in the loop. Not another agent builder. The OS for running an AI workforce accountably.",
-    descKo: "AI 에이전트 위에 얹히는 통제 레이어. 에이전트가 뭘 하는지 보여주고, 위험하면 멈추고, 사람을 끼워넣는다. 에이전트를 만드는 도구가 아니라, AI 조직을 책임지고 운영하기 위한 OS.",
-  },
-];
-
 function ProductCard({ product }: { product: Product }) {
   const ref = useScrollReveal<HTMLElement>();
   const { show } = useKorean();
@@ -279,24 +271,7 @@ function GameCard({ game, delay }: { game: Product; delay: number }) {
   );
 }
 
-function IdeaCard({ domain, desc, descKo, delay }: { domain: string; desc: string; descKo: string; delay: number }) {
-  const ref = useScrollReveal<HTMLDivElement>();
-  const { show } = useKorean();
-  return (
-    <div ref={ref} className={styles.ideaCard} style={{ transitionDelay: `${delay}s` }}>
-      <div className={styles.ideaName}>
-        <a href={`https://${domain}`}>{domain}</a>
-      </div>
-      <p className={styles.ideaDesc}>{desc}</p>
-      {show && <p className={styles.ideaKo}>{descKo}</p>}
-    </div>
-  );
-}
-
 export default function Products() {
-  const ideasRef = useScrollReveal<HTMLElement>();
-  const { show } = useKorean();
-
   return (
     <div id="products">
       <div className={styles.stage}><span>Launched</span></div>
@@ -309,19 +284,6 @@ export default function Products() {
 
       <div className={styles.stage}><span>In Development</span></div>
       {inDev.map((p) => <ProductCard key={p.label} product={p} />)}
-
-      <div className={styles.stage}><span>Ideas / Domains Secured</span></div>
-      <section ref={ideasRef} className={`${styles.section} ${styles.ideasSection}`}>
-        <div className={styles.ideasGrid}>
-          {ideas.map((idea, i) => (
-            <IdeaCard key={idea.domain} {...idea} delay={i * 0.06} />
-          ))}
-          <div className={`${styles.ideaCard} ${styles.ideaMore}`}>
-            <p className={styles.ideaDescDim}>More ideas brewing. Always.</p>
-            {show && <p className={styles.ideaKo}>더 많은 아이디어가 계속 쌓이고 있다.</p>}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
