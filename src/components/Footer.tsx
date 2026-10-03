@@ -32,7 +32,6 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.label}>Ideas</div>
           <span className={styles.comingSoon}>superplane.ai (coming soon)</span>
-          <span className={styles.comingSoon}>nkdtxt.com (coming soon)</span>
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Connect</div>

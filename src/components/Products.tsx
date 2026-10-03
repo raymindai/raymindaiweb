@@ -192,11 +192,6 @@ const ideas = [
     desc: "The control layer for AI agents. See what they do, stop what's risky, keep humans in the loop. Not another agent builder. The OS for running an AI workforce accountably.",
     descKo: "AI 에이전트 위에 얹히는 통제 레이어. 에이전트가 뭘 하는지 보여주고, 위험하면 멈추고, 사람을 끼워넣는다. 에이전트를 만드는 도구가 아니라, AI 조직을 책임지고 운영하기 위한 OS.",
   },
-  {
-    domain: "nkdtxt.com",
-    desc: "Strip it down. Raw text, nothing else.",
-    descKo: "군더더기를 모두 걷어낸, 텍스트만을 위한 도구.",
-  },
 ];
 
 function ProductCard({ product }: { product: Product }) {
