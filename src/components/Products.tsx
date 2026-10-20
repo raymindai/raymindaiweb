@@ -20,20 +20,99 @@ interface Product {
   label: string;
   image?: string;
   imagePosition?: "left" | "right";
+  cta?: string;
+  ctaKo?: string;
 }
+
+const paldosaju: Product = {
+  name: "Paldo Saju",
+  domains: ["paldosaju.com"],
+  url: "https://paldosaju.com",
+  extraLinks: [
+    { href: "https://paldosaju.com/en", label: "English", labelKo: "영어판" },
+    { href: "https://paldosaju.com/en/learn", label: "What Is Saju?", labelKo: "사주란?" },
+  ],
+  status: "Launched",
+  desc: "Paldo Saju is a Korean fortune telling service where you pick a reader from fifty-four characters across Korea's eight provinces. Each one listens to your story, then reads your saju from a birth chart calculated on the Korean calendar. Readings cover love, work, money, compatibility, face and palm. The first reading is free, in Korean, English or Japanese.",
+  descKo: "팔도사주는 전국 팔도 동네마다 다른 말투의 사주 마스터 쉰네 명이 모인 사주 서비스다. 고른 마스터가 먼저 사연을 끝까지 듣고, 만세력으로 세운 여덟 글자로 짚어 준다. 사주, 궁합, 관상, 손금, 꿈해몽, 오늘의 운세를 볼 수 있다. 첫 풀이는 무료이고 한국어, 영어, 일본어로 볼 수 있다.",
+  visualClass: styles.visualPastlife,
+  label: "paldosaju",
+  image: "/productimages/paldosaju_01.webp",
+  imagePosition: "right",
+};
+
+const tarotmasters: Product = {
+  name: "TarotMasters",
+  domains: ["tarotmasters.app"],
+  url: "https://tarotmasters.app",
+  extraLinks: [
+    { href: "https://tarotmasters.app/en/cards", label: "Card Meanings", labelKo: "카드 의미" },
+    { href: "https://tarotmasters.app/en/horoscope", label: "Horoscope", labelKo: "별자리 운세" },
+  ],
+  status: "Launched",
+  desc: "TarotMasters is a tarot reading service where you choose one of fourteen tarot masters, each with a voice of their own. Tell them what is on your mind, draw your cards on the table, and read them together in a conversation. The first card opens free. It runs in Korean, English, Japanese, Spanish, Portuguese and Traditional Chinese.",
+  descKo: "타로마스터즈는 열네 명의 타로 마스터 가운데 한 명을 골라 고민을 털어놓고 카드를 함께 읽는 타로 서비스다. 마스터마다 말투와 보는 방식이 달라서 같은 고민도 다르게 짚어 준다. 연애, 재회, 그 사람의 속마음부터 오늘의 카드와 별자리 운세까지 볼 수 있고, 첫 카드는 무료로 펼쳐진다. 한국어, 영어, 일본어, 스페인어, 포르투갈어, 대만 중국어로 운영한다.",
+  visualClass: styles.visualPastlife,
+  label: "tarotmasters",
+  image: "/productimages/tarotmasters_01.webp",
+  imagePosition: "left",
+};
 
 const isekaiplay: Product = {
   name: "IsekaiPlay",
   domains: ["isekaiplay.com"],
   url: "https://isekaiplay.com",
   status: "Launched",
-  desc: "An interactive romance fantasy story you play by talking, not by picking from a menu. You step into a world run by a status window and try to win over the one person it can't measure. Every story has a designed arc, and the characters remember what you said to them. Available in Korean, Japanese, and English.",
-  descKo: "이세계플레이는 대화로 플레이하는 인터랙티브 로맨스 판타지 스토리다. 상태창이 있는 이세계에서, 상태창으로도 잴 수 없는 한 사람의 마음을 얻어 간다. 작품마다 설계된 이야기의 흐름이 있고, 인물은 당신이 한 말을 잊지 않는다. 한국어, 일본어, 영어로 즐길 수 있다.",
+  desc: "IsekaiPlay is a home for isekai stories. Hear them on FM, read them on Story, and live them on Chat. All three run in Korean, Japanese, and English.",
+  descKo: "이세계플레이는 이세계 이야기만 다루는 곳이다. FM으로 듣고, Story로 읽고, Chat으로 직접 살아 본다. 세 가지 모두 한국어, 일본어, 영어로 즐길 수 있다.",
   visualClass: styles.visualPastlife,
   label: "isekaiplay",
   image: "/productimages/isekaiplay_01.webp",
-  imagePosition: "left",
+  imagePosition: "right",
 };
+
+const isekaiServices: Product[] = [
+  {
+    name: "FM",
+    domains: ["isekaiplay.com/fm"],
+    url: "https://isekaiplay.com/fm",
+    extraLinks: [{ href: "https://isekaiplay.com/fm/en/monster-interpreter/1", label: "Episode 1", labelKo: "1화 듣기" }],
+    status: "Launched",
+    desc: "isekaiFM is an audio drama station that only airs stories from other worlds. Each series comes out in episodes, with a distinct voice for every character, sound design and scene art, in Korean, English and Japanese. The first three episodes are free. After an episode, you can talk one on one with a character who remembers what you heard.",
+    descKo: "isekaiFM은 이세계 이야기만 방송하는 오디오 드라마 방송국이다. 작품은 한 화씩 연재되고, 인물마다 다른 목소리와 효과음, 장면 그림이 함께 나온다. 한국어, 영어, 일본어로 들을 수 있고 모든 작품의 1화부터 3화까지는 무료다. 한 화를 다 들으면 방금 들은 이야기를 기억하는 인물과 일대일로 대화할 수 있다.",
+    visualClass: styles.visualPastlife,
+    label: "isekaifm",
+    image: "/productimages/isekaifm_01.webp",
+    cta: "Listen",
+    ctaKo: "듣기",
+  },
+  {
+    name: "Story",
+    domains: ["isekaiplay.com/story"],
+    url: "https://isekaiplay.com/ko/story",
+    extraLinks: [{ href: "https://isekaiplay.com/ko/story/schedule", label: "Schedule", labelKo: "연재표" }],
+    status: "Launched",
+    desc: "IsekaiPlay Story publishes isekai romance fantasy web novels in Korean and Japanese. Ten original series come out one chapter at a time, with the first three chapters free. When you finish a chapter, you can talk to one of its characters in IsekaiPlay Chat. Several series also have audio drama versions on IsekaiPlay FM.",
+    descKo: "이세계플레이 Story는 이세계 로맨스 판타지 웹소설만 연재하는 서비스다. 한국어와 일본어로 오리지널 작품 10편을 한 화씩 공개하고, 작품마다 첫 세 화는 무료다. 한 화를 다 읽으면 그 이야기 속 인물에게 이세계플레이 Chat에서 말을 걸 수 있다. 몇몇 작품은 이세계플레이 FM에서 오디오 드라마로도 들을 수 있다.",
+    visualClass: styles.visualPastlife,
+    label: "isekaistory",
+    image: "/productimages/isekaistory_01.webp",
+    cta: "Read",
+    ctaKo: "읽기",
+  },
+  {
+    name: "Chat",
+    domains: ["isekaiplay.com/chat"],
+    url: "https://isekaiplay.com/en/chat",
+    extraLinks: [{ href: "https://isekaiplay.com/en/stories", label: "All Stories", labelKo: "전체 작품" }],
+    status: "Launched",
+    desc: "Isekai Chat is a romance fantasy you play by talking. You enter an isekai story and speak to its characters in your own words, and they answer in character. A status window shows the relationship changing, and the story remembers what you said yesterday. Free to start, in Korean, Japanese and English.",
+    descKo: "이세계챗은 말로 플레이하는 로맨스 판타지다. 이세계 이야기 속에 들어가 등장인물에게 내 말로 말을 걸면, 그 인물이 자기답게 대답한다. 상태창에는 관계가 달라지는 모습이 보이고, 이야기는 어제 내가 한 말을 기억한다. 무료로 시작할 수 있고 한국어, 일본어, 영어로 즐길 수 있다.",
+    visualClass: styles.visualPastlife,
+    label: "isekaichat",
+    image: "/productimages/isekaichat_01.webp",
+  },
+];
 
 const launched: Product[] = [
   {
@@ -259,7 +338,7 @@ function GameCard({ game, delay }: { game: Product; delay: number }) {
       {show && <p className={styles.ideaKo}>{game.descKo}</p>}
       <div className={styles.ctaGroup}>
         <a href={game.url} target="_blank" rel="noopener noreferrer" className={styles.cta}>
-          {show ? "플레이" : "Play"} →
+          {show ? (game.ctaKo ?? "플레이") : (game.cta ?? "Play")} →
         </a>
         {game.extraLinks?.map((link) => (
           <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={styles.cta}>
@@ -275,7 +354,12 @@ export default function Products() {
   return (
     <div id="products">
       <div className={styles.stage}><span>Launched</span></div>
+      <ProductCard product={paldosaju} />
+      <ProductCard product={tarotmasters} />
       <ProductCard product={isekaiplay} />
+      <div className={`${styles.gameGrid} ${styles.gameGrid3}`}>
+        {isekaiServices.map((g, i) => <GameCard key={g.label} game={g} delay={i * 0.08} />)}
+      </div>
       <ProductCard product={dopaplay} />
       <div className={styles.gameGrid}>
         {games.map((g, i) => <GameCard key={g.label} game={g} delay={(i % 2) * 0.08} />)}

@@ -37,11 +37,11 @@ export default function CV() {
       <section className={styles.now}>
         <h2 className={styles.sectionTitle}>Now</h2>
         <p className={styles.nowText}>
-          Founder of <strong>Raymind.AI</strong>, an independent AI product studio shipping consumer apps, games, developer tools, and AI engines. Products in market include IsekaiPlay, memory.wiki, pastlife.app, screenstyler.ai, jolong.ai, and four DOPAPLAY games: 3SEC FEED, DOPA DASH, POPCHAIN, and Kai's Greedy Loop.
+          Founder of <strong>Raymind.AI</strong>, an independent AI product studio shipping consumer apps, games, developer tools, and AI engines. Products in market include Paldo Saju, TarotMasters, IsekaiPlay (FM, Story, and Chat), memory.wiki, pastlife.app, screenstyler.ai, jolong.ai, and four DOPAPLAY games: 3SEC FEED, DOPA DASH, POPCHAIN, and Kai's Greedy Loop.
         </p>
         {show && (
           <p className={styles.nowTextKo}>
-            Raymind.AI를 만들어서 운영하고 있다. 소비자 앱, 게임, 개발자 도구, AI 엔진을 직접 만들어 출시하는 독립 스튜디오다. 이세계플레이, memory.wiki, pastlife.app, screenstyler.ai, jolong.ai, 그리고 DOPAPLAY의 게임 4종(3SEC FEED, DOPA DASH, POPCHAIN, Kai's Greedy Loop)이 이미 시장에 나와 있다.
+            Raymind.AI를 만들어서 운영하고 있다. 소비자 앱, 게임, 개발자 도구, AI 엔진을 직접 만들어 출시하는 독립 스튜디오다. 팔도사주, 타로마스터즈, 이세계플레이(FM, Story, Chat), memory.wiki, pastlife.app, screenstyler.ai, jolong.ai, 그리고 DOPAPLAY의 게임 4종(3SEC FEED, DOPA DASH, POPCHAIN, Kai's Greedy Loop)이 이미 시장에 나와 있다.
           </p>
         )}
       </section>

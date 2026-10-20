@@ -92,6 +92,7 @@
 }
 .ctaGroup {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.6rem;
   margin-top: 3rem;
 }
@@ -106,6 +107,7 @@
   border: 1px solid var(--accent);
   padding: 1rem 2.4rem;
   border-radius: 2px;
+  white-space: nowrap;
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 .cta:hover {
@@ -236,6 +238,7 @@
   border-top: 1px solid var(--border);
 }
 .gameGrid + .section { border-top: 1px solid var(--border); }
+.gameGrid3 { grid-template-columns: repeat(3, 1fr); gap: 8rem 4rem; }
 .gameCard {
   display: flex;
   flex-direction: column;
@@ -293,8 +296,11 @@
 }
 
 @media (max-width: 749px) { .ideasGrid { grid-template-columns: 1fr; } }
+@media (max-width: 1099px) {
+  .gameGrid3 { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 849px) {
-  .gameGrid { grid-template-columns: 1fr; gap: 6rem; padding: 4rem var(--page-pad-mobile) 8rem; }
+  .gameGrid, .gameGrid3 { grid-template-columns: 1fr; gap: 6rem; padding: 4rem var(--page-pad-mobile) 8rem; }
 }
 @media (max-width: 649px) {
   .stage { padding: 4rem var(--page-pad-mobile) 1.5rem; }

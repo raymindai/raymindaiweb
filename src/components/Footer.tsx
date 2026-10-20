@@ -12,6 +12,8 @@ export default function Footer() {
         </div>
         <div className={styles.col}>
           <div className={styles.label}>Products</div>
+          <a href="https://paldosaju.com">paldosaju.com</a>
+          <a href="https://tarotmasters.app">tarotmasters.app</a>
           <a href="https://isekaiplay.com">isekaiplay.com</a>
           <a href="https://memory.wiki">memory.wiki</a>
           <a href="https://pastlife.app">pastlife.app</a>
