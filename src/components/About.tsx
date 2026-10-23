@@ -36,7 +36,7 @@ export default function About() {
           <p>
             I've spent most of my career building products for others, sometimes for big names,
             sometimes for small ones. That work still lives somewhere.{" "}
-            <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
+            <a href="https://hyunsangcho.com/portfolio" target="_blank" rel="noopener noreferrer" className={styles.link}>
               See it if you're curious
             </a>.{" "}
             Now I build my own, incorporated in the US and South Korea. Open to the right

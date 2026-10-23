@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Manifesto from "./components/Manifesto";
 import Belief from "./components/Belief";
 import Products from "./components/Products";
+import Method from "./components/Method";
 import BigQuote from "./components/BigQuote";
 import About from "./components/About";
 import Waitlist from "./components/Waitlist";
@@ -86,6 +87,8 @@ export default function App() {
               <Belief />
               <div className="divider" />
               <Products />
+              <div className="divider" />
+              <Method />
               <BigQuote />
               <div className="divider" />
               <About />

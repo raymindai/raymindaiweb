@@ -34,7 +34,7 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.label}>Connect</div>
           <a href="mailto:hi@raymind.ai">hi@raymind.ai</a>
-          <a href="https://hyunsangcho.com" target="_blank" rel="noopener noreferrer">hyunsangcho.com</a>
+          <a href="https://hyunsangcho.com/portfolio" target="_blank" rel="noopener noreferrer">hyunsangcho.com</a>
           <a href="https://ronincho.com" target="_blank" rel="noopener noreferrer">ronincho.com</a>
           <a href="/cv">CV</a>
         </div>
