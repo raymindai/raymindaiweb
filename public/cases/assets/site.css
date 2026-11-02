@@ -57,6 +57,10 @@ ol, ul { list-style: none; }
 .hero-phones img:last-child { margin-top: 56px; }
 .phone, .flow img, .anatomy img, .shot { border-radius: 18px; box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 24px 60px -24px rgba(0,0,0,0.45); }
 .hero-media .screen { border-radius: 14px; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.08); }
+.live { display: inline-flex; align-items: baseline; gap: 10px; margin-top: 28px; padding: 11px 20px 12px; border-radius: 999px; background: #fbfaf6; color: #121211; font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; transition: transform .2s ease; }
+.live span { font-size: 13px; font-weight: 500; color: #6f6d66; }
+.live i { font-style: normal; color: var(--accent); }
+.live:hover { transform: translateY(-1px); }
 .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,0.16); }
 .facts dt { font-size: 12.5px; font-weight: 600; color: var(--on-dark-2); letter-spacing: 0.02em; margin-bottom: 4px; }
 .facts dd { font-size: 14.5px; line-height: 1.6; }
@@ -258,6 +262,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .shot-main figcaption, .shots figcaption { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin-top: 14px; }
 .shot-main figcaption b, .shots figcaption b { color: var(--ink); margin-right: 8px; }
 .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 24px; margin-top: 44px; }
+.shots.two { grid-template-columns: repeat(2, 1fr); gap: 44px 28px; }
 .shots img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; width: 100%; }
 
 /* reports */
@@ -453,7 +458,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .facts, .facts.light { grid-template-columns: 1fr; }
   .case-stats { grid-template-columns: 1fr; }
   .tree .op { display: none; }
-  .shots, .reports { grid-template-columns: 1fr; }
+  .shots, .shots.two, .reports { grid-template-columns: 1fr; }
   .tree .node { flex-basis: 40%; padding: 14px 10px; }
   .f-row { grid-template-columns: 92px 1fr 54px; font-size: 13.5px; }
   .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; }
