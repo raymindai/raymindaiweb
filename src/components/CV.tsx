@@ -12,6 +12,7 @@ export default function CV() {
         <div className={styles.links}>
           <a href="mailto:hi@raymind.ai">hi@raymind.ai</a>
           <a href="https://raymind.ai">raymind.ai</a>
+          <a href={show ? "/cases/" : "/cases/en/"}>{show ? "케이스 스터디" : "Case studies"}</a>
           <a href="https://hyunsangcho.com/portfolio" target="_blank" rel="noopener noreferrer">hyunsangcho.com</a>
           <a href={show ? "/HyunsangCho_CV_Ko.pdf" : "/HyunsangCho_CV_En.pdf"} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
             {show ? "PDF 다운로드" : "Download PDF"}
