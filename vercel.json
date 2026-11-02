@@ -43,7 +43,7 @@
       "permanent": false
     },
     {
-      "source": "/cases/:ed(en|nextsecurities|makinarocks)",
+      "source": "/cases/:ed(en|makinarocks)",
       "destination": "/cases/:ed/",
       "permanent": false
     }
