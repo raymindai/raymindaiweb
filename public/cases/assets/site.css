@@ -268,7 +268,8 @@ html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .pair { margin: 56px 0; }
 .ship { border-top: 1px solid var(--ink); margin-bottom: 28px; }
 .ship li { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
-.ship b { color: var(--ink); }
+.ship li { text-align: right; }
+.ship b { color: var(--ink); flex: none; white-space: nowrap; text-align: left; }
 .case-no span { white-space: nowrap; display: inline-block; }
 
 /* memory.wiki product shots */
@@ -489,6 +490,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .dd .res { flex-wrap: wrap; row-gap: 18px; }
   .dd .res > div { flex: 1 1 100%; }
   .ship b { display: block; margin-bottom: 4px; }
+  .ship li { text-align: left; }
   .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; }
   .tbl thead { display: none; }
   .tbl tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
