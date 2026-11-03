@@ -27,7 +27,7 @@
     <div class="hero-copy">
       <p class="eyebrow"><span>Case 01</span><span>2026</span><span>Raymind.AI</span></p>
       <h1>Paldo Saju<span>A checkout flow people trust before they pay</span></h1>
-      <p class="lede">An AI saju master hears your story first, then reads your chart with you in conversation. I designed it, built it and launched it, then spent the first three weeks measuring every step of the funnel and fixing the checkout screen with A/B tests.</p>
+      <p class="lede">An AI saju consultation I designed, built and launched on my own, and run with around 30 AI agents. In the first three weeks I measured every step of the funnel and fixed the checkout screen with A/B tests. Removing a struck-through list price that had never been charged, and showing the real price, raised revenue per checkout visitor by 61%.</p>
       <a class="live" href="https://paldosaju.com" target="_blank" rel="noopener">paldosaju.com<i>↗</i></a>
       <dl class="facts">
         <div><dt>Role</dt><dd>Planning, UX and UI design, metric design, experiment decisions, development (Claude Code)</dd></div>
@@ -49,10 +49,10 @@
   <div class="wrap intro-grid">
     <div class="intro-text">
       <p class="label">About the project</p>
-      <p>Paldo Saju is an AI saju consultation service from my studio, Raymind.AI. Saju is Korean four pillars fortune reading. Gifted masters from all eight provinces of Korea, the paldo in the name, hear the user's story first, then talk them through the saju drawn from their birthday.</p><p>I am building it on my own. I do the planning, screen design and metric design myself, and around 30 AI agents share the operations, each with its own role. Agents for priorities, deployment, finance, data, the funnel, pricing and ads each work within set permissions, and every change goes into the change log. So that a small team could move like a large organisation, I designed the roles, permissions and decision criteria first.</p>
+      <p>Paldo Saju is an AI saju consultation service. Saju is Korean four pillars fortune reading. Gifted masters from all eight provinces of Korea, the paldo in the name, hear the user's story first, then talk them through the saju drawn from their birthday.</p><p>I am building it on my own. I do the planning, screen design and metric design myself, and around 30 AI agents share the operations, each with its own role. Agents for priorities, deployment, finance, data, the funnel, pricing and ads each work within set permissions, and every change goes into the change log. I designed the roles, permissions and decision criteria first, so a one-person team could run like a large organisation.</p>
     </div>
     <dl class="intro-list">
-      <div><dt>What I decide</dt><dd>Prices, new paid channels, budget increases</dd></div><div><dt>What the agents do</dt><dd>Screen changes, experiment allocation, result calculations and ad operations. Only within a daily ad cap, a loss cap and a limit on budget changes</dd></div><div><dt>Screens where money is at stake</dt><dd>I approve them from 360px and 390px captures before they change</dd></div><div><dt>Records</dt><dd>Every change and experiment in the change log, summed up on one page every Monday</dd></div><div><dt>Launch</dt><dd>12 October 2026, mobile web</dd></div>
+      <div><dt>What I decide</dt><dd>Prices, new paid channels, budget increases</dd></div><div><dt>What the agents do</dt><dd>Screen changes, experiment allocation, result calculations and ad operations. Only within a daily ad cap, a loss cap and a limit on budget changes</dd></div><div><dt>Screens where money is at stake</dt><dd>I approve them from 360px and 390px captures before they change</dd></div><div><dt>Records</dt><dd>Every change and experiment in the change log, summed up on one page every Monday</dd></div><div><dt>AI cost</dt><dd>Prompt caching on the free-reading LLM calls cut the cost per call by 19.5%</dd></div><div><dt>Launch</dt><dd>12 October 2026, mobile web</dd></div>
     </dl>
   </div>
 </section>
@@ -61,10 +61,10 @@
   <div class="wrap">
     <div class="summary-grid">
       <dl class="qa">
-        <div><dt>The user problem I set out to solve</dt><dd>Even after hearing the free reading to the end, 87% of users who saw the checkout screen pressed nothing. Before paying, they had no way to know whether the reading was worth the money or whether the price was honest.</dd></div><div><dt>Why it mattered</dt><dd>Bringing in one user through ads cost two to three times what that user brought in. Unless the checkout flow was fixed, the more users I brought in, the bigger the loss.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>I used a metric tree and the funnel to find the step that leaked most, set the decision metric and guardrails first, then A/B tested the checkout screen one change at a time.</dd></div><div><dt>Results and what I learned</dt><dd>Showing the price truthfully raised revenue per checkout visitor by 61%. The business has not reached break-even yet, and that gap taught me five things.</dd></div>
+        <div><dt>The user problem I set out to solve</dt><dd>Even after hearing the free reading to the end, 87% of users who saw the checkout screen pressed nothing. Before paying, they had no way to know whether the reading was worth the money or whether the price was honest.</dd></div><div><dt>Why it mattered</dt><dd>Acquiring a user through ads cost two to three times the revenue that user brought in. Unless the checkout flow was fixed, the more users I brought in, the bigger the loss.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>I used a metric tree and the funnel to find the step that leaked most, set the primary metric and guardrails first, then A/B tested the checkout screen one change at a time. When design opinions split, user behaviour made the call, not taste.</dd></div><div><dt>Results and what I learned</dt><dd>Removing the struck-through list price and showing the real price raised revenue per checkout visitor by 61%. The business has not reached break-even yet, and that gap taught me five things.</dd></div>
       </dl>
       <div class="stats">
-        <div class="stat"><b>+61%</b><span>Revenue per checkout visitor<br>after showing the price truthfully</span></div><div class="stat"><b>9.2%</b><span>Conversion after giving first<br>(5.8% before)</span></div><div class="stat"><b>22%</b><span>Share of new visits from outside ads<br>(12% in week two)</span></div>
+        <div class="stat"><b>+61%</b><span>Revenue per checkout visitor<br>after removing the fake list price</span></div><div class="stat"><b>9.2%</b><span>Conversion after showing<br>two lines free (5.8% before)</span></div><div class="stat"><b>22%</b><span>Share of new visits not from ads<br>(12% in week two)</span></div>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
     <h2 class="sec-title">One worry and a birthday, and a master talks it through with you.</h2></div>
     
   <div class="prose">
-    <p>Saju is full of difficult terms and dense information. Paldo Saju keeps the saju chart small at the top, and the master talks it through in conversation, shaped around the worry the user picked. The structure starts from the user's question and brings out only as much of the complex information as they need. The free reading leads into the reading contents and then to the checkout screen, and users pay straight away, with no app to install and no login.</p>
+    <p>Saju is full of difficult terms and dense information. Paldo Saju keeps the saju chart small at the top, and the master talks it through in conversation, shaped around the worry the user picked. The structure starts from the user's question and brings out only as much of the complex information as they need. The free reading leads to the reading's contents page and then to the checkout screen, and users pay straight away, with no app to install and no login.</p>
   </div>
   <div class="flow">
     <figure><img src="../assets/img/flow1.jpg" width="780" height="1688" alt="First screen" loading="lazy" decoding="async"><figcaption><b>First screen</b>Pick a master and say what is on your mind</figcaption></figure>
@@ -107,7 +107,7 @@
     <div class="evid">
       <div class="ev"><b>87%</b><p>Share of users who saw the checkout screen and left without pressing anything. Every other step kept 57 to 92% of the step before. Here, only 13% carried on.</p></div>
       <div class="ev"><b>74%</b><p>Of users who entered a birthday but never reached the checkout screen, the share who left within 34 seconds of seeing the contents and the first price. The moment they saw the price was the turning point.</p></div>
-      <div class="ev"><b>34%</b><p>Share who left before the first answer appeared. 48% of them left within 5 seconds.</p></div>
+      <div class="ev"><b>34%</b><p>Share who started a consultation and left before the first answer appeared. 48% of them left within 5 seconds.</p></div>
       <p class="cap">74% and 34% are new users from Meta ads, 18 to 31 October.</p>
     </div>
   </div>
@@ -122,7 +122,7 @@
     
   <div class="three">
     <div><h3>It was the biggest leak</h3><p>At every other step of the funnel, more than half the users from the step before carried on. Checkout button click-through was only 13%. For the same effort, this was the spot that could move most.</p></div>
-    <div><h3>Ads could not fill the gap</h3><p>Bringing in one user through ads cost two to three times what that user brought in. Spending more on ads with the checkout flow unchanged would grow the loss faster than the revenue.</p></div>
+    <div><h3>Ads could not fill the gap</h3><p>Acquiring a user through ads cost two to three times the revenue that user brought in. Spending more on ads with the checkout flow unchanged would grow the loss faster than the revenue.</p></div>
     <div><h3>Where money changes hands, trust comes first</h3><p>The less a user can see of a product before buying, the more they look for honesty in the price and the tone. I judged that a price dressed up as a discount, or words that rush people to pay, might lift clicks today but would wear trust down. Every screen where money changes hands has the same problem.</p></div>
   </div>
   <div class="econ">
@@ -140,7 +140,7 @@
 <section class="sec " id="process">
   <div class="wrap">
     <div class="sec-top"><div class="sec-head"><span class="sec-num">03</span><span class="sec-label">How I went about it, and what I chose</span></div>
-    <h2 class="sec-title">I decided what to watch first, and wrote it down before changing anything.</h2></div>
+    <h2 class="sec-title">I decided what to watch first, and wrote it down before changing anything.</h2></div>
     
   <div class="tree" role="img" aria-label="Weekly revenue = new visits × conversion rate × order value × orders per buyer">
     <span class="node root">Weekly revenue</span><span class="op">=</span>
@@ -149,12 +149,12 @@
     <span class="node">Order value</span><span class="op">×</span>
     <span class="node">Orders per buyer</span>
   </div>
-  <p class="cap">Each week I compared the four boxes with the week before and pushed first on the one that could move most. This case is about the bold box, conversion rate, and within it the checkout button click.</p>
+  <p class="cap">Each week I compared the four boxes with the week before and pushed first on the one that could move most. The box I pushed on is the bold one, conversion rate, and within it the checkout button click.</p>
   <div class="choices">
-    <div><span class="k">Choice 1</span><h3>One decision metric: revenue per checkout visitor</h3><p>Watch conversion alone and you can win by selling cheap. Watch order value alone and you can win by selling less. I made the call on one number that holds both.</p></div>
-    <div><span class="k">Choice 2</span><h3>Guardrails: conversion rate and confirmed contacts</h3><p>Even if the decision metric rises, a test is switched off when a guardrail falls further than its set margin. It is the line that stops me losing users while chasing revenue.</p></div>
+    <div><span class="k">Choice 1</span><h3>One primary metric: revenue per checkout visitor</h3><p>Watch conversion alone and you can win by selling cheap. Watch order value alone and you can win by selling less. I made the call on one number that holds both.</p></div>
+    <div><span class="k">Choice 2</span><h3>Guardrails: conversion rate and confirmed contacts</h3><p>Even if the primary metric rises, a test is switched off when a guardrail falls further than its set margin. It is the line that stops me losing users while chasing revenue.</p></div>
     <div><span class="k">Choice 3</span><h3>Write it down before switching on, review it every week</h3><p>Before switching a test on, I wrote the hypothesis, the numbers to watch, the decision date and the stop criteria in the change log. Every Monday I grouped the week into what changed, what happened, what I learned and what comes next.</p></div>
-    <div><span class="k">Choice 4</span><h3>With small samples, roll out only when every signal agrees</h3><p>For a small service, statistical certainty took weeks. I rolled a change out to everyone only when the decision metric and the guardrails all pointed the same way, and kept watching after that.</p></div>
+    <div><span class="k">Choice 4</span><h3>With small samples, roll out only when every signal agrees</h3><p>For a small service, statistical certainty took weeks. I rolled a change out to everyone only when the primary metric and the guardrails all pointed the same way, and kept watching after that.</p></div>
     <div><span class="k">Choice 5</span><h3>People decide, AI agents run</h3><p>I decided prices, new paid channels and budget increases. AI agents handled screen changes, experiment allocation and result calculations, logging each one in the change log. Screens where money is at stake I approved from captures before they changed.</p></div>
   </div>
 
@@ -162,7 +162,7 @@
   <div class="anatomy">
     <figure><img src="../assets/img/flow5.jpg" width="780" height="1688" alt="Paldo Saju checkout screen" loading="lazy" decoding="async"></figure>
     <ol>
-      <li><b>What you get, first</b>The titles of the four reading chapters appear as a contents list. Users know what they will get before they see the price.</li>
+      <li><b>What you get, first</b>Instead of a product description, the titles of the four chapters this user will get. Users know what they will get before they see the price. This order is now a design system rule, reused on the checkout of other products.</li>
       <li><b>Prices as they are</b>The first-time price and the price from the second time on sit side by side. No list price that has never actually been charged.</li>
       <li><b>Payment methods at equal size</b>KakaoPay, Naver Pay and card sit side by side at the same size. Payment goes straight through, with no login.</li>
       <li><b>Promises right under the button</b>One line under the checkout button covers refunds for unused consultation passes and refunds for errors.</li>
@@ -172,13 +172,13 @@
   <h3 class="sub">A/B tests on the checkout screen</h3>
   <div class="exp">
     <article>
-      <h4>Showing the price truthfully</h4>
-      <p>The struck-through list price had never actually been charged. Instead of dressing it up as a discount, I showed the first-time price and the price from the second time on, as they really were. The hypothesis was "telling the truth will not sell less".</p>
+      <h4>Removing the struck-through list price</h4>
+      <p>The struck-through list price had never actually been charged. Instead of dressing it up as a discount, I showed the first-time price and the price from the second time on, as they really were. The hypothesis was "showing the real price will not sell less".</p>
       <div class="ab">
-        <span>Old</span><img src="../assets/img/price-before.jpg" width="585" height="205" alt="Before: a struck-through list price and a half-price badge on the first reading fee" loading="lazy" decoding="async">
-        <span>New</span><img src="../assets/img/price-after.jpg" width="780" height="235" alt="After: the first-time price and the price from the second time on" loading="lazy" decoding="async">
+        <span>Before</span><img src="../assets/img/price-before.jpg" width="585" height="205" alt="Before: a struck-through list price and a half-price badge on the first reading fee" loading="lazy" decoding="async">
+        <span>After</span><img src="../assets/img/price-after.jpg" width="780" height="235" alt="After: the first-time price and the price from the second time on" loading="lazy" decoding="async">
       </div>
-      <div class="res"><div><b>+61%</b>Revenue per checkout visitor</div><div><b>17.8%</b>Checkout button click-through<br>(15.6% before)</div></div>
+      <div class="res"><div><b>+61%</b>Revenue per checkout visitor</div><div><b>17.8%</b>Checkout button click-through<br>(15.6% before)</div></div>
       <p class="cap">Decision: rolled out the new version to everyone and made it the price display rule. The amount actually charged was the same on both sides.</p>
     </article>
     <article class="exp-b">
@@ -186,10 +186,39 @@
       <div class="exp-b-in">
         <img src="../assets/img/tease.jpg" width="540" height="906" alt="Two blurred lines at the end of the last free answer, with an email field" class="shot" loading="lazy" decoding="async">
         <div>
-          <p>I cut the last free answer at the point users most wanted to read on, and showed the next two lines as soon as they left an email address. Rather than pushing for payment, it opened one more way to step further in.</p>
-          <div class="res col"><div><b>9.2%</b>Conversion (5.8% before)</div><div><b>+40%</b>Payments per user</div></div>
+          <p>I cut the last free answer at the point users most wanted to read on, and showed the next two lines as soon as they left an email address. Rather than pushing for payment, it gave users one more reason to keep going.</p>
+          <div class="res col"><div><b>9.2%</b>Conversion (5.8% before)</div><div><b>+40%</b>Payments per user</div></div>
           <p class="cap">Decision: the sample was too small for statistical certainty, but payments per user, conversion and confirmed contacts all pointed the same way, so I rolled it out to everyone.</p>
         </div>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="sub">When design opinions split, user behaviour made the call</h3>
+  <div class="dd">
+    <article>
+      <div class="dd-text">
+        <h4>Is a faster first screen always better?</h4>
+        <p>Users arriving from ads see only Grandma Malsun's portrait for the first few seconds, and meet the birthday form only after she speaks to them. A draft proposed showing the form straight away, so more people would carry on. By the usual rule of removing friction, it was the right call.</p>
+        <div class="res"><div><b>78.7% → 67.6%</b>Share who went on to enter a birthday, after the draft went live</div><div><b>87.5% → 88.3%</b>Visitors from the list, who never saw the draft, held steady</div></div>
+        <p class="cap">Decision: reverted that night. Before typing a birthday, people first decide whether this is someone they can open up to. The few seconds in which the grandma speaks first were not friction but the time in which trust builds. This was a same-day before-and-after comparison, so a narrower re-test is checking it again.</p>
+      </div>
+      <div class="dd-phones">
+        <figure><img src="../assets/img/flow1.jpg" width="780" height="1688" alt="Now: only the portrait for the first few seconds" loading="lazy" decoding="async"><figcaption><b>Now, at first</b>Only the portrait</figcaption></figure>
+        <figure><img src="../assets/img/flow2.jpg" width="780" height="1688" alt="Now: the birthday form after the grandma speaks" loading="lazy" decoding="async"><figcaption><b>Now, after she speaks</b>The birthday form opens</figcaption></figure>
+        <figure class="lost"><img src="../assets/img/flow2.jpg" width="780" height="1688" alt="Draft: her words and the birthday form from the start" loading="lazy" decoding="async"><figcaption><b>Draft, from the start</b>Words and form at once<em>Reverted</em></figcaption></figure>
+      </div>
+    </article>
+    <article>
+      <div class="dd-text">
+        <h4>One recommended card at the top of the list</h4>
+        <p>After picking a worry, users see a list of masters who are good with it. I tested adding one card at the top, for the top master, with a single "First reading free" button, randomised by device.</p>
+        <div class="res"><div><b>66.6% → 76.9%</b>Share who went on to enter a birthday, a statistically significant gain</div><div><b>+20%</b>Revenue per visitor, not yet significant</div></div>
+        <p class="cap">Decision: the earlier step clearly improved and revenue pointed the same way, so it went to everyone. But an earlier step alone never makes the call. From the same ad, the direct link and the list link split sharply on birthday entry, 78.8% against 47.3%, yet revenue per arrival over a day was about the same. So I judge by revenue per person who arrives, not by clicks.</p>
+      </div>
+      <div class="dd-phones two">
+        <figure><img src="../assets/img/list-a.jpg" width="786" height="1420" alt="A: the list of masters only" loading="lazy" decoding="async"><figcaption><b>A, list only</b>The list starts at the first card</figcaption></figure>
+        <figure class="won"><img src="../assets/img/list-b.jpg" width="786" height="1420" alt="B: a card for the top master with a First reading free button at the top" loading="lazy" decoding="async"><figcaption><b>B, a card on top</b>One button to start<em>Rolled out</em></figcaption></figure>
       </div>
     </article>
   </div>
@@ -200,23 +229,23 @@
 <section class="sec " id="result">
   <div class="wrap">
     <div class="sec-top"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">Results</span></div>
-    <h2 class="sec-title">The checkout screen got better, but the business has not yet reached break-even.</h2></div>
+    <h2 class="sec-title">The checkout screen got better, but the business has not yet reached break-even.</h2></div>
     
   <div class="split result-split">
     <div>
       <p class="label">Checkout flow A/B tests, first three weeks after launch</p>
       <table class="tbl">
         <thead><tr><th>What changed</th><th>Result</th><th>Decision</th></tr></thead>
-        <tbody><tr><td>Showed the price truthfully (removed the struck-through list price)</td><td>Checkout click-through 15.6% → 17.8%<br>Revenue per checkout visitor +61%</td><td>Rolled out</td></tr><tr><td>Leave an email to see the next two lines first</td><td>Conversion 5.8% → 9.2%<br>Payments per user +40%</td><td>Rolled out</td></tr><tr><td>When users go back from checkout, a sheet that saves the reading they just heard by email</td><td>Conversion 11.9% → 13.5%<br>Payments per user +19%</td><td>Rolled out</td></tr><tr><td>Order of the worries to pick on the first screen</td><td>Revenue per checkout visitor +48%</td><td>Rolled out</td></tr><tr><td>Offer of an add-on right after payment, from 20 minutes to 24 hours</td><td>Add-ons within 24 hours 15.8% → 20.0%<br>Net revenue per user +8.7%</td><td>Kept 24 hours</td></tr><tr><td>One line in the contents: "the answer is already in your chart"</td><td>Click-through 20.6% → 22.0%,<br>not significant</td><td>Kept, no harm</td></tr><tr class="back"><td>A bundle of three as the default first purchase</td><td>+78% per user in the A/B test<br>Click-through halved after rollout</td><td>Reverted</td></tr><tr class="back"><td>A higher-priced product card at the top of checkout</td><td>-72% per user, same day as a price test<br>The cause could not be isolated</td><td>Reverted</td></tr></tbody>
+        <tbody><tr><td>Removed the struck-through list price and showed the real price</td><td>Checkout click-through 15.6% → 17.8%<br>Revenue per checkout visitor +61%</td><td>Rolled out</td></tr><tr><td>Leave an email to see the next two lines first</td><td>Conversion 5.8% → 9.2%<br>Payments per user +40%</td><td>Rolled out</td></tr><tr><td>When users go back from checkout, a sheet that saves the reading they just heard by email</td><td>Conversion 11.9% → 13.5%<br>Payments per user +19%</td><td>Rolled out</td></tr><tr><td>Reordered the worries on the first screen</td><td>Revenue per checkout visitor +48%</td><td>Rolled out</td></tr><tr><td>Kept the post-payment add-on offer open for 24 hours instead of 20 minutes</td><td>Add-ons within 24 hours 15.8% → 20.0%<br>Net revenue per user +8.7%</td><td>Kept 24 hours</td></tr><tr><td>Added one line to the contents: the answer is already in your chart</td><td>Click-through 20.6% → 22.0%,<br>not significant</td><td>Kept, no harm</td></tr><tr class="back"><td>Made a bundle of three readings the default first purchase</td><td>+78% per user in the A/B test<br>Click-through halved after rollout</td><td>Reverted</td></tr><tr class="back"><td>A higher-priced product card at the top of checkout</td><td>Revenue per checkout visitor -72%, same day as a price test<br>The cause could not be isolated</td><td>Reverted</td></tr></tbody>
       </table>
     </div>
     <div class="biz">
       <p class="label">The business as a whole</p>
-      <div class="ev"><b>+87%</b><p>Weekly revenue in the second week after launch, against the first week.</p></div>
+      <div class="ev"><b>+87%</b><p>Revenue in the second week after launch, up 87% on the first week.</p></div>
       <div class="ev"><b>67%</b><p>October revenue against ad spend. Break-even was 148%, and the contribution margin was -83% of revenue.</p></div>
-      <div class="ev"><b>-76%</b><p>Daily loss after cutting ads on 22 October. Daily revenue fell by 65% as well.</p></div>
+      <div class="ev"><b>-76%</b><p>After cutting ads on 22 October, the daily loss fell by 76%. Daily revenue fell by 65% as well.</p></div>
       <div class="ev"><b>-56%</b><p>Weekly revenue in week three. With fewer ads, new visits fell by 31%, and conversion slipped from 5.8% to 4.0%. The biggest factor was checkout button click-through dropping from 12% to 9%.</p></div>
-      <div class="ev"><b>22%</b><p>Share of new visits in week three that came from outside ads (organic search, owned channels). In week two it was 12%.</p></div>
+      <div class="ev"><b>22%</b><p>Share of new visits in week three that did not come from ads (organic search, owned channels). In week two it was 12%.</p></div>
     </div>
   </div>
   </div>
@@ -232,7 +261,7 @@
     <span class="learn-n">01</span>
     <div class="learn-body">
       <h3>Where money changes hands, the truth converts</h3>
-      <p>The checkout used to show a struck-through list price that had never actually been charged. When I removed it and showed the price as it really was, revenue per checkout visitor rose by 61%. Since then, "a price that has never actually been charged is never used as a comparison price" has been the price display rule.</p>
+      <p>The checkout used to show a struck-through list price that had never actually been charged. When I removed it and showed the real price, revenue per checkout visitor rose by 61%. Since then, "a price that has never actually been charged is never used as a comparison price" has been the price display rule.</p>
     </div>
   </li>
   <li>
@@ -282,11 +311,11 @@
       <div><span>Email</span><a href="mailto:hi@raymind.ai">hi@raymind.ai</a></div>
       <div><span>Earlier portfolio</span><a href="https://hyunsangcho.com/portfolio">hyunsangcho.com/portfolio</a></div>
       <div><span>Studio</span><a href="https://raymind.ai">raymind.ai</a></div>
-      <div><span>Languages</span>Korean and English</div>
+      <div><span>Languages</span>Korean and English</div>
     </div>
-    <p class="foot-note">Business figures on this site are shown as percentages only. © 2026 Hyunsang Cho</p>
+    <p class="foot-note">© 2026 Hyunsang Cho</p>
   </div>
 </footer>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="16:20 한국 시간 (두바이 11:20)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="17:05 한국 시간 (두바이 12:05)"></script>
 </body>
 </html>

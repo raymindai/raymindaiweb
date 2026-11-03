@@ -216,13 +216,28 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .exp article { background: var(--card); border: 1px solid var(--line-2); border-radius: 10px; padding: clamp(24px, 3vw, 40px); }
 .exp h4 { font-family: var(--display); font-size: 22px; letter-spacing: -0.035em; margin-bottom: 12px; }
 .exp p { font-size: 15px; line-height: 1.75; color: var(--ink-2); }
-.ab { display: grid; grid-template-columns: 32px 1fr; gap: 12px 14px; align-items: center; margin: 24px 0; }
+.ab { display: grid; grid-template-columns: minmax(32px, auto) 1fr; gap: 12px 14px; align-items: center; margin: 24px 0; }
 .ab span { font-size: 13px; font-weight: 700; color: var(--ink-3); }
 .ab img { border-radius: 10px; }
 .res { display: flex; gap: 32px; padding: 18px 0; margin: 18px 0 4px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
 .res b { font-size: 38px; color: var(--accent); margin-bottom: 8px; }
 .res.col { flex-direction: column; gap: 16px; }
 .exp-b-in { display: grid; grid-template-columns: 200px 1fr; gap: 28px; margin-top: 16px; align-items: start; }
+.dd article { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 3.4vw, 48px); align-items: start; background: var(--card); border: 1px solid var(--line-2); border-radius: 10px; padding: clamp(24px, 3vw, 40px); }
+.dd article + article { margin-top: clamp(20px, 2.4vw, 28px); }
+.dd h4 { font-family: var(--display); font-size: 22px; letter-spacing: -0.035em; margin-bottom: 12px; }
+.dd p { font-size: 15px; line-height: 1.75; color: var(--ink-2); }
+.dd .res > div { flex: 1 1 0; min-width: 0; }
+.dd .res b { font-size: clamp(24px, 2.4vw, 30px); white-space: nowrap; }
+.dd .cap { margin-top: 16px; }
+.dd-phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.2vw, 16px); }
+.dd-phones.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 440px; justify-self: center; width: 100%; }
+.dd-phones img { border-radius: 12px; box-shadow: 0 18px 40px -22px rgba(0,0,0,0.5); }
+.dd-phones figcaption { font-size: 12.5px; line-height: 1.5; color: var(--ink-2); margin-top: 10px; }
+.dd-phones figcaption b { display: block; color: var(--ink); font-size: 13px; }
+.dd-phones figcaption em { display: table; font-style: normal; font-size: 11.5px; font-weight: 700; margin-top: 6px; padding: 2px 8px; border-radius: 99px; background: var(--line); color: var(--ink-2); }
+.dd-phones .lost figcaption em { background: var(--accent); color: #fff; }
+.dd-phones .won figcaption em { background: var(--ink); color: var(--paper, #fff); }
 .shot { border-radius: 14px; }
 
 /* tables */
@@ -254,6 +269,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .ship { border-top: 1px solid var(--ink); margin-bottom: 28px; }
 .ship li { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
 .ship b { color: var(--ink); }
+.case-no span { white-space: nowrap; }
 
 /* memory.wiki product shots */
 .shot-main { margin-top: 44px; }
@@ -436,6 +452,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .econ { grid-template-columns: 1fr; gap: 20px; }
   .anatomy figure { max-width: 300px; }
   .exp-b-in { grid-template-columns: 1fr; }
+  .dd article { grid-template-columns: minmax(0, 1fr); }
   .exp-b-in img { max-width: 240px; }
   .learn li { grid-template-columns: 1fr; gap: 12px; }
   .learn h3 { grid-row: auto; }
@@ -465,7 +482,11 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .tree .op { display: none; }
   .shots, .shots.two, .reports { grid-template-columns: 1fr; }
   .tree .node { flex-basis: 40%; padding: 14px 10px; }
-  .f-row { grid-template-columns: 92px 1fr 54px; font-size: 13.5px; }
+  .f-row { grid-template-columns: 106px 1fr 54px; font-size: 13.5px; }
+  .ship li { display: block; }
+  .dd .res { flex-wrap: wrap; row-gap: 18px; }
+  .dd .res > div { flex: 1 1 100%; }
+  .ship b { display: block; margin-bottom: 4px; }
   .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; }
   .tbl thead { display: none; }
   .tbl tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
