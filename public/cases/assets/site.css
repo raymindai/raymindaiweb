@@ -2,17 +2,14 @@
 @font-face { font-family: 'WS'; font-weight: 400; font-display: swap; src: url(fonts/ws-400.woff2) format('woff2'); }
 @font-face { font-family: 'WS'; font-weight: 600; font-display: swap; src: url(fonts/ws-600.woff2) format('woff2'); }
 @font-face { font-family: 'WS'; font-weight: 700; font-display: swap; src: url(fonts/ws-700.woff2) format('woff2'); }
-@font-face { font-family: 'GS'; font-weight: 400; font-display: swap; src: url(fonts/gs-400.woff2) format('woff2'); }
-@font-face { font-family: 'GS'; font-weight: 600; font-display: swap; src: url(fonts/gs-600.woff2) format('woff2'); }
-@font-face { font-family: 'GS'; font-weight: 700; font-display: swap; src: url(fonts/gs-700.woff2) format('woff2'); }
-@font-face { font-family: 'GSD'; font-weight: 700; font-display: swap; src: url(fonts/gsd-700.woff2) format('woff2'); }
 
 :root {
   --paper: #f3f2ed; --card: #fbfaf6; --ink: #121211; --ink-2: #3c3b37; --ink-3: #6f6d66;
   --line: #d3d0c6; --line-2: #e4e1d8; --accent: #121211; --dark: #121211; --on-dark: #f3f2ed; --on-dark-2: #b9b6ac;
   --maxw: 1180px; --gut: clamp(18px, 4.2vw, 48px);
-  --sans: 'GS', 'WS', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  --display: 'GSD', 'WS', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  /* Owner 11/3: "그냥 다 원티드산스하면되지않나?" One family for Korean, Latin and digits. */
+  --sans: 'WS', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --display: 'WS', -apple-system, 'Apple SD Gothic Neo', sans-serif;
 }
 body.paldo { --accent: #c2412a; --dark: #1b1310; --on-dark-2: #c6b8ad; }
 body.mw { --accent: #2b47e6; --dark: #0d0d0f; }
@@ -172,9 +169,9 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 
 /* evidence */
 .evid, .biz { display: grid; }
-.ev { display: grid; grid-template-columns: 132px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--line); align-items: start; }
+.ev { display: grid; grid-template-columns: minmax(132px, max-content) 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--line); align-items: start; }
 .ev:last-of-type { border-bottom: 1px solid var(--line); }
-.ev b { font-size: clamp(34px, 3.4vw, 44px); }
+.ev b { font-size: clamp(34px, 3.4vw, 44px); white-space: nowrap; }
 .ev p { font-size: 15px; line-height: 1.7; color: var(--ink-2); }
 
 /* econ */
@@ -228,7 +225,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .dd h4 { font-family: var(--display); font-size: 22px; letter-spacing: -0.035em; margin-bottom: 12px; }
 .dd p { font-size: 15px; line-height: 1.75; color: var(--ink-2); }
 .dd .res > div { flex: 1 1 0; min-width: 0; }
-.dd .res b { font-size: clamp(24px, 2.4vw, 30px); white-space: nowrap; }
+.dd .res b { font-size: clamp(22px, 2.2vw, 28px); white-space: nowrap; }
 .dd .cap { margin-top: 16px; }
 .dd-phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.2vw, 16px); }
 .dd-phones.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 440px; justify-self: center; width: 100%; }
@@ -456,7 +453,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .exp-b-in img { max-width: 240px; }
   .learn li { grid-template-columns: 1fr; gap: 12px; }
   .learn h3 { grid-row: auto; }
-  .ev { grid-template-columns: 96px 1fr; }
+  .ev { grid-template-columns: minmax(96px, max-content) 1fr; }
   .fit-row { grid-template-columns: 1fr; gap: 8px; }
   .fit-row a { grid-column: 1; }
   .first li > div { grid-template-columns: 1fr; }
