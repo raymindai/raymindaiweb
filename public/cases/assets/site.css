@@ -244,6 +244,9 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .tbl td:nth-child(2) { color: var(--ink); font-weight: 600; font-feature-settings: 'tnum' 1; white-space: nowrap; }
 .tbl td:nth-child(3) { white-space: nowrap; font-size: 13px; }
 .tbl tr.back td:nth-child(3) { color: var(--accent); font-weight: 700; }
+/* English rows are longer: give 'What changed' room and let results wrap. */
+html[lang="en"] .tbl td:first-child { width: 40%; }
+html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .result-split { grid-template-columns: 1.35fr 1fr; }
 
 /* learnings */
@@ -266,7 +269,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .ship { border-top: 1px solid var(--ink); margin-bottom: 28px; }
 .ship li { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
 .ship b { color: var(--ink); }
-.case-no span { white-space: nowrap; }
+.case-no span { white-space: nowrap; display: inline-block; }
 
 /* memory.wiki product shots */
 .shot-main { margin-top: 44px; }
@@ -308,6 +311,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .timeline > div { display: grid; grid-template-columns: 150px 300px 1fr; gap: 28px; padding: 26px 0; border-top: 1px solid var(--line); align-items: baseline; }
 .timeline > div:last-child { border-bottom: 1px solid var(--line); }
 .timeline span { font-size: 14px; color: var(--ink-3); font-feature-settings: 'tnum' 1; }
+.timeline span em { display: block; font-style: normal; margin-top: 2px; }
 .timeline h3 { font-size: 18px; letter-spacing: -0.025em; line-height: 1.45; }
 .timeline p { font-size: 15px; line-height: 1.75; color: var(--ink-2); }
 
@@ -352,6 +356,8 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .first a { font-size: 13px; font-weight: 600; color: var(--ink-3); text-decoration: none; }
 .first a:hover { color: var(--ink); }
 .prod { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px 24px; }
+.prod.three { grid-template-columns: repeat(3, 1fr); }
+.prod-lede { max-width: 820px; margin: -8px 0 40px; font-size: 17px; line-height: 1.8; color: var(--ink-2); }
 .prod .badge { display: inline-block; margin-left: 8px; vertical-align: 2px; font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: 1.5; color: #c2412a; border: 1px solid currentColor; border-radius: 999px; padding: 1px 9px; white-space: nowrap; }
 .bring { border-top: 2px solid var(--ink); }
 .bring li { display: grid; grid-template-columns: 72px 360px 1fr; gap: 28px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
@@ -373,9 +379,8 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .tile span { font-size: 12.5px; color: var(--ink-3); font-weight: 600; }
 .tile h3 { font-size: 17px; letter-spacing: -0.025em; line-height: 1.4; margin: 6px 0 8px; }
 .tile p { font-size: 13.5px; line-height: 1.68; color: var(--ink-2); }
-.tile.text { background: var(--ink); color: var(--paper); border-color: var(--ink); justify-content: flex-end; }
-.tile.text span { color: #b9b6ac; }
-.tile.text p { color: #d9d6cc; }
+.tile.text { justify-content: flex-start; border-style: dashed; background: transparent; }
+.tile.text > div { padding-top: 22px; }
 .more-line { margin-top: 36px; font-size: 16px; color: var(--ink-2); }
 .more-line a { font-weight: 700; color: var(--ink); }
 
@@ -418,7 +423,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .principles { grid-template-columns: repeat(2, 1fr); }
   .principles > div, .principles > div:nth-child(4):nth-last-child(2) { grid-column: auto; }
   .principles > div:nth-child(5):last-child { grid-column: span 2; }
-  .grid, .prod { grid-template-columns: repeat(2, 1fr); }
+  .grid, .prod, .prod.three { grid-template-columns: repeat(2, 1fr); }
   .bring li { grid-template-columns: 56px 1fr; }
   .bring li > div { grid-column: 2; }
   .fit-row { grid-template-columns: 220px 1fr; }
@@ -428,7 +433,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
 }
 @media (max-width: 860px) {
   body { font-size: 16px; }
-  .menu a:not(:first-child):not(:nth-child(2)):not(.lang) { display: none; }
+  .menu a:nth-child(3) { display: none; }
   .home-intro, .case-text, .intro-grid { grid-template-columns: 1fr; }
   .hero-grid, .hero-grid.wide-media, .summary-grid, .split, .result-split, .exp, .anatomy, .case-card, .learn-body { grid-template-columns: 1fr; }
   .hero-phones { max-width: 420px; }
@@ -470,7 +475,7 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .menu { gap: 14px; font-size: 13.5px; }
   .menu a.lang { padding-left: 14px; }
   .f-step { white-space: nowrap; }
-  .choices, .choices.four, .principles, .grid, .prod { grid-template-columns: 1fr; }
+  .choices, .choices.four, .principles, .grid, .prod, .prod.three { grid-template-columns: 1fr; }
   .principles > div:nth-child(5):last-child { grid-column: auto; }
   .bring li { grid-template-columns: 1fr; gap: 8px; }
   .bring li > div { grid-column: 1; }
@@ -496,6 +501,9 @@ html[lang="en"] .intro-list > div { grid-template-columns: clamp(116px, 12vw, 15
   .brand { font-size: 15px; }
   .menu { gap: 11px; font-size: 13px; }
   .menu a.lang { padding-left: 0; border-left: 0; }
+  .foot-grid { grid-template-columns: 1fr; }
+  /* English labels are longer: keep Case studies and Contact, drop How I work (also linked from the home page). */
+  html[lang="en"] .menu a:nth-child(2) { display: none; }
 }
 @media (max-width: 370px) {
   .menu { gap: 10px; font-size: 12.5px; }
