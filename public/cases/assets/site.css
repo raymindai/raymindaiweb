@@ -1,15 +1,15 @@
 
-@font-face { font-family: 'WS'; font-weight: 400; font-display: swap; src: url(fonts/ws-400.woff2) format('woff2'); }
-@font-face { font-family: 'WS'; font-weight: 600; font-display: swap; src: url(fonts/ws-600.woff2) format('woff2'); }
-@font-face { font-family: 'WS'; font-weight: 700; font-display: swap; src: url(fonts/ws-700.woff2) format('woff2'); }
+@font-face { font-family: 'Pretendard'; font-weight: 400; font-display: swap; src: url(fonts/pd-400.woff2) format('woff2'); }
+@font-face { font-family: 'Pretendard'; font-weight: 600; font-display: swap; src: url(fonts/pd-600.woff2) format('woff2'); }
+@font-face { font-family: 'Pretendard'; font-weight: 700; font-display: swap; src: url(fonts/pd-700.woff2) format('woff2'); }
 
 :root {
   --paper: #f3f2ed; --card: #fbfaf6; --ink: #121211; --ink-2: #3c3b37; --ink-3: #6f6d66;
   --line: #d3d0c6; --line-2: #e4e1d8; --accent: #121211; --dark: #121211; --on-dark: #f3f2ed; --on-dark-2: #b9b6ac;
   --maxw: 1180px; --gut: clamp(18px, 4.2vw, 48px);
   /* Owner 11/3: "그냥 다 원티드산스하면되지않나?" One family for Korean, Latin and digits. */
-  --sans: 'WS', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  --display: 'WS', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --sans: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --display: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
 }
 body.paldo { --accent: #c2412a; --dark: #1b1310; --on-dark-2: #c6b8ad; }
 body.mw { --accent: #2b47e6; --dark: #0d0d0f; }
