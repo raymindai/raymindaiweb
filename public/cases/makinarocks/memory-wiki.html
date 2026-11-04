@@ -148,6 +148,13 @@
     <div><span class="k">선택 5</span><h3>신뢰 규칙은 데이터 쪽에서</h3><p>초안은 공개 주소로 나가지 않고, 권한은 문서를 내주는 곳에서 검사합니다. 읽는 쪽이 브라우저든 AI든 같은 규칙을 따릅니다. 그래프가 문서보다 오래되면 AI가 알 수 있게 표시합니다. 한 번 만든 주소는 만료되지 않습니다.</p></div>
     <div><span class="k">선택 6</span><h3>세 AI에게 같은 질문을</h3><p>같은 자료와 직접 만든 질문으로 Claude, <k-w>GPT-4o</k-w>, Gemini를 함께 평가하는 벤치마크를 만들었습니다. 한 AI의 점수보다, 세 AI가 같은 답을 내는지를 핵심으로 봤습니다.</p></div>
   </div>
+  <h3 class="sub" id="tokens">모든 플랫폼에 토큰 하나</h3>
+  <div class="prose">
+    <p>색, 글자, 간격, 모서리, 움직임을 하나의 디자인 토큰으로 관리합니다. 라이트와 다크의 의미 색에서 Style Dictionary가 웹, Mac 앱, VS Code 확장의 CSS와 iPhone 앱의 Swift, Android 앱의 Kotlin을 만들고, 만들어진 파일에는 손으로 고치지 말라고 적혀 있습니다.</p>
+    <p>시작은 버그였습니다. 강조색 16가지가 웹 설정, 스타일시트, 서버의 허용 값 목록, Android의 열거형, 네 곳에 손으로 따로 적혀 있었고, 잊힌 서버 쪽 때문에 Android에서 고른 색이 조용히 저장되지 않았습니다. 색을 더하거나 이름을 바꾸는 곳을 JSON 파일 하나로 정하고, 웹, 서버, Android가 거기서 만든 것을 읽게 했습니다.</p>
+  </div>
+  <figure class="wide frame tok-fig"><a class="zoom" href="../assets/img/mw-tokens-code-ko.jpg" target="_blank" rel="noopener"><img src="../assets/img/mw-tokens-code-ko.jpg" width="1800" height="1195" alt="디자인 토큰 JSON에서 만들어진 CSS, Swift, Kotlin 파일. 같은 text-primary 토큰이 모든 파일에 같은 값으로 들어가 있습니다" loading="lazy" decoding="async"></a><figcaption>저장소에서 그대로 옮긴 부분. 같은 의미 색이 JSON에서 CSS, Swift, Kotlin까지 같은 값으로 이어집니다. 누르면 크게 볼 수 있습니다.</figcaption></figure>
+  <figure class="frame tok-android"><img src="../assets/img/mw-android-color.jpg" width="1344" height="684" alt="Android 앱 설정의 강조색 선택. 라임을 고르자 칩, 링크 글자, 카드 테두리가 라임으로 칠해짐" loading="lazy" decoding="async"><figcaption>Android 앱의 강조색 선택. 고른 색으로 칩, 링크, 카드를 미리 칠해, 무엇이 바뀔지 누르는 순간 보입니다.</figcaption></figure>
   </div>
 </section>
 
@@ -191,7 +198,6 @@
     <div class="learn-body">
       <h3>기술보다 전달 방식이 제품입니다</h3>
       <p>검색 정확도는 누구나 올릴 수 있지만, 어떤 AI든 주소 하나로 같은 맥락을 받게 하는 전달 방식은 쉽게 따라 하기 어렵다고 봤습니다. 그래서 그래프를 앱 안에 두지 않고, AI가 받는 문서 안에 함께 실었습니다.</p>
-      <p class="learn-next"><span>마키나락스에서라면</span>AI가 무엇을 하는지만큼, 그 결과가 현장 작업자의 화면, 보고서, 알림 중 어디에 어떤 모양으로 도착하는지를 함께 설계하겠습니다.</p>
     </div>
   </li>
   <li>
@@ -199,7 +205,6 @@
     <div class="learn-body">
       <h3>일관성은 화면이 아니라 데이터와 규칙에서 나옵니다</h3>
       <p>모든 화면이 같은 렌더러와 같은 그래프를 읽게 하자, 편집기와 보기 화면이 다르게 보이는 문제가 구조적으로 사라졌습니다. 색과 간격은 토큰으로 관리해 라이트 모드와 다크 모드를 한 체계에서 만들었습니다.</p>
-      <p class="learn-next"><span>마키나락스에서라면</span>디자인 시스템을 컴포넌트에서 멈추지 않고 용어, 상태 문구, 문서 규칙까지 넓혀, Runway와 산업별 앱이 같은 말을 하게 하겠습니다.</p>
     </div>
   </li>
   <li>
@@ -242,6 +247,6 @@
     <p class="foot-note">© 2026 조현상</p>
   </div>
 </footer>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="19:02 한국 시간 (두바이 14:02)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="21:18 한국 시간 (두바이 16:18)"></script>
 </body>
 </html>

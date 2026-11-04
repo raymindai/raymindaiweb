@@ -153,6 +153,9 @@
     <p>Colour, type, spacing, radii and motion live in one set of design tokens. From the light and dark semantic colours, Style Dictionary generates CSS for the web, the Mac app and the VS Code extension, Swift for the iPhone app and Kotlin for the Android app, and each generated file says it must never be edited by hand.</p>
     <p>It started with a bug. A palette of 16 accent colours was kept by hand in four places: the web settings, the stylesheet, the server's list of allowed values and the Android enum. The server copy was the one that got forgotten, so a colour picked on Android silently failed to save. I made one JSON file the only place to add or rename a colour, and the web, the server and Android now read what it generates. On Android the picker also paints a chip, a link and a selected card in the chosen colour, so a tap shows what is about to change.</p>
   </div>
+  <figure class="wide frame tok-fig"><a class="zoom" href="../assets/img/mw-tokens-code.jpg" target="_blank" rel="noopener"><img src="../assets/img/mw-tokens-code.jpg" width="1800" height="1195" alt="Design token JSON and the CSS, Swift and Kotlin generated from it, with the same text-primary token highlighted in every file" loading="lazy" decoding="async"></a><figcaption>Real excerpts from the repository. The same semantic colours run from the JSON source to CSS, Swift and Kotlin. Select to see it full size.</figcaption></figure>
+  <figure class="wide frame tok-fig"><a class="zoom" href="../assets/img/mw-accent-json.jpg" target="_blank" rel="noopener"><img src="../assets/img/mw-accent-json.jpg" width="1800" height="973" alt="accent-palette.json with its 16 swatches, and the four files that used to keep their own copy" loading="lazy" decoding="async"></a><figcaption>The accent palette: one JSON file, and the four places that used to keep their own copy. Four colours carry a "web only" note in the same file, so the Android picker shows twelve by rule, not by a forgotten copy.</figcaption></figure>
+  <figure class="frame tok-android"><img src="../assets/img/mw-android-color.jpg" width="1344" height="684" alt="Android settings: picking lime paints the chip, the link text and the card outline lime" loading="lazy" decoding="async"><figcaption>The Android accent picker. The chosen colour paints a chip, a link and a card before you leave the screen.</figcaption></figure>
   </div>
 </section>
 
@@ -243,6 +246,6 @@
     <p class="foot-note">© 2026 Hyunsang Cho</p>
   </div>
 </footer>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="19:02 한국 시간 (두바이 14:02)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="21:18 한국 시간 (두바이 16:18)"></script>
 </body>
 </html>

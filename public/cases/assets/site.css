@@ -117,6 +117,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 /* flow */
 .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(12px, 1.8vw, 24px); margin-top: 48px; }
 .flow img { border-radius: 14px; }
+.flow video { display: block; width: 100%; height: auto; border-radius: 14px; background: #0b0b0d; box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 24px 60px -24px rgba(0,0,0,0.45); }
 .flow figcaption { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin-top: 14px; }
 .flow figcaption b { display: block; color: var(--ink); font-size: 14.5px; margin-bottom: 2px; }
 .flow + .flow { margin-top: 36px; }
@@ -132,6 +133,8 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .ho > div { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); }
 .ho dt { font-size: 14px; font-weight: 700; line-height: 1.65; }
 .ho dd { font-size: 15px; line-height: 1.7; color: var(--ink-2); }
+.ho.comp { margin-top: 8px; }
+.ho.comp dd b { color: var(--ink); font-weight: 700; }
 .wk-principles { margin-top: 44px; }
 .orb-stage { background: #071214; color: var(--on-dark); border-radius: 16px; padding: clamp(28px, 4vw, 56px); margin-top: 28px; }
 .orb-title { font-size: 13px; font-weight: 700; color: var(--on-dark-2); margin-bottom: 24px; }
@@ -265,6 +268,9 @@ html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .frame figcaption, .wide figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 14px; line-height: 1.6; }
 .wide { margin-bottom: 8px; }
 .wide img { border-radius: 12px; }
+.zoom { display: block; cursor: zoom-in; }
+.tok-fig { margin-top: 40px; }
+.tok-android { max-width: 640px; margin: 40px 0 0; }
 .pair { margin: 56px 0; }
 .ship { border-top: 1px solid var(--ink); margin-bottom: 28px; }
 .ship li { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
@@ -321,6 +327,12 @@ html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .case-card:hover { transform: translateY(-2px); box-shadow: 0 30px 60px -40px rgba(0,0,0,0.4); }
 .case-media { background: #111; }
 .case-media img { width: 100%; height: auto; }
+.home-hero-img { margin: clamp(36px, 5vw, 64px) 0 0; }
+.home-hero-img img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.case-media.phones { aspect-ratio: 1600 / 840; display: flex; justify-content: center; align-items: flex-start; gap: 5%; padding-top: 6%; overflow: hidden; background: #17110f; }
+.case-media.phones img { width: 27%; border-radius: 14px; }
+.home-hero-img.phones { aspect-ratio: 16 / 10; border-radius: 14px; }
+.case-media.phones.wk-phones { background: #0a0d0e; }
 .case-text { padding: clamp(28px, 3.4vw, 48px); display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: end; }
 .case-b { display: flex; flex-direction: column; }
 .case-b .case-stats { margin-top: 0; }

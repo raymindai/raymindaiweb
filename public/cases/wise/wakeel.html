@@ -29,9 +29,9 @@
     <div class="hero-copy">
       <p class="eyebrow"><span>Case 01</span><span>2026</span><span>Abu Dhabi DGE</span></p>
       <h1>Wakeel<span>AI decisions matched to the weight of each approval</span></h1>
-      <p class="lede">A mobile app where AI reads the approvals and requests that reach a senior decision-maker first, and attaches a recommendation. So that the busiest person in the organisation can trust AI with approvals that cannot be undone, I designed a decision flow matched to the weight of each approval, and a face for Wakeel. I set the direction, and a team of AI agents builds options on the real app code and refines them within minutes. What a review settles goes to the development team as documents they can build from directly.</p>
+      <p class="lede">A mobile app where AI reads the approvals and requests that reach a senior decision-maker first, and attaches a recommendation. So that the busiest person in the organisation can trust AI with approvals that cannot be undone, I lead its experience design. I decided that each approval opens to the depth its weight deserves, that every action waits five seconds with undo in reach, and that Wakeel has one face, an orb in eight states, on every screen. What a review settles goes to the development team as documents they can build from directly.</p>
       <dl class="facts">
-        <div><dt>Role</dt><dd>Experience design lead. UX, presence, prototypes, developer handoff</dd></div>
+        <div><dt>Role</dt><dd>Product Experience Lead. UX, presence, prototypes, developer handoff</dd></div>
         <div><dt>Period</dt><dd>Since August 2026, ongoing</dd></div>
         <div><dt>Integrations</dt><dd>Oracle ERP approvals, Outlook decision requests</dd></div>
         <div><dt>Way of working</dt><dd>Design hub, options on real app code, refinement through comments, developer handoff</dd></div>
@@ -158,7 +158,7 @@
         <li><b>Changes that started from a comment</b>61 of 253 records</li>
       </ul>
     </div>
-    <figure class="thread-fig"><img src="../assets/img/wk-hub-thread.jpg" width="1040" height="1166" alt="A comment thread in the hub: an English comment, then the agent's in-progress and done replies" loading="lazy" decoding="async"><figcaption>A real comment in the hub and the agent's replies. Comment at 14:11, work started at 14:15, applied at 14:25. The revised sheet is A3 below.</figcaption></figure>
+    <figure class="thread-fig"><img src="../assets/img/wk-hub-thread.jpg" width="1040" height="1166" alt="A comment thread in the hub: an English comment, then the agent's in-progress and done replies" loading="lazy" decoding="async"><figcaption>A real comment in the hub (spelling corrected) and the agent's replies. Comment at 14:11, work started at 14:15, applied at 14:25. The revised sheet is A3 below.</figcaption></figure>
   </div>
 
   <h3 class="sub">Example: "Oracle approvals look like email replies"</h3>
@@ -203,6 +203,15 @@
     <figure><img src="../assets/img/wk-undo-d.jpg" width="780" height="1688" alt="Undo alert D" loading="lazy" decoding="async"><figcaption><b>D, a wide button</b>The default, with one undo under the text</figcaption></figure>
   </div>
   <p class="cap">After a comment on 2 November, "Send now" was dropped and the rest laid out four ways. D is the default, and all four are switched on in the same app, to be settled in the next review.</p>
+  <h3 class="sub" id="components">Components and states</h3>
+  <dl class="ho comp">
+    <div><dt>Orb</dt><dd><b>States</b> idle, listening, thinking, speaking, working, waiting for you, done, offline. Listening, thinking, working and waiting for you must read apart without a text label at 58 points. <b>Rules</b> the same size in every state, only material and motion change; the letter gives way to a count, a done mark or an envelope for a moment. <b>Accessibility</b> stills under Reduce Motion and in the background, and becomes a still image where shaders are not available. <b>Where</b> the tab bar, decision screens and Ask Wakeel, in place of the sparkle icon and three dots.</dd></div>
+    <div><dt>Decision card</dt><dd><b>Content</b> source, title, summary and one key fact; the button is Wakeel's recommendation. <b>Variants</b> quick approve when the checks raise no issue; the recommended answer and its colour first when they do.</dd></div>
+    <div><dt>Recommendation depth</dt><dd><b>Variants</b> one block for a safe quick approve; the recommendation, the checks and what will go to Oracle; reasoning and conditions for handovers, tenders, multi-year costs and answers other than approve. <b>Contract</b> per decision: whether quick approve is allowed, the checks, the depth and the Oracle approval order.</dd></div>
+    <div><dt>Undo alert</dt><dd><b>Rule</b> every action waits five seconds; the button shows progress only, the alert above holds the seconds left and undo, and several actions stack into one alert. <b>Variants</b> A to D above, D the default, all four switched on in the same app until the next review.</dd></div>
+    <div><dt>Count badge</dt><dd><b>Where</b> the tab bar, the app icon badge and the badge value in push. <b>States</b> hidden at 0, 99+ above 99, the last value while loading, mirrored for Arabic. <b>Done when</b> approving one item lowers the tab, list and app icon counts together, without a refresh.</dd></div>
+    <div><dt>Approval sheet</dt><dd><b>Rules</b> the title is the subject alone and the answer is only on the button; the platform colour fades down from the top edge; the approval chain ("What happens next"), the note and other actions fold behind one-line rows, and the note opens by itself for Reject.</dd></div>
+  </dl>
   </div>
 </section>
 
@@ -247,6 +256,20 @@
     <figure><img src="../assets/img/wk-orb-ctx-1.jpg" width="518" height="1125" alt="A decision screen, with the orb left of the input" loading="lazy" decoding="async"><figcaption><b>Decision screen</b>Where the orb disappears today. It takes the spot left of the input, so Wakeel is on every screen</figcaption></figure>
     <figure><img src="../assets/img/wk-orb-ctx-2.jpg" width="518" height="1125" alt="Ask Wakeel, with a small orb next to the title" loading="lazy" decoding="async"><figcaption><b>Ask Wakeel</b>A small orb next to the title thinks and speaks, in place of the sparkle icon and three dots</figcaption></figure>
   </div>
+  
+  <h3 class="sub" id="live">In the live prototype</h3>
+  <div class="prose">
+    <p>I turned the version where the orb leads the conversation from the centre of the screen into a prototype that actually runs. Tap to talk, hold to dictate, double-tap for shortcuts. Wakeel opens with one paragraph on what it did overnight, answers a request with a plan of who does what, and brings up what is stuck before asking how to handle it.</p>
+  </div>
+  <div class="flow six live-flow">
+    <figure><video src="../assets/img/wk-live-orb.mp4" poster="../assets/img/wk-live-1.jpg" width="780" height="1688" muted loop playsinline preload="metadata" aria-label="The Wakeel prototype first screen: an orb holding the number 4, slowly turning"></video><script>(function(){var v=document.currentScript.previousElementSibling;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)v.play().catch(function(){});})()</script><figcaption><b>Idle</b>Four things wait for you. The count sits in the orb, the first thing to read above it</figcaption></figure>
+    <figure><img src="../assets/img/wk-live-3.jpg" width="780" height="1688" alt="Hold to dictate: the orb warms red with a microphone inside" loading="lazy" decoding="async"><figcaption><b>Listening</b>Hold to dictate. The orb warms red and shows a microphone</figcaption></figure>
+    <figure><img src="../assets/img/wk-live-4.jpg" width="780" height="1688" alt="A request answered as a six-step plan, each step with who does it and whether to ask first" loading="lazy" decoding="async"><figcaption><b>Answering with a plan</b>The request becomes six steps, each with who does it and whether to ask first</figcaption></figure>
+    <figure><img src="../assets/img/wk-live-5.jpg" width="780" height="1688" alt="Wakeel brings up a stuck matter and asks how to handle it, the last words still appearing" loading="lazy" decoding="async"><figcaption><b>Speaking</b>It brings up what is stuck and asks how to handle it. Words appear as it speaks</figcaption></figure>
+    <figure><img src="../assets/img/wk-live-6.jpg" width="780" height="1688" alt="Shortcuts after a double-tap: quiet, new task, record a meeting, next agenda, all tasks, needs me" loading="lazy" decoding="async"><figcaption><b>Shortcuts</b>Double-tap for quiet, a new task, recording a meeting, the next agenda item and what needs you</figcaption></figure>
+    <figure><img src="../assets/img/wk-live-2.jpg" width="780" height="1688" alt="The same first screen in light, with the milk-glass orb" loading="lazy" decoding="async"><figcaption><b>Light</b>The same first screen, with the milk-glass orb</figcaption></figure>
+  </div>
+  <p class="cap">Captured at phone size from the prototype running in the hub. The people and tasks are sample data.</p>
   <p class="label ho-label">Ten places the orb should be, from first priority</p>
   <dl class="ho">
     <div><dt>Tab bar</dt><dd>Today a flat circle with no motion. It breathes when idle, warms when waiting for you, carries light when agents work, and listens on a long press</dd></div>
@@ -362,6 +385,6 @@
   </div>
 </footer>
 <script src="../assets/wk-orb.js" defer></script>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="19:02 한국 시간 (두바이 14:02)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="21:18 한국 시간 (두바이 16:18)"></script>
 </body>
 </html>
