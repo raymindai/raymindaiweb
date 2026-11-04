@@ -43,7 +43,7 @@
       "permanent": false
     },
     {
-      "source": "/cases/:ed(en|ai|wise|makinarocks)",
+      "source": "/cases/:ed(en|ai|wise|deel|beam|makinarocks)",
       "destination": "/cases/:ed/",
       "permanent": false
     }
