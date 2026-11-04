@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kai's Greedy Loop: tuned by a bot, then rebuilt for people | Hyunsang Cho</title>
+<meta name="description" content="A case study on Kai's Greedy Loop, a one-finger arcade roguelite: the bot that balanced it, the leaderboard that disagreed, and the first minute rebuilt for people.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="case gl">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Hyunsang Cho</a>
+    <nav class="menu">
+      <a href="index.html#cases" aria-current="page">Case studies</a>
+      <a href="how-i-work.html">How I work</a>
+      <a href="index.html#earlier">Earlier work</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero dark">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>Case 01</span><span>2026</span><span>Raymind.AI</span></p>
+      <h1>Kai's Greedy Loop<span>Tuned by a bot, then rebuilt for people</span></h1>
+      <p class="lede">A one-finger arcade roguelite that I design and build at my studio, with AI agents writing all of its code. A bot with perfect reflexes balanced it to a median run of 220 seconds. On the real leaderboard, people's median run was 21 to 26 seconds. So I gave the bot a person's limits, judged each build on its own runs, and rebuilt the first minute so the game's two moves are learnt by doing them.</p>
+      <a class="live" href="https://greedyloop.com" target="_blank" rel="noopener">greedyloop.com<i>↗</i></a>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Game design, art direction, balance, playtesting, development (Claude Code)</dd></div>
+        <div><dt>Period</dt><dd>First commit 22 August 2026, live and still changing</dd></div>
+        <div><dt>Platform</dt><dd>The web (greedyloop.com and dopaplay.io) and Google Play</dd></div>
+        <div><dt>Team</dt><dd>Solo. AI agents write the code; I direct the design and review every change</dd></div>
+      </dl>
+    </div>
+    <div class="hero-phones">
+      <video class="gv phone" src="../assets/img/game-greedyloop.mp4" poster="../assets/img/game-greedyloop.jpg" width="540" height="960" muted loop playsinline preload="none" aria-label="Kai's Greedy Loop gameplay: a creature runs a ring track around a crystal"></video>
+      <img src="../assets/img/gl-tap.jpg" width="646" height="1400" alt="The lesson's first beat: the world slows and the bubble over Kai says TAP!" class="phone" decoding="async">
+    </div>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="Sections of this case"><div class="wrap subnav-in"><a href="#intro">Intro</a><a href="#summary">Summary</a><a href="#product">Product</a><a href="#problem">01 Problem</a><a href="#why">02 Why</a><a href="#process">03 Process and choices</a><a href="#result">04 Results</a><a href="#learn">05 What I learned</a></div></nav>
+
+<section class="intro" id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-text">
+      <p class="label">About the project</p>
+      <p>Kai's Greedy Loop is a one-finger arcade roguelite. A small creature runs around a loop: tap to change lane; hold, then let go, to lock in what you have eaten. That is the whole rule. There are 64 creatures to collect, each with seven stages of evolution, and six worlds, each with its own palette, joined by gates.</p><p>I started it on 22 August 2026. It is past 1,200 commits, and I have not typed a line of its code. AI agents write the code and run the builds and checks; I look at the screen, because they cannot, and say exactly what is wrong. On day one the agents also built a bot that plays the game thousands of times, and the game was balanced with it.</p>
+    </div>
+    <dl class="intro-list">
+      <div><dt>What I decide</dt><dd>The rules, the feel, the art direction, and what gets cut</dd></div><div><dt>What the agents do</dt><dd>The code, builds and checks, and bots that play the game thousands of times</dd></div><div><dt>Instruments</dt><dd>A perfect bot, a bot with a person's limits, every posted run tagged with its build, and play events from the live game</dd></div><div><dt>AI in the art</dt><dd>Much of the 3D models, art, music and voices began with AI tools. I choose, refine and place every piece, and nothing is generated while you play</dd></div><div><dt>Live</dt><dd>greedyloop.com, dopaplay.io and Google Play</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="summary" id="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <dl class="qa">
+        <div><dt>The player problem I set out to solve</dt><dd>The game was balanced by a bot with perfect reflexes, and its median run of 220 seconds sat right on target. On the leaderboard, people's median run was 21 to 26 seconds. The most active tester played 99 runs in three days, died in the first world in 87 of them, and did not come back.</dd></div><div><dt>Why it mattered</dt><dd>What I had built was not reaching anyone: five of the six worlds had been seen by no player but me. The bottleneck was the first gate. Lowering the thresholds later in a run did not help; getting a person through the first minute would.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>I gave the bot a person's limits, so it could answer the question the perfect bot never could: does a person get past the first gate. I tagged every run with its build, and rebuilt the first minute as a lesson on the real road, where the two moves are learnt by doing them.</dd></div><div><dt>Results and what I learned</dt><dd>The first minute is now three beats with nothing that can kill you, and the hold is learnt by doing it. Whether more people now pass the first gate is not measured yet: the old board mixed four weeks of builds, and in practice there is one regular player, me. That gap is the main lesson.</dd></div>
+      </dl>
+      <div class="stats">
+        <div class="stat"><b>220 / 22</b><span>Median seconds per run: the perfect bot,<br>then people on the leaderboard</span></div><div class="stat"><b>87 of 99</b><span>Runs the most active tester<br>ended in the first world</span></div><div class="stat"><b>3 beats</b><span>The rebuilt first minute: tap,<br>hold and release, break a block</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec " id="product">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">00</span><span class="sec-label">Product</span></div>
+    <h2 class="sec-title">One finger, two moves.</h2></div>
+    
+  <div class="split">
+    <div class="prose">
+      <p>The goal on day one was one rule, no two runs alike, and a game you could play for years. Tap to change lane. Hold, then let go, to lock in what you have eaten. Everything else in the game has to be read from that one finger: dodge the blocks, carry the creatures, decide how long to stay greedy before you bank.</p>
+      <p>The first build was a flat 2D circle. Today the same rule runs in 3D across six worlds, and every gate is a door between two worlds that look nothing alike.</p>
+      <p><a href="https://dopaplay.io/en/greedyloop">dopaplay.io/en/greedyloop</a> plays it in the browser.</p>
+    </div>
+    <div class="gl-phones">
+      <figure><img src="../assets/img/gl-day1.jpg" width="647" height="1400" alt="Day one: a flat 2D circle with a HOLD button" loading="lazy" decoding="async"><figcaption><b>Day one, 22 August</b>A flat 2D circle</figcaption></figure>
+      <figure><img src="../assets/img/gl-today.jpg" width="787" height="1400" alt="Now: the same loop in 3D around a blue crystal" loading="lazy" decoding="async"><figcaption><b>Now</b>The same rule, in 3D</figcaption></figure>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="problem">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">01</span><span class="sec-label">The player problem I set out to solve</span></div>
+    <h2 class="sec-title">The bot lasted 220 seconds. People lasted 22.</h2></div>
+    
+  <div class="split">
+    <div>
+      <p class="prose-p">Every balance target in the game was a number from a bot with perfect reactions, and the bot was on target. Then I read the real leaderboard and wrote to the agents: "A person playing and you playing are different."</p>
+      <table class="tbl gl-vs">
+        <thead><tr><th></th><th>Perfect bot</th><th>People on the leaderboard</th></tr></thead>
+        <tbody>
+          <tr><td>Median run</td><td>220 seconds</td><td>21 to 26 seconds</td></tr>
+          <tr><td>Longest tenth of runs</td><td>395 seconds and up</td><td>56 to 86 seconds and up</td></tr>
+          <tr><td>Reaching the third world or beyond</td><td>Most runs</td><td>2 runs in about 200</td></tr>
+        </tbody>
+      </table>
+      <p class="cap">The bot is a sweep at the balance setting of the time. The leaderboard was read on 21 September 2026: 758 runs from 84 named players besides me, across four weeks of a game that changed every day.</p>
+    </div>
+    <div class="evid">
+      <div class="ev"><b>87 of 99</b><p>Runs the most active tester ended in the first world, over three days. After the third day they did not come back.</p></div>
+      <div class="ev"><b>5 of 6</b><p>Worlds that no player but me had seen, along with most of the late-game events.</p></div>
+      <div class="ev"><b>1</b><p>Regular player, in practice: me. So the board could say that people last far less long than the bot, and not much more.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="why">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">02</span><span class="sec-label">Why the problem mattered</span></div>
+    <h2 class="sec-title">A target met by a bot said nothing about the game a person gets.</h2></div>
+    
+  <div class="three">
+    <div><h3>What I built was not being played</h3><p>Most of the worlds, creatures and events in the game sat beyond a point that almost nobody but me reached. Every week spent on later content was a week spent on something unseen.</p></div>
+    <div><h3>The first gate was the bottleneck</h3><p>Lowering the thresholds later in a run did not change anything, because people never got there. Surviving the first gate did. The first minute was the whole problem.</p></div>
+    <div><h3>People skipped the second move</h3><p>Many players went through without ever learning to hold and release. Without the release, nothing you eat is locked in, so they were playing half a game.</p></div>
+  </div>
+  <p class="decide">So the order was set: get a person through the first minute before tuning anything that comes after it.</p>
+  </div>
+</section>
+
+
+<section class="sec " id="process">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">03</span><span class="sec-label">How I went about it, and what I chose</span></div>
+    <h2 class="sec-title">I changed the instruments first, then the first minute.</h2></div>
+    
+  <div class="choices">
+    <div><span class="k">Choice 1</span><h3>Give the bot a person's limits</h3><p>The agents added profiles to the bot, each with a reaction time, a timing error and the odd late move: perfect, human (0.25 seconds) and slow (0.4 seconds). A sweep plays each profile and prints the share of runs that pass each gate.</p></div>
+    <div><span class="k">Choice 2</span><h3>Judge the build, not the history</h3><p>Every posted run carries its build number, what killed it, how far it got, and whether it came from my own test browser, so my test runs sit apart from my real ones.</p></div>
+    <div><span class="k">Choice 3</span><h3>Teach on the real road</h3><p>My direction to the agents: pace it so people understand, and no separate difficulty setting. There is no tutorial screen. A first run opens on the lesson, with a real block, a real hoard and a real release.</p></div>
+    <div><span class="k">Choice 4</span><h3>Nothing lethal, nobody trapped</h3><p>Nothing can kill you during the lesson. Each beat has a fail-safe in real seconds, and a block you bump gets one more try, so a beginner can get every beat wrong and still be running.</p></div>
+    <div><span class="k">Choice 5</span><h3>Cut what the player has to think about</h3><p>On day eight the game had 18 mutations, 8 fusions, turrets and mystery boxes, all working. I wrote: "All that matters in play is dodging well." Two days later they were gone.</p></div>
+  </div>
+
+  <h3 class="sub">The first minute, rebuilt as three beats</h3>
+  <figure class="gl-wide"><a class="zoom" href="../assets/img/gl-lesson.jpg" target="_blank" rel="noopener"><img src="../assets/img/gl-lesson.jpg" width="1400" height="607" alt="The lesson in five frames: TAP!, HOLD, RELEASE!, NOT NOW! and HOLD, with the line for each beat at the top" loading="lazy" decoding="async"></a><figcaption>The lesson as it played in mid-September. Its third beat has since changed: you no longer tap round the block, the dash breaks it. Select to see it full size.</figcaption></figure>
+  <div class="three" style="margin-top: 36px">
+    <div><h3>1. Tap</h3><p>A block sits dead ahead in your lane. The world slows to a third, an X stands on the blocked lane and a ring on the way past, and the bubble over Kai says the verb. A tap out of the lane answers it.</p></div>
+    <div><h3>2. Hold, then release</h3><p>A line of creatures in your lane. With three carried and the road clear, the bubble says HOLD and a ring fills under your thumb, then it says RELEASE. Letting go dashes and frees the creatures.</p></div>
+    <div><h3>3. Break a block</h3><p>A block ahead in your lane. The lesson asks for the hold well before it, and says RELEASE only once the block is in the dash's reach. The dash breaks it, and a bounce or a missed block gets one more go.</p></div>
+  </div>
+  <p class="cap">Each success cheers in the bubble and names the move: THAT'S HOW YOU CHANGE LANE, FREE THEM, BREAK A BLOCK. HOW TO PLAY can replay the lesson at any time.</p>
+
+  <h3 class="sub">When people still skipped the hold</h3>
+  <div class="split">
+    <div class="prose">
+      <p>Five days later, players were still getting through without learning the hold. So the hold became something you can only learn by doing it.</p>
+      <p>The lesson waits on the hold, with a ring under your thumb that shows HOLD, then RELEASE. A lesson that ends without a release opens the next run on that beat. Until a player's first release, an ordinary run suggests it whenever three creatures are carried. The first release is called out, YOU'VE GOT IT!, in 12 languages.</p>
+    </div>
+    <figure class="gl-wide" style="margin-top: 0"><a class="zoom" href="../assets/img/gl-dock.jpg" target="_blank" rel="noopener"><img src="../assets/img/gl-dock.jpg" width="1440" height="900" alt="The tuning dock in the browser: sliders for speed, tier climb and hazard density, beside the running game" loading="lazy" decoding="async"></a><figcaption>The tuning dock the agents built for me, so I can change speed, climb and hazard density while the game runs and judge the feel myself.</figcaption></figure>
+  </div>
+
+  <h3 class="sub">Art direction in one line</h3>
+  <div class="split">
+    <div class="prose">
+      <p>On day two, image models gave me four looks in a day: glossy with thick outlines, flat vector, big sticker eyes and a pink glow from nowhere. I binned all four. Each piece had been styled on its own, and nothing agreed where the light came from.</p>
+      <p>The brief I wrote was one line: "The whole thing has to be beautiful." The agents measured the screen before painting anything. Contrast was fine; the whole world was one colour. It needed light, so that same day the game moved to 3D.</p>
+    </div>
+    <div class="gl-two">
+      <figure><img src="../assets/img/gl-glossy.jpg" width="800" height="800" alt="One of the four rejected looks: a glossy orange blob with big eyes" loading="lazy" decoding="async"><figcaption><b>Binned</b>One of four looks from day two</figcaption></figure>
+      <figure><img src="../assets/img/gl-3d.jpg" width="1400" height="788" alt="The same day in 3D: the loop around a lit crystal" loading="lazy" decoding="async"><figcaption><b>Kept</b>The same day, in 3D</figcaption></figure>
+    </div>
+  </div>
+
+  <h3 class="sub">The same method on my other games</h3>
+  <div class="three">
+    <div><h3>POPCHAIN: a target before the tuning</h3><p>Each of the 300 levels is designed with a target win rate for a casual player first. Bots at three reaction speeds, from 0.55 to 1.5 seconds, play every level, and the tuner adjusts the level until the casual win rate fits.</p></div>
+    <div><h3>DOPA DASH: the bots caught a wrong floor</h3><p>A normal bot was clearing the HARD levels over 95% of the time against a 50 to 62% target. A rule that even a beginner must clear 15 to 20% was binding first. I lowered it and retuned 60 levels: the beginner's pass rate on hard levels fell from about 25% to 6 to 19%. I stopped there, because lower would make walls for beginners.</p></div>
+    <div><h3>DOPA DASH: a rule I could not read</h3><p>Playing it myself, I could not tell how to score PERFECT. So the drill moved onto the real field, with a timing bar under the beat and a calibration that corrects a device's sound delay, as with Bluetooth earphones.</p></div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="result">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">Results</span></div>
+    <h2 class="sec-title">The first minute changed. Whether more people pass the first gate is not measured yet.</h2></div>
+    
+  <div class="split result-split">
+    <div>
+      <p class="label">What changed, and when</p>
+      <table class="tbl">
+        <thead><tr><th>What changed</th><th>When</th><th>State</th></tr></thead>
+        <tbody>
+          <tr><td>A first run opens on a three-beat lesson, with nothing lethal</td><td>19 September</td><td>Live</td></tr>
+          <tr><td>The bot gets a person's limits; first-gate pass rate per profile</td><td>21 September</td><td>In the tools</td></tr>
+          <tr><td>Every posted run tagged with its build</td><td>21 September</td><td>In place</td></tr>
+          <tr><td>The hold is learnt by doing it, in 12 languages</td><td>24 September</td><td>Live</td></tr>
+          <tr><td>DOPA DASH hard levels retuned: beginner pass rate about 25% to 6 to 19%</td><td>28 September</td><td>Live</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="biz">
+      <p class="label">What I cannot claim yet</p>
+      <div class="ev"><b>Not yet</b><p>Whether more people pass the first gate since the lesson. The old board mixed four weeks of builds, and in practice it had one regular player.</p></div>
+      <div class="ev"><b>Next</b><p>The leaderboard moved to the dopaplay.io server on 27 September. Its rows keep each run's build, seconds and furthest world, but not yet what ended the run, so first-minute numbers per build need a read path there.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec sec-learn" id="learn">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">05</span><span class="sec-label">What I learned</span></div>
+    <h2 class="sec-title">Five lessons from tuning a game with bots and people</h2></div>
+    <ol class="learn">
+  <li>
+    <span class="learn-n">01</span>
+    <div class="learn-body">
+      <h3>A bot that plays your game is not a player</h3>
+      <p>The perfect bot answered whether a run could be won. It could not answer whether a person would get it. It hit its target while people lasted about a tenth as long.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">02</span>
+    <div class="learn-body">
+      <h3>Give AI a person's limits before trusting its numbers</h3>
+      <p>A bot with a late reaction, a timing error and the odd late move was the only instrument that could ask the question that mattered: does a person get past the first gate.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">03</span>
+    <div class="learn-body">
+      <h3>Teach a move by having people do it</h3>
+      <p>The lesson uses a real block, a real hoard and a real release, with nothing that can kill you. Each success names the move that was just made, so the first minute is a run of small wins, not a list of orders.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">04</span>
+    <div class="learn-body">
+      <h3>Cutting is the designer's call</h3>
+      <p>In one week the agents built 18 mutations and 8 fusions, and all of them worked. Taking them out made the game better. The code can be handed to AI; what stays in the game cannot.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">05</span>
+    <div class="learn-body">
+      <h3>Judge the build in front of you</h3>
+      <p>A board that mixes four weeks of a game that changed every day can show that people last far less long than the bot, but not whether today's build is better. Every run now carries its build, and the next step is enough people per build to call it.</p>
+    </div>
+  </li>
+</ol>
+  </div>
+</section>
+
+<nav class="case-nav"><div class="wrap case-nav-in">
+  <span></span>
+  <a class="next" href="cookierun-vr.html"><span>Next case</span>CookieRun VR</a>
+</div></nav>
+<script>(function(){var vs=[].slice.call(document.querySelectorAll('video.gv'));if(!vs.length||matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.play().catch(function(){});}else{e.target.pause();}});},{threshold:0.25});vs.forEach(function(v){io.observe(v);});})();</script>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-kicker">More</p>
+    <h2 class="foot-title">The full archive of earlier work is at <a href="https://hyunsangcho.com/portfolio">hyunsangcho.com</a>,<br>and what I am building now is at <a href="https://raymind.ai">raymind.ai</a>.</h2>
+    <div class="foot-grid">
+      <div><span>Email</span><a href="mailto:hi@raymind.ai">hi@raymind.ai</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ronincho">linkedin.com/in/ronincho</a></div>
+      <div><span>Full career</span><a href="https://hyunsangcho.com/about">hyunsangcho.com/about</a></div>
+      <div><span>Languages</span>Korean and English</div>
+    </div>
+    <p class="foot-note">© 2026 Hyunsang Cho</p>
+  </div>
+</footer>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="06:24 한국 시간 (두바이 01:24)"></script>
+</body>
+</html>

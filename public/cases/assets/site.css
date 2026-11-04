@@ -14,6 +14,8 @@
 body.paldo { --accent: #c2412a; --dark: #1b1310; --on-dark-2: #c6b8ad; }
 body.mw { --accent: #2b47e6; --dark: #0d0d0f; }
 body.wk { --accent: #13877a; --dark: #0e1312; --on-dark-2: #a7b8b4; }
+body.gl { --accent: #5b3fd0; --dark: #0d1020; --on-dark-2: #aeb3c8; }
+body.cr { --accent: #c2410c; --dark: #1a120d; --on-dark-2: #cbb8a6; }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 116px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.78; letter-spacing: -0.012em; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: 'tnum' 0; }
@@ -300,6 +302,44 @@ html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .games video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 14px; background: #111; border: 1px solid var(--line); }
 .games figcaption { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin-top: 12px; }
 .games figcaption b { display: block; color: var(--ink); font-size: 15.5px; margin-bottom: 2px; }
+.games a.gplay { display: block; }
+.games .play { display: flex; align-items: baseline; gap: 6px; width: fit-content; max-width: 100%; margin-top: 10px; font-size: 13.5px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.games .play::before { content: '\25B6\FE0E'; flex: none; font-size: 9px; color: #c2412a; }
+@media (max-width: 760px) { .games .play { font-size: 12.5px; gap: 5px; } }
+.games .play:hover { text-decoration: underline; }
+.games-cap a { color: inherit; }
+/* Kai's Greedy Loop case (DeepMind edition) */
+.hero-phones video { display: block; width: 100%; height: auto; }
+.gl-phones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); }
+.gl-phones img { border-radius: 14px; }
+.gl-phones figcaption, .gl-two figcaption, .gl-wide figcaption { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin-top: 12px; }
+.gl-phones figcaption b, .gl-two figcaption b { display: block; color: var(--ink); font-size: 14.5px; margin-bottom: 2px; }
+.gl-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.776fr); gap: clamp(16px, 2vw, 28px); align-items: start; margin-top: 8px; }
+.gl-two img, .gl-wide img { border-radius: 12px; }
+.gl-wide { margin: 40px 0 0; }
+.cr-trailer { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.08); }
+.cr-trailer img, .cr-trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.cr-trailer .cr-play { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: baseline; gap: 9px; padding: 10px 16px 11px; border-radius: 999px; background: rgba(12,8,6,0.78); color: #fff; font-size: 14.5px; font-weight: 700; transition: background .2s ease; }
+.cr-trailer .cr-play::before { content: '\25B6\FE0E'; font-size: 10px; color: #ff8a3d; }
+.cr-trailer:hover .cr-play { background: #c2410c; }
+.cr-cap { font-size: 13px; line-height: 1.55; color: var(--on-dark-2); margin-top: 12px; }
+.cr-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); align-items: start; margin-top: 8px; }
+.cr-pair img, .cr-wide img { border-radius: 10px; border: 1px solid var(--line); }
+.cr-pair figcaption, .cr-wide figcaption { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin-top: 10px; }
+.cr-pair figcaption b { display: block; color: var(--ink); font-size: 14.5px; margin-bottom: 2px; }
+.cr-wide { margin: 40px 0 0; }
+.cr-text .prose { max-width: 760px; margin-bottom: 28px; }
+.tbl.cr-vs td:nth-child(2), .tbl.cr-vs td:nth-child(3) { white-space: normal; font-weight: 400; font-size: 14px; color: var(--ink-2); width: 40%; }
+.tbl.cr-vs td:nth-child(2) { color: var(--ink); }
+@media (max-width: 760px) { .tbl.cr-vs td:nth-child(2), .tbl.cr-vs td:nth-child(3) { font-size: 13px; } html[lang="en"] .tbl.cr-vs td:first-child { width: 22%; } }
+@media (max-width: 760px) { .cr-pair { grid-template-columns: 1fr; } .cr-trailer .cr-play { left: 10px; bottom: 10px; font-size: 13px; padding: 8px 13px 9px; } }
+.tbl.gl-vs td:first-child { color: var(--ink); font-weight: 600; }
+.tbl.gl-vs { display: table; } .tbl.gl-vs thead { display: table-header-group; } .tbl.gl-vs tbody { display: table-row-group; }
+.tbl.gl-vs tr { display: table-row; padding: 0; } .tbl.gl-vs td { display: table-cell; padding: 15px 12px 15px 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 760px) { .tbl.gl-vs { font-size: 13px; } .tbl.gl-vs th { font-size: 12px; } html[lang="en"] .tbl.gl-vs td:first-child { width: 34%; } }
+@media (max-width: 760px) { .gl-two { grid-template-columns: 1fr; } }
+.prod .go { display: inline-block; margin-top: 10px; font-size: 13.5px; font-weight: 700; color: var(--ink); }
+.prod .go::after { content: ' →'; }
 .games-cap { margin: 14px 0 44px; }
 .games-h { font-size: 19px; letter-spacing: -0.01em; margin: 6px 0 0; }
 .games.wide { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 24px; margin-top: 18px; }
@@ -352,6 +392,8 @@ html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .case-card.paldo .case-no { color: #c2412a; }
 .case-card.mw .case-no { color: #2b47e6; }
 .case-card.wk .case-no { color: #13877a; }
+.case-card.gl .case-no { color: #5b3fd0; }
+.case-card.cr .case-no { color: #c2410c; }
 .case-text h3 { font-family: var(--display); font-size: clamp(30px, 3.2vw, 42px); letter-spacing: -0.045em; line-height: 1.12; margin: 14px 0 16px; }
 .case-text h3 span { display: block; font-size: 0.5em; letter-spacing: -0.03em; margin-top: 10px; color: var(--ink-2); line-height: 1.4; }
 .case-text p { font-size: 15.5px; line-height: 1.75; color: var(--ink-2); }
@@ -360,6 +402,8 @@ html[lang="en"] .tbl td:nth-child(2) { white-space: normal; }
 .case-card.paldo .case-stats b { color: #c2412a; }
 .case-card.mw .case-stats b { color: #2b47e6; }
 .case-card.wk .case-stats b { color: #13877a; }
+.case-card.gl .case-stats b { color: #5b3fd0; }
+.case-card.cr .case-stats b { color: #c2410c; }
 .more { margin-top: auto; font-size: 15px; font-weight: 700; }
 .more::after { content: ' →'; }
 .how-card { display: block; text-decoration: none; border: 1px solid var(--ink); border-radius: 14px; padding: clamp(28px, 3.4vw, 44px); background: var(--ink); color: var(--paper); }
