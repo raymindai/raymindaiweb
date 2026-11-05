@@ -43,7 +43,7 @@
       "permanent": false
     },
     {
-      "source": "/cases/:ed(en|ai|wise|deel|beam|blackrock|youtube|deepmind|kurly|makinarocks)",
+      "source": "/cases/:ed(en|ai|wise|deel|beam|blackrock|youtube|deepmind|kurly|makinarocks|meta|monzo|granola|deliveroo|fin)",
       "destination": "/cases/:ed/",
       "permanent": false
     }
