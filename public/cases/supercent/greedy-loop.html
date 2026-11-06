@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kai's Greedy Loop: 봇으로 맞추고, 사람에게 맞게 다시 만든 게임 | 조현상</title>
+<meta name="description" content="한 손가락 아케이드 로그라이트 Kai's Greedy Loop 케이스 스터디. 밸런스를 맞춘 봇, 그와 다르게 말한 순위표, 사람을 위해 다시 만든 첫 1분.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="case gl">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">조현상<span>Hyunsang Cho</span></a>
+    <nav class="menu">
+      <a href="index.html#cases" aria-current="page">케이스 스터디</a>
+      <a href="how-i-work.html">일하는 방식</a>
+      <a href="index.html#earlier">이전 작업</a>
+      <a href="index.html#contact">연락처</a><a class="out" href="https://raymind.ai">raymind.ai</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero dark">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>Case 01</span><span>2026</span><span>Raymind.AI</span></p>
+      <h1>Kai's Greedy Loop<span>봇으로 맞추고, 사람에게 맞게 다시 만든 게임</span></h1>
+      <p class="lede">제 스튜디오에서 기획하고 만드는 한 손가락 아케이드 로그라이트로, 코드는 전부 AI 에이전트가 씁니다. 반응이 완벽한 봇으로 밸런스를 맞추자 한 판 중앙값이 220초였습니다. 실제 순위표에서 사람의 한 판 중앙값은 <k-w>21~26초였습니다.</k-w> 그래서 봇에게 사람의 한계를 주고, 빌드마다 그 빌드의 판으로 판정하고, 게임의 두 동작을 직접 해 보며 배우도록 첫 1분을 다시 만들었습니다.</p>
+      <a class="live" href="https://greedyloop.com" target="_blank" rel="noopener">greedyloop.com<i>↗</i></a>
+      <dl class="facts">
+        <div><dt>역할</dt><dd>게임 기획, 아트 디렉션, 밸런스, 플레이테스트, <k-w>개발(Claude</k-w> Code)</dd></div>
+        <div><dt>기간</dt><dd>2026년 8월 22일 첫 커밋, 출시 뒤에도 계속 바뀌는 중</dd></div>
+        <div><dt>플랫폼</dt><dd><k-w>웹(greedyloop.com,</k-w> <k-w>dopaplay.io)과</k-w> Google Play</dd></div>
+        <div><dt>팀</dt><dd>1인. 코드는 AI 에이전트가 쓰고, 저는 기획을 이끌며 모든 변경을 검토합니다</dd></div>
+      </dl>
+    </div>
+    <div class="hero-phones">
+      <video class="gv phone" src="../assets/img/game-greedyloop.mp4" poster="../assets/img/game-greedyloop.jpg" width="540" height="960" muted loop playsinline preload="none" aria-label="Kai's Greedy Loop 플레이 화면: 크리처가 크리스털 둘레의 고리 트랙을 달립니다"></video>
+      <img src="../assets/img/gl-tap.jpg" width="646" height="1400" alt="레슨의 첫 단계: 세상이 느려지고 Kai 위 말풍선에 TAP!이 뜹니다" class="phone" decoding="async">
+    </div>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="이 케이스의 순서"><div class="wrap subnav-in"><a href="#intro">소개</a><a href="#summary">요약</a><a href="#product">제품</a><a href="#problem">01 문제</a><a href="#why">02 이유</a><a href="#process">03 과정과 선택</a><a href="#result">04 결과</a><a href="#learn">05 배운 것</a></div></nav>
+
+<section class="intro" id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-text">
+      <p class="label">프로젝트 소개</p>
+      <p>Kai's Greedy Loop는 한 손가락 아케이드 로그라이트입니다. 작은 크리처가 고리 모양의 길을 달립니다. 탭하면 차선을 바꾸고, 누르고 있다가 떼면 먹은 것을 확정합니다. 규칙은 그것이 전부입니다. 모을 크리처가 64종, 저마다 진화 7단계가 있고, 색이 다른 여섯 세계가 관문으로 이어집니다.</p><p>2026년 8월 22일에 시작했고, 저는 이 게임의 코드를 한 줄도 직접 치지 않았습니다. 코드와 빌드, 검사는 AI 에이전트가 하고, 저는 화면을 봅니다. 에이전트는 화면을 볼 수 없으니, 무엇이 틀렸는지 정확히 말해 주는 것이 제 일입니다. 첫날 에이전트는 게임을 수천 번 플레이하는 봇도 만들었고, 밸런스는 그 봇으로 맞췄습니다.</p>
+    </div>
+    <dl class="intro-list">
+      <div><dt>제가 정하는 것</dt><dd>규칙, 손맛, 아트 디렉션, 그리고 무엇을 덜어 낼지</dd></div><div><dt>에이전트가 하는 것</dt><dd>코드, 빌드와 검사, 게임을 수천 번 플레이하는 봇</dd></div><div><dt>측정 도구</dt><dd>완벽한 봇, 사람의 한계를 준 봇, 빌드가 붙은 모든 기록, 라이브 게임의 플레이 이벤트</dd></div><div><dt>아트에 쓴 AI</dt><dd>3D 모델, 아트, 음악, 목소리의 상당수가 AI 도구에서 시작했습니다. 조각마다 고르고 다듬고 배치하는 것은 저이고, 플레이 중에 생성되는 것은 없습니다</dd></div><div><dt>라이브</dt><dd>greedyloop.com, dopaplay.io, Google Play</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="summary" id="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <dl class="qa">
+        <div><dt>해결하려 했던 플레이어 문제</dt><dd>반응이 완벽한 봇으로 밸런스를 맞췄고, 한 판 중앙값 220초는 목표에 딱 맞았습니다. 순위표에서 사람의 한 판 중앙값은 <k-w>21~26초였습니다.</k-w> 가장 많이 한 테스터는 사흘 동안 99판을 했고, 그중 87판이 첫 세계에서 끝났고, 다시 오지 않았습니다.</dd></div><div><dt>왜 중요했나</dt><dd>만든 것이 누구에게도 닿지 않고 있었습니다. 여섯 세계 중 다섯은 저 말고 본 사람이 없었습니다. 병목은 첫 관문이었습니다. 뒤쪽 기준을 낮춰도 소용이 없었고, 사람이 첫 1분을 넘게 해야 했습니다.</dd></div><div><dt>어떤 과정으로, 어떤 선택을 했나</dt><dd>봇에게 사람의 한계를 주어, 완벽한 봇이 답할 수 없던 질문, 사람이 첫 관문을 넘는가에 답하게 했습니다. 모든 판에 빌드를 붙이고, 첫 1분을 진짜 길 위의 레슨으로 다시 만들어 두 동작을 직접 해 보며 배우게 했습니다.</dd></div><div><dt>결과와 배운 것</dt><dd>첫 1분은 이제 죽을 일 없는 세 단계이고, 누르고 떼기는 직접 해 보며 배웁니다. 더 많은 사람이 첫 관문을 넘는지는 아직 재지 못했습니다. 예전 순위표에는 4주치 빌드가 섞여 있었고, 꾸준히 하는 사람은 사실상 저 한 명이었습니다. 그 빈틈이 가장 큰 배움입니다.</dd></div>
+      </dl>
+      <div class="stats">
+        <div class="stat"><b>220 / 22</b><span>한 판 <k-w>중앙값(초):</k-w> 완벽한 봇,<br>그리고 순위표의 사람</span></div><div class="stat"><b>99판 중 87판</b><span>가장 많이 한 테스터의 판 가운데<br>첫 세계에서 끝난 판</span></div><div class="stat"><b>3단계</b><span>다시 만든 첫 1분: 탭,<br>누르고 떼기, 블록 부수기</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec " id="product">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">00</span><span class="sec-label">제품</span></div>
+    <h2 class="sec-title">손가락 하나, 동작 둘.</h2></div>
+    
+  <div class="split">
+    <div class="prose">
+      <p>첫날의 목표는 규칙 하나, 같은 판이 두 번 없는 게임, 몇 년이고 할 수 있는 게임이었습니다. 탭하면 차선을 바꿉니다. 누르고 있다가 떼면 먹은 것을 확정합니다. 나머지는 모두 그 손가락 하나로 읽혀야 합니다. 블록을 피하고, 크리처를 싣고 다니고, 확정하기 전에 얼마나 더 욕심을 낼지 정하는 것까지.</p>
+      <p>첫 빌드는 평평한 2D 원이었습니다. 지금은 같은 규칙이 여섯 세계에서 3D로 움직이고, 관문마다 전혀 다르게 생긴 두 세계 사이의 문이 됩니다.</p>
+      <p><a href="https://dopaplay.io/ko/greedyloop">dopaplay.io/ko/greedyloop</a>에서 브라우저로 해 볼 수 있습니다.</p>
+    </div>
+    <div class="gl-phones">
+      <figure><img src="../assets/img/gl-day1.jpg" width="647" height="1400" alt="첫날: HOLD 버튼이 있는 평평한 2D 원" loading="lazy" decoding="async"><figcaption><b>첫날, 8월 22일</b>평평한 2D 원</figcaption></figure>
+      <figure><img src="../assets/img/gl-today.jpg" width="787" height="1400" alt="지금: 파란 크리스털 둘레의 같은 고리를 3D로" loading="lazy" decoding="async"><figcaption><b>지금</b>같은 규칙을 3D로</figcaption></figure>
+    </div>
+  </div>
+
+  <h3 class="sub">여섯 세계, 규칙 하나</h3>
+  <div class="split">
+    <div class="prose">
+      <p>관문을 지날 때마다 Kai는 앞 세계와 전혀 다른 세계에 떨어집니다. 가만히 있는 길은 첫 길뿐이고, 그다음부터는 휘고, 숨 쉬듯 넓어졌다 좁아지고, 스스로를 가로지릅니다. 세계마다 새로운 골칫거리도 하나씩 생깁니다.</p>
+    </div>
+    <div class="prose">
+      <p>여섯 세계를 묶는 제 규칙은 하나입니다. 플레이어가 이미 아는 것은 몰래 다르게 움직이면 안 됩니다. 움직임이 바뀌면 모양도 바뀌어야 하니, 더 빠른 벽은 다른 벽처럼 보여야 합니다.</p>
+    </div>
+  </div>
+  <div class="gl-worlds">
+      <figure><img src="../assets/img/gl-w1.jpg" width="1600" height="900" alt="이끼 낀 둥근 길 위의 Kai, 가운데에 높은 파란 크리스털" loading="lazy" decoding="async"><figcaption><b>1. The Moss Ring</b>높은 파란 크리스털을 두른 이끼 낀 포석. 게임에서 유일하게 움직이지 않는 길입니다.</figcaption></figure>
+      <figure><img src="../assets/img/gl-w2.jpg" width="1600" height="900" alt="얕은 물 위로 난 길과 돌탑, 차선마다 선 빨간 벽" loading="lazy" decoding="async"><figcaption><b>2. The Pale Tide</b>얕은 물 아래 옅은 모래, 돌탑, 그리고 숨 쉬는 길.</figcaption></figure>
+      <figure><img src="../assets/img/gl-w3.jpg" width="1600" height="900" alt="버섯 돔 둘 사이에서 스스로를 가로지르는 8자 길" loading="lazy" decoding="async"><figcaption><b>3. The Spore Hollow</b>보랏빛 어둠 속 버섯 돔. 길이 스스로를 가로지르고, 차선이 하나 줄어듭니다.</figcaption></figure>
+      <figure><img src="../assets/img/gl-w4.jpg" width="1600" height="900" alt="빛나는 용암 위로 난 검은 바위 길" loading="lazy" decoding="async"><figcaption><b>4. The Magma Field</b>아래에서 빛이 올라오는 용암 호수 위의 갈라진 검은 바위. 길이 좁아지고, 좁아지는 자리가 움직입니다.</figcaption></figure>
+      <figure><img src="../assets/img/gl-w5.jpg" width="1600" height="900" alt="뼈로 된 길 위로 거대한 손이 내려옵니다" loading="lazy" decoding="async"><figcaption><b>5. The Spine</b>네잎클로버 모양으로 말린 뼈의 길, 그리고 바깥에서 뻗어 들어오는 손.</figcaption></figure>
+      <figure><img src="../assets/img/gl-w6.jpg" width="1600" height="900" alt="위 세계들의 포석이 깊고 푸른 어둠을 지나 길 위로 떨어집니다" loading="lazy" decoding="async"><figcaption><b>6. The Tear</b>세계의 바닥. 위의 기념비들이 여기 부서져 누워 있고, 그 길들이 비처럼 떨어집니다.</figcaption></figure>
+  </div>
+  <p class="cap">세계마다 <a href="https://greedyloop.com/worlds">greedyloop.com/worlds</a>에 따로 페이지가 있습니다.</p>
+  </div>
+</section>
+
+
+<section class="sec " id="problem">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">01</span><span class="sec-label">해결하려 했던 플레이어 문제</span></div>
+    <h2 class="sec-title">봇은 220초를 버텼고, 사람은 22초를 버텼습니다.</h2></div>
+    
+  <div class="split">
+    <div>
+      <p class="prose-p">게임의 밸런스 목표는 모두 반응이 완벽한 봇에서 나온 숫자였고, 봇은 목표에 맞았습니다. 그러다 실제 순위표를 읽고, 사람이 하는 것과 봇이 하는 것은 다르다고 에이전트에게 적었습니다.</p>
+      <table class="tbl gl-vs">
+        <thead><tr><th></th><th>완벽한 봇</th><th>순위표의 사람</th></tr></thead>
+        <tbody>
+          <tr><td>한 판 중앙값</td><td>220초</td><td><k-w>21~26초</k-w></td></tr>
+          <tr><td>가장 긴 <k-w>10%의</k-w> 판</td><td>395초 이상</td><td><k-w>56~86초</k-w> 이상</td></tr>
+          <tr><td>셋째 세계 이상 도달</td><td>대부분의 판</td><td>약 200판 중 2판</td></tr>
+        </tbody>
+      </table>
+      <p class="cap">봇은 당시 밸런스 설정으로 돌린 결과입니다. 순위표는 2026년 9월 21일에 읽었고, 저를 뺀 이름 있는 플레이어 84명의 758판입니다. 매일 바뀐 게임의 4주치가 섞여 있습니다.</p>
+    </div>
+    <div class="evid">
+      <div class="ev"><b>99판 중 87판</b><p>가장 많이 한 테스터가 사흘 동안 한 판 가운데 첫 세계에서 끝난 판. 사흘째 이후로 다시 오지 않았습니다.</p></div>
+      <div class="ev"><b>6개 중 5개</b><p>저 말고 아무도 보지 못한 세계. 후반 이벤트 대부분도 마찬가지였습니다.</p></div>
+      <div class="ev"><b>1명</b><p>꾸준히 하는 플레이어는 사실상 저 한 명. 그래서 순위표가 말할 수 있는 것은 사람이 봇보다 훨씬 짧게 버틴다는 것 정도였습니다.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="why">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">02</span><span class="sec-label">왜 그 문제가 중요했나</span></div>
+    <h2 class="sec-title">봇이 맞춘 목표는 사람이 받는 게임에 대해 아무것도 말해 주지 않았습니다.</h2></div>
+    
+  <div class="three">
+    <div><h3>만든 것이 플레이되지 않았습니다</h3><p>게임의 세계, 크리처, 이벤트 대부분이 저 말고는 거의 아무도 닿지 못하는 지점 너머에 있었습니다. 뒤쪽 콘텐츠에 쓴 한 주는 아무도 보지 않는 것에 쓴 한 주였습니다.</p></div>
+    <div><h3>병목은 첫 관문이었습니다</h3><p>뒤쪽 기준을 낮춰도 달라지는 것이 없었습니다. 사람들은 거기까지 가지 못했으니까요. 달라지게 한 것은 첫 관문을 넘는 일이었고, 첫 1분이 문제의 전부였습니다.</p></div>
+    <div><h3>두 번째 동작을 건너뛰었습니다</h3><p>많은 플레이어가 누르고 떼는 법을 배우지 않은 채 지나갔습니다. 떼지 않으면 먹은 것이 하나도 확정되지 않으니, 게임의 절반만 하고 있던 셈입니다.</p></div>
+  </div>
+  <p class="decide">그래서 순서를 정했습니다. 그 뒤의 무엇을 맞추기 전에, 사람이 첫 1분을 넘게 한다.</p>
+  </div>
+</section>
+
+
+<section class="sec " id="process">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">03</span><span class="sec-label">어떤 과정으로, 어떤 선택을 했나</span></div>
+    <h2 class="sec-title">측정 도구를 먼저 바꾸고, 그다음 첫 1분을 바꿨습니다.</h2></div>
+    
+  <div class="choices">
+    <div><span class="k">선택 1</span><h3>봇에게 사람의 한계를 줍니다</h3><p>에이전트가 봇에 반응 시간, 타이밍 오차, 가끔 늦는 조작을 담은 프로필을 넣었습니다. 완벽, <k-w>사람(0.25초),</k-w> <k-w>느림(0.4초).</k-w> 프로필마다 돌려 관문별 통과 비율을 뽑습니다.</p></div>
+    <div><span class="k">선택 2</span><h3>역사가 아니라 빌드를 판정합니다</h3><p>올라오는 모든 판에 빌드 번호, 무엇에 죽었는지, 어디까지 갔는지, 제 테스트 브라우저에서 온 판인지가 붙습니다. 제 테스트 판은 제 실제 판과 따로 봅니다.</p></div>
+    <div><span class="k">선택 3</span><h3>진짜 길 위에서 가르칩니다</h3><p>에이전트에게 준 방향은 이것이었습니다. <k-w>"템포는</k-w> 최대한 사용자가 잘 이해할수 있도록. 난이도 설정은 따로 <k-w>하지마."</k-w> 튜토리얼 화면은 없습니다. 첫 판은 진짜 블록, 진짜로 모은 크리처, 진짜 놓기가 있는 레슨으로 시작합니다.</p></div>
+    <div><span class="k">선택 4</span><h3>죽지 않고, 갇히지 않습니다</h3><p>레슨 중에는 죽을 수 없습니다. 단계마다 실제 시간 기준의 안전장치가 있고, 부딪힌 블록은 한 번 더 기회를 줍니다. 처음 하는 사람이 모든 단계를 틀려도 계속 달리고 있습니다.</p></div>
+    <div><span class="k">선택 5</span><h3>플레이어가 생각할 것을 덜어 냅니다</h3><p>8일째 게임에는 변이 18개, 융합 8개, 포탑, 미스터리 상자가 있었고, 모두 작동했습니다. 저는 이렇게 적었습니다. <k-w>"전부</k-w> 다 빼자. 게임플레이 중에 중요한 거는 오직 잘 <k-w>피하기."</k-w> 이틀 뒤 모두 빠졌습니다.</p></div>
+  </div>
+
+  <h3 class="sub">세 단계로 다시 만든 첫 1분</h3>
+  <figure class="gl-wide"><a class="zoom" href="../assets/img/gl-lesson.jpg" target="_blank" rel="noopener"><img src="../assets/img/gl-lesson.jpg" width="1400" height="607" alt="레슨의 다섯 장면: TAP!, HOLD, RELEASE!, NOT NOW!, HOLD, 위에는 단계마다의 안내 문구" loading="lazy" decoding="async"></a><figcaption>9월 중순에 돌던 레슨입니다. 셋째 단계는 그 뒤 바뀌어, 이제 블록을 탭으로 돌아가지 않고 대시로 부숩니다. 누르면 크게 볼 수 있습니다.</figcaption></figure>
+  <div class="three" style="margin-top: 36px">
+    <div><h3>1. 탭</h3><p>내 차선 바로 앞에 블록이 있습니다. 세상이 3분의 1 속도로 느려지고, 막힌 차선에는 X, 비켜 갈 길에는 고리가 서고, Kai 위 말풍선이 동작을 말합니다. 탭으로 차선을 벗어나면 답이 됩니다.</p></div>
+    <div><h3>2. 누르고, 떼기</h3><p>내 차선에 크리처가 줄지어 있습니다. 셋을 싣고 길이 비면 말풍선이 HOLD라고 하고 엄지 아래 고리가 차오르고, 이어서 RELEASE라고 합니다. 떼면 대시하며 크리처를 풀어 줍니다.</p></div>
+    <div><h3>3. 블록 부수기</h3><p>내 차선 앞에 블록이 있습니다. 레슨은 블록보다 한참 앞에서 누르기를 요청하고, 블록이 대시가 닿는 거리에 들어와야 RELEASE라고 합니다. 대시가 블록을 부수고, 튕기거나 놓쳐도 한 번 더 기회가 있습니다.</p></div>
+  </div>
+  <p class="cap">성공할 때마다 말풍선이 환호하며 동작의 이름을 부릅니다. THAT'S HOW YOU CHANGE LANE, FREE THEM, BREAK A BLOCK. HOW TO PLAY로 레슨을 언제든 다시 볼 수 있습니다.</p>
+
+  <h3 class="sub">그래도 누르기를 건너뛸 때</h3>
+  <div class="split">
+    <div class="prose">
+      <p>닷새 뒤에도 플레이어들은 누르기를 배우지 않고 지나가고 있었습니다. 그래서 누르기를 직접 해 봐야만 배울 수 있는 것으로 바꿨습니다.</p>
+      <p>레슨은 누르기를 기다리고, 엄지 아래 고리가 HOLD, 이어서 RELEASE를 보여 줍니다. 떼기 없이 끝난 레슨은 다음 판을 그 단계에서 엽니다. 처음 뗄 때까지는 보통 판에서도 크리처 셋을 실을 때마다 떼기를 권합니다. 첫 떼기는 YOU'VE GOT <k-w>IT!으로</k-w> 12개 언어로 불러 줍니다.</p>
+    </div>
+    <figure class="gl-wide" style="margin-top: 0"><a class="zoom" href="../assets/img/gl-dock.jpg" target="_blank" rel="noopener"><img src="../assets/img/gl-dock.jpg" width="1440" height="900" alt="브라우저의 튜닝 독: 돌아가는 게임 옆에 속도, 티어 상승, 장애물 밀도 슬라이더" loading="lazy" decoding="async"></a><figcaption>에이전트가 만들어 준 튜닝 독. 게임이 돌아가는 동안 속도, 상승, 장애물 밀도를 바꾸며 손맛을 직접 판단합니다.</figcaption></figure>
+  </div>
+
+  <h3 class="sub">아트 디렉션 한 줄</h3>
+  <div class="split">
+    <div class="prose">
+      <p>둘째 날 이미지 모델이 하루 만에 네 가지 룩을 줬습니다. 두꺼운 외곽선의 광택, 플랫 벡터, 스티커 같은 큰 눈, 어디서 오는지 모를 분홍 빛. 넷 다 버렸습니다. 조각마다 따로 스타일을 입혀서, 빛이 어디서 오는지 서로 맞는 것이 없었습니다.</p>
+      <p>제가 쓴 브리프는 한 줄이었습니다. <k-w>"전체적으로</k-w> <k-w>아름다워야함."</k-w> 에이전트는 무엇을 칠하기 전에 화면부터 쟀습니다. 대비는 괜찮았고, 세상 전체가 한 가지 색이었습니다. 빛이 필요했고, 그날 게임은 3D로 넘어갔습니다.</p>
+    </div>
+    <div class="gl-two">
+      <figure><img src="../assets/img/gl-glossy.jpg" width="800" height="800" alt="버린 네 가지 룩 중 하나: 큰 눈의 광택 있는 주황 덩어리" loading="lazy" decoding="async"><figcaption><b>버림</b>둘째 날의 네 가지 룩 중 하나</figcaption></figure>
+      <figure><img src="../assets/img/gl-3d.jpg" width="1400" height="788" alt="같은 날의 3D: 빛을 받는 크리스털 둘레의 고리" loading="lazy" decoding="async"><figcaption><b>남김</b>같은 날, 3D로</figcaption></figure>
+    </div>
+  </div>
+
+  <h3 class="sub">다른 게임에도 같은 방법으로</h3>
+  <div class="three">
+    <div><h3>POPCHAIN: 튜닝 전에 목표부터</h3><p>300개 레벨마다 캐주얼 플레이어의 목표 승률을 먼저 정합니다. 반응 속도가 0.55초부터 1.5초까지 다른 봇 셋이 모든 레벨을 플레이하고, 튜너가 캐주얼 승률이 맞을 때까지 레벨을 조정합니다.</p></div>
+    <div><h3>DOPA DASH: 봇이 잡아낸 잘못된 하한</h3><p>보통 봇이 HARD 레벨을 목표 <k-w>50~62%를</k-w> 넘어 95% 이상 깨고 있었습니다. 초보도 <k-w>15~20%는</k-w> 깨야 한다는 규칙이 먼저 걸리고 있었습니다. 그 하한을 낮추고 60개 레벨을 다시 맞추자, 어려운 레벨의 초보 통과율이 약 <k-w>25%에서</k-w> <k-w>6~19%로</k-w> 내려왔습니다. 더 낮추면 초보에게 벽이 되기에 거기서 멈췄습니다.</p></div>
+    <div><h3>DOPA DASH: 제가 읽지 못한 규칙</h3><p>직접 해 보니 PERFECT를 받는 법을 알 수 없었습니다. 그래서 연습을 실제 필드로 옮기고, 박자 아래 타이밍 바와, 블루투스 이어폰처럼 기기의 소리 지연을 바로잡는 보정을 넣었습니다.</p></div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="result">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">결과</span></div>
+    <h2 class="sec-title">첫 1분은 바뀌었습니다. 더 많은 사람이 첫 관문을 넘는지는 아직 재지 못했습니다.</h2></div>
+    
+  <div class="split result-split">
+    <div>
+      <p class="label">무엇이 언제 바뀌었나</p>
+      <table class="tbl">
+        <thead><tr><th>바뀐 것</th><th>날짜</th><th>상태</th></tr></thead>
+        <tbody>
+          <tr><td>첫 판이 죽을 일 없는 세 단계 레슨으로 시작</td><td>9월 19일</td><td>라이브</td></tr>
+          <tr><td>봇에 사람의 한계, 프로필별 첫 관문 통과율</td><td>9월 21일</td><td>도구에 반영</td></tr>
+          <tr><td>올라오는 모든 판에 빌드 표시</td><td>9월 21일</td><td>적용</td></tr>
+          <tr><td>누르기는 직접 해 보며 배우기, 12개 언어</td><td>9월 24일</td><td>라이브</td></tr>
+          <tr><td>DOPA DASH 어려운 레벨 재조정: 초보 통과율 약 <k-w>25%에서</k-w> <k-w>6~19%로</k-w></td><td>9월 28일</td><td>라이브</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="biz">
+      <p class="label">아직 말할 수 없는 것</p>
+      <div class="ev"><b>아직</b><p>레슨 뒤로 더 많은 사람이 첫 관문을 넘는지. 예전 순위표에는 4주치 빌드가 섞여 있었고, 꾸준히 하는 사람은 사실상 한 명이었습니다.</p></div>
+      <div class="ev"><b>다음</b><p>순위표는 9월 27일 dopaplay.io 서버로 옮겼습니다. 판마다 빌드, 초, 가장 멀리 간 세계는 남지만 무엇이 판을 끝냈는지는 아직 남지 않아, 빌드별 첫 1분 숫자를 보려면 거기서 읽는 길이 필요합니다.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec sec-learn" id="learn">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">05</span><span class="sec-label">배운 것</span></div>
+    <h2 class="sec-title">봇과 사람으로 게임을 맞추며 배운 다섯 가지</h2></div>
+    <ol class="learn">
+  <li>
+    <span class="learn-n">01</span>
+    <div class="learn-body">
+      <h3>게임을 하는 봇은 플레이어가 아닙니다</h3>
+      <p>완벽한 봇은 판을 깰 수 있는지에는 답했지만, 사람이 그 판을 이해할지에는 답하지 못했습니다. 봇이 목표에 맞는 동안 사람은 그 10분의 1 정도밖에 버티지 못했습니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">02</span>
+    <div class="learn-body">
+      <h3>AI의 숫자를 믿기 전에 사람의 한계부터 줍니다</h3>
+      <p>늦은 반응, 타이밍 오차, 가끔 늦는 조작을 넣은 봇만이 정말 중요한 질문을 던질 수 있었습니다. 사람이 첫 관문을 넘는가.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">03</span>
+    <div class="learn-body">
+      <h3>동작은 직접 해 보게 해서 가르칩니다</h3>
+      <p>레슨은 진짜 블록, 진짜로 모은 크리처, 진짜 놓기를 쓰고, 죽을 일은 없습니다. 성공할 때마다 방금 한 동작의 이름을 불러 주니, 첫 1분이 지시 목록이 아니라 작은 성공의 연속이 됩니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">04</span>
+    <div class="learn-body">
+      <h3>덜어 내는 일은 디자이너가 정합니다</h3>
+      <p>일주일 사이 에이전트가 변이 18개와 융합 8개를 만들었고, 모두 작동했습니다. 그것을 걷어 내자 게임이 좋아졌습니다. 코드는 AI에게 맡길 수 있어도, 게임에 무엇이 남을지는 맡길 수 없습니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">05</span>
+    <div class="learn-body">
+      <h3>지금 앞에 있는 빌드로 판정합니다</h3>
+      <p>매일 바뀐 게임의 4주가 섞인 순위표로는 사람이 봇보다 훨씬 짧게 버틴다는 것은 알 수 있어도, 오늘 빌드가 더 나은지는 알 수 없습니다. 이제 모든 판에 빌드가 붙고, 다음 단계는 빌드마다 판정할 만큼의 사람입니다.</p>
+    </div>
+  </li>
+</ol>
+  </div>
+</section>
+
+<nav class="case-nav"><div class="wrap case-nav-in">
+  <span></span>
+  <a class="next" href="cookierun-vr.html"><span>다음 케이스</span>쿠키런 VR</a>
+</div></nav>
+<script>(function(){var vs=[].slice.call(document.querySelectorAll('video.gv'));if(!vs.length||matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.play().catch(function(){});}else{e.target.pause();}});},{threshold:0.25});vs.forEach(function(v){io.observe(v);});})();</script>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-kicker">더 보기</p>
+    <h2 class="foot-title">이전 작업 전체는 <a href="https://hyunsangcho.com/portfolio">hyunsangcho.com</a>에서,<br>지금 만드는 제품은 <a href="https://raymind.ai">raymind.ai</a>에서 <k-w>보실 수 있습니다.</k-w></h2>
+    <div class="foot-grid">
+      <div><span>메일</span><a href="mailto:hi@raymind.ai">hi@raymind.ai</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ronincho">linkedin.com/in/ronincho</a></div>
+      <div><span>경력 전체</span><a href="https://hyunsangcho.com/about">hyunsangcho.com/about</a></div>
+      <div><span>언어</span>한국어, <k-w>영어(업무</k-w> <k-w>능통)</k-w></div>
+    </div>
+    <p class="foot-note">© 2026 조현상</p>
+  </div>
+</footer>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="10:13 한국 시간 (두바이 05:13)"></script>
+</body>
+</html>
