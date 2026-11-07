@@ -63,10 +63,10 @@
   <div class="wrap">
     <div class="summary-grid">
       <dl class="qa">
-        <div><dt>The user problem I set out to solve</dt><dd>AI characters forget what came before and drift into talking plot instead of talking to the player. After playing IsekaiPlay myself, my note read: "The other side doesn't feel like it's paying attention to me." In the Japanese edition, 74.8% were leaving before saying a first word.</dd></div><div><dt>Why it mattered</dt><dd>When the conversation is the product, the first few turns are everything. Across 280 sessions in seven days, 82.9% reached a second turn and 28.9% reached a tenth.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>Memory is stored as facts and proven within the first session, and the engine makes the character respond to the player every turn. On Auntie Rabbit I moved almost everything, from the menu to payment, into the conversation, and built group conversation and voice you can interrupt.</dd></div><div><dt>Results and what I learned</dt><dd>On IsekaiPlay in Japanese, the time until reply choices appear went from 23–29 seconds to 9–11. On Auntie Rabbit, the time from the end of the guest's speech to the first word of the reply went from 4.3–6.3 seconds to about 3.5–4. Auntie Rabbit is still a web beta, so there are no usage numbers here.</dd></div>
+        <div><dt>The user problem I set out to solve</dt><dd>AI characters forget what came before and drift into talking plot instead of talking to the player. After playing IsekaiPlay myself, my note read: "The other side doesn't feel like it's paying attention to me." Checking 15 replies on the live service, the character picked up the player's words 15 times out of 15, but only 5 ended where you wanted to know what came next.</dd></div><div><dt>Why it mattered</dt><dd>When the conversation is the product, the first few turns are everything. In the Japanese edition, 65% of the sessions that reached six turns went on to reach ten. Get through the first few turns and a conversation lasts.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>Memory is stored as facts and proven within the first session, and the engine makes the character respond to the player every turn. On Auntie Rabbit I moved almost everything, from the menu to payment, into the conversation, and built group conversation and voice you can interrupt.</dd></div><div><dt>Results and what I learned</dt><dd>On IsekaiPlay, 49% of sessions with a first reply that speaks to the character reached ten turns, and 0% with the old line that just stood there. A rule that ends the first three replies on the character reaching out took a test from 6/15 to 15/15. Auntie Rabbit is still a web beta, so there are no usage numbers here.</dd></div>
       </dl>
       <div class="stats">
-        <div class="stat"><b>9–11s</b><span>IsekaiPlay in Japanese, until reply<br>choices appear. Was 23–29s</span></div><div class="stat"><b>28.9%</b><span>Sessions reaching a tenth turn<br>(82.9% a second). 280 sessions, 7 days</span></div><div class="stat"><b>About 3.5–4s</b><span>Auntie Rabbit voice, end of speech<br>to first word. Was 4.3–6.3s</span></div>
+        <div class="stat"><b>49% vs 0%</b><span>Sessions reaching ten turns: a first reply<br>that speaks (80) and one that stands (42)</span></div><div class="stat"><b>15/15</b><span>Replies on the live service that<br>picked up the player's words</span></div><div class="stat"><b>0.12s</b><span>Auntie Rabbit, from talking over a character<br>to their voice dipping. Stops at 0.38s</span></div>
       </div>
     </div>
   </div>
@@ -90,20 +90,22 @@
     <div><span class="k">Choice 2</span><h3>Seven stages, visible on screen</h3><p>The relationship moves through seven stages, and the status window above the chat shows the current stage and mood. The character profile keeps the state of the relationship and the moments built together.</p></div>
     <div><span class="k">Choice 3</span><h3>The attention contract</h3><p>The character responds to the player before the plot, gives a small win early and ends where you want to know what happens next. This is not a wish written into a prompt; it is a rule the engine enforces every turn.</p></div>
     <div><span class="k">Choice 4</span><h3>Judging and acting are separate</h3><p>One call judges what happened and another writes the character's lines. When a character says no, it never ends at no: it always closes with a promise of what comes next. Hard safety rules are kept in code, not in the prompt.</p></div>
-    <div><span class="k">Choice 5</span><h3>Time to the first word</h3><p>In the Japanese edition, 74.8% left before their first word, so I cut the opening message to under 100 characters. The time until reply choices appear went from 23–29 seconds to 9–11.</p></div>
+    <div><span class="k">Choice 5</span><h3>The first reply faces the character</h3><p>Counting by first reply, 49% of sessions with a line that speaks to the character reached ten turns, while all 42 sessions with "I stand in front of them" stopped before ten. So I changed that line, and first-reply choices are now written to speak to the character.</p></div>
   </div>
   <div class="split" style="margin-top: 48px">
     <div>
-      <p class="label">Sessions still going in the first ten turns</p>
+      <p class="label">Conversation quality, in numbers</p>
       <table class="tbl">
-        <thead><tr><th>Turn reached</th><th>Share of sessions</th></tr></thead>
+        <thead><tr><th>What I measured</th><th>Result</th></tr></thead>
         <tbody>
-          <tr><td>Second turn</td><td>82.9%</td></tr>
-          <tr><td>Fifth turn</td><td>52.1%</td></tr>
-          <tr><td>Tenth turn</td><td>28.9%</td></tr>
+          <tr><td>Sessions reaching ten turns: a first reply that speaks to the character (80 sessions)</td><td>49%</td></tr>
+          <tr><td>Sessions reaching ten turns: the old line that just stands there (42 sessions)</td><td>0%</td></tr>
+          <tr><td>Replies that picked up the player's words (check on the live service)</td><td>15/15</td></tr>
+          <tr><td>First three replies ending on the character reaching out (rule test, before and after)</td><td>6/15 → 15/15</td></tr>
+          <tr><td>Replies where a side character cut in (rule test, before and after)</td><td>2/15 → 0/15</td></tr>
         </tbody>
       </table>
-      <p class="cap">280 sessions over seven days in August 2026. Three in ten sessions reach a tenth turn; raising that is the next job.</p>
+      <p class="cap">First-reply figures split 30 days of real user sessions, test accounts removed (August to September 2026). They are an observation, not a controlled experiment. Reply counts come from the first three replies in five Japanese stories, and the rule in the before-and-after test has not gone live yet.</p>
     </div>
     <figure class="phone-fig"><img src="../assets/img/ch-is-panel.jpg" width="560" height="2641" alt="IsekaiPlay character profile in Korean: character card, the state of the relationship, tokens of trust, mood and a list of moments built together" loading="lazy" decoding="async"><figcaption>The character profile (Korean edition): the state of the relationship, tokens of trust, mood and the moments built together.</figcaption></figure>
   </div>
@@ -135,7 +137,7 @@
   <div class="choices" style="margin-top: 48px">
     <div><span class="k">Choice 1</span><h3>The guest is the centre</h3><p>If a character asks something and there is no answer for 12 seconds, it offers an easier way, like "you don't have to say if you don't want to". It asks the guest's name, and checks when unsure.</p></div>
     <div><span class="k">Choice 2</span><h3>Auntie's notebook and my diary</h3><p>Auntie's notebook keeps only what the guest said, and nothing sensitive. The diary belongs to the guest, so it is never sent to the AI. The line I drew: "Auntie's notebook is Auntie's notebook, and this is my private space."</p></div>
-    <div><span class="k">Choice 3</span><h3>Voice you can interrupt</h3><p>There is an always-listening mode and a push-to-talk mode, and the end of speech is detected from how Korean sentences end. If the guest speaks while a character is talking, the voice drops at 0.12 seconds and stops at 0.38. The time from the end of the guest's speech to the first word of the reply went from 4.3–6.3 seconds to about 3.5–4.</p></div>
+    <div><span class="k">Choice 3</span><h3>Voice you can interrupt</h3><p>There is an always-listening mode and a push-to-talk mode, and the end of speech is detected from how Korean sentences end. If the guest speaks while a character is talking, the voice drops at 0.12 seconds and stops at 0.38.</p></div>
     <div><span class="k">Choice 4</span><h3>Voice costs more</h3><p>"Talking with a voice can't cost the same as talking without one." I wrote down the cost of one message for each feature and priced voice separately, by the hour. Answers to questions the app itself asks, and nights in crisis, are free.</p></div>
   </div>
   <p class="cap">Built for the web, iOS and Android in Korean, English and Japanese. The web app is open as a beta and the store apps are in preparation, so there are no usage numbers here. Screens are the English store screenshots; all names and stories are examples.</p>
@@ -229,6 +231,6 @@
     <p class="foot-note">© 2026 Hyunsang Cho</p>
   </div>
 </footer>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="08:10 한국 시간 (두바이 03:10)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="18:05 한국 시간 (두바이 13:05)"></script>
 </body>
 </html>
