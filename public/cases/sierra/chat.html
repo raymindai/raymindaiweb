@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat products: IsekaiPlay and Auntie Rabbit | Hyunsang Cho</title>
+<meta name="description" content="Case study of two AI services where the conversation is the product: an AI character that remembers you and pays attention to you, and a cast of characters who listen together, in text and voice.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="case ch">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Hyunsang Cho</a>
+    <nav class="menu">
+      <a href="index.html#cases" aria-current="page">Case studies</a>
+      <a href="how-i-work.html">How I work</a>
+      <a href="index.html#earlier">Earlier work</a>
+      <a href="index.html#contact">Contact</a><a class="out" href="https://raymind.ai">raymind.ai</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero dark">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>Case 01</span><span>2026</span><span>Raymind.AI</span></p>
+      <h1>Chat products<span>Two AI services where the conversation is the product</span></h1>
+      <p class="lede">On IsekaiPlay and Auntie Rabbit's Snack Bar, almost everything on screen happens inside the chat. I planned and designed both on my own, and built them with Claude Code. On IsekaiPlay an AI character remembers the player and pays attention to them; on Auntie Rabbit I designed group conversation, where several characters listen to one person, and voice conversation.</p>
+      <a class="live" href="https://isekaiplay.com" target="_blank" rel="noopener">isekaiplay.com<i>↗</i></a> <a class="live" href="https://auntierabbit.com" target="_blank" rel="noopener">auntierabbit.com<i>↗</i></a>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Product, conversation design, UX and UI, safety rules, development (Claude Code)</dd></div>
+        <div><dt>Timeline</dt><dd>IsekaiPlay from June 2026, Auntie Rabbit from October 2026</dd></div>
+        <div><dt>Platform</dt><dd>IsekaiPlay on the web. Auntie Rabbit as a web beta, with iOS and Android in preparation. Both in Korean, English and Japanese</dd></div>
+        <div><dt>Team</dt><dd>Just me. AI agents write the code, and I review every change</dd></div>
+      </dl>
+    </div>
+    <div class="hero-phones">
+      <img src="../assets/img/en-tk-chat.jpg" width="720" height="1280" alt="Auntie Rabbit in English: Auntie Rabbit and Dokkaebi reply to a guest, with reply choices and an input bar below" class="phone" decoding="async">
+      <img src="../assets/img/is-en-turn.jpg" width="720" height="1226" alt="IsekaiPlay in English: heart, relationship stage 1 of 7 and how far he has opened up at the top, the character's line, and a reply to pick or type your own" class="phone" decoding="async">
+    </div>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="Sections of this case"><div class="wrap subnav-in"><a href="#intro">Intro</a><a href="#summary">Summary</a><a href="#isekai">01 IsekaiPlay</a><a href="#tokki">02 Auntie Rabbit</a><a href="#kakao">03 Kakao</a><a href="#learn">04 What I learned</a></div></nav>
+
+<section class="intro" id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-text">
+      <p class="label">About the project</p>
+      <p>IsekaiPlay is a single-player AI interactive romance fantasy: you build a relationship with one character in another world that has a status window. The arc of the story is designed in seasons, and each line is generated on the spot from what the player says.</p><p>Auntie Rabbit's Snack Bar is a one-to-many place to talk: you drop in at night and tell Auntie Rabbit and her regulars about your day. It is the next step after Paldo Saju and TarotMasters, built on what I learned from the worries people actually shared there, and it starts from the worry itself.</p>
+    </div>
+    <dl class="intro-list">
+      <div><dt>What I decide</dt><dd>The principles of the conversation, each character's voice, the screens, the safety rules, the shape of the pricing</dd></div><div><dt>What the agents do</dt><dd>Code, builds and checks, and a test bench where simulated guests talk to the characters to check quality</dd></div><div><dt>Models</dt><dd>OpenAI, Gemini, DeepSeek. On IsekaiPlay one call judges what happened and a separate call writes the character's lines</dd></div><div><dt>Live</dt><dd>isekaiplay.com, auntierabbit.com (Korean tokkiimo.com, Japanese usagiobachan.com)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="summary" id="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <dl class="qa">
+        <div><dt>The user problem I set out to solve</dt><dd>AI characters forget what came before and drift into talking plot instead of talking to the player. After playing IsekaiPlay myself, my note read: "The other side doesn't feel like it's paying attention to me." Checking 15 replies on the live service, the character picked up the player's words 15 times out of 15, but only 5 ended where you wanted to know what came next.</dd></div><div><dt>Why it mattered</dt><dd>When the conversation is the product, the first few turns are everything. In the Japanese edition, 65% of the sessions that reached six turns went on to reach ten. Get through the first few turns and a conversation lasts.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>Memory is stored as facts and proven within the first session, and the engine makes the character respond to the player every turn. On Auntie Rabbit I moved almost everything, from the menu to payment, into the conversation, and built group conversation and voice you can interrupt.</dd></div><div><dt>Results and what I learned</dt><dd>On IsekaiPlay, 49% of sessions with a first reply that speaks to the character reached ten turns, and 0% with the old line that just stood there. A rule that ends the first three replies on the character reaching out took a test from 6/15 to 15/15. Auntie Rabbit is still a web beta, so there are no usage numbers here.</dd></div>
+      </dl>
+      <div class="stats">
+        <div class="stat"><b>49% vs 0%</b><span>Sessions reaching ten turns: a first reply<br>that speaks (80) and one that stands (42)</span></div><div class="stat"><b>15/15</b><span>Replies on the live service that<br>picked up the player's words</span></div><div class="stat"><b>0.12s</b><span>Auntie Rabbit, from talking over a character<br>to their voice dipping. Stops at 0.38s</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec " id="isekai">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">01</span><span class="sec-label">IsekaiPlay</span></div>
+    <h2 class="sec-title">Someone who remembers you, and pays attention to you.</h2></div>
+    
+  <div class="split">
+    <div class="prose">
+      <p>I used a number of AI character chat services and took the opposite position. Instead of endless improvisation that forgets what came before, memory is guaranteed and the story is designed. There are no ads, and love and endings are not for sale.</p>
+      <p>On the day I reworked the feel of the conversation, my note was one line: "In the end it's conversation, and people." From then on, every decision on the screen and in the engine was judged by whether the player feels the other side is looking at them.</p>
+    </div>
+    <figure class="phone-fig"><img src="../assets/img/ch-is-talk.jpg" width="720" height="1366" alt="IsekaiPlay in Japanese, a one-to-one talk: two character cards, the character's line and reply choices" loading="lazy" decoding="async"><figcaption>A one-to-one talk in the Japanese edition, where the numbers below were counted. Reply choices appear under the character's line, or you can type your own.</figcaption></figure>
+  </div>
+  <div class="choices">
+    <div><span class="k">Choice 1</span><h3>Memory as facts, and as proof</h3><p>What the player says is stored as structured facts and checked for contradictions. Within the first session, the character brings back something the player actually said, so remembering is shown in the conversation rather than claimed.</p></div>
+    <div><span class="k">Choice 2</span><h3>Seven stages, visible on screen</h3><p>The relationship moves through seven stages, and the status window above the chat shows the current stage and mood. The character profile keeps the state of the relationship and the moments built together.</p></div>
+    <div><span class="k">Choice 3</span><h3>The attention contract</h3><p>The character responds to the player before the plot, gives a small win early and ends where you want to know what happens next. This is not a wish written into a prompt; it is a rule the engine enforces every turn.</p></div>
+    <div><span class="k">Choice 4</span><h3>Judging and acting are separate</h3><p>One call judges what happened and another writes the character's lines. When a character says no, it never ends at no: it always closes with a promise of what comes next. Hard safety rules are kept in code, not in the prompt.</p></div>
+    <div><span class="k">Choice 5</span><h3>The first reply faces the character</h3><p>Counting by first reply, 49% of sessions with a line that speaks to the character reached ten turns, while all 42 sessions with "I stand in front of them" stopped before ten. So I changed that line, and first-reply choices are now written to speak to the character.</p></div>
+  </div>
+  <div style="margin-top: 48px; max-width: 760px">
+      <p class="label">Conversation quality, in numbers</p>
+    <table class="tbl">
+      <thead><tr><th>What I measured</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Sessions reaching ten turns: a first reply that speaks to the character (80 sessions)</td><td>49%</td></tr>
+        <tr><td>Sessions reaching ten turns: the old line that just stands there (42 sessions)</td><td>0%</td></tr>
+        <tr><td>Replies that picked up the player's words (check on the live service)</td><td>15/15</td></tr>
+        <tr><td>First three replies ending on the character reaching out (rule test, before and after)</td><td>6/15 → 15/15</td></tr>
+        <tr><td>Replies where a side character cut in (rule test, before and after)</td><td>2/15 → 0/15</td></tr>
+      </tbody>
+    </table>
+    <p class="cap">First-reply figures split 30 days of real user sessions, test accounts removed (August to September 2026). They are an observation, not a controlled experiment. Reply counts come from the first three replies in five Japanese stories, and the rule in the before-and-after test has not gone live yet.</p>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="tokki">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">02</span><span class="sec-label">Auntie Rabbit's Snack Bar</span></div>
+    <h2 class="sec-title">One person's story, heard by many.</h2></div>
+    
+  <div class="split">
+    <div class="prose">
+      <p>I wrote the experience principles down at the start: "Mobile first, no exceptions. Feels like a game. Warm. Welcoming. Very easy. Almost everything happens in the chat." So the menu, settings, payment and past conversations are, wherever possible, things you say to Auntie or tap inside the chat.</p>
+      <p>The other principle was "make talking one-to-many the best part." Auntie listens, the regulars chime in, and the guest can call in whichever character they want to talk to.</p>
+    </div>
+    <div class="prose">
+      <p>It exists to comfort, so it never pleads, guilt-trips, plays jealous or scares. Even a crisis said indirectly, like "I wish I didn't wake up tomorrow", is taken seriously and pointed to a crisis line: 109 in Korean, 988 in English. In Korea it takes people 14 and over, and 14 to 18 year olds need a guardian's permission; the English edition takes 18 and over and, following US companion-chatbot laws (California SB 243, New York GBL 1702), says it is AI at the start and every three hours after.</p>
+      <p>In ads and on the site it is never called counselling or therapy. It is described as a place that listens and remembers.</p>
+    </div>
+  </div>
+  <div class="flow four">
+    <figure><img src="../assets/img/en-tk-chat.jpg" width="720" height="1280" alt="Auntie Rabbit and Dokkaebi reply to a guest's first finish" loading="lazy" decoding="async"><figcaption><b>Listening together</b>Several regulars answer one person's story</figcaption></figure>
+    <figure><img src="../assets/img/en-tk-call.jpg" width="720" height="1280" alt="Tiger joins the chat after being called in" loading="lazy" decoding="async"><figcaption><b>Call someone in</b>One line and a regular joins the conversation</figcaption></figure>
+    <figure><img src="../assets/img/en-tk-imo.jpg" width="720" height="1280" alt="Tiger and Auntie Rabbit answer a guest's worry about signing up for a race" loading="lazy" decoding="async"><figcaption><b>Talk to one</b>@Auntie picks one character to talk to</figcaption></figure>
+    <figure><img src="../assets/img/en-tk-note.jpg" width="720" height="1280" alt="The regulars book: Dokkaebi's card and introduction, with a close button" loading="lazy" decoding="async"><figcaption><b>Regulars book</b>Each regular builds their own relationship with the guest</figcaption></figure>
+  </div>
+  <div class="choices" style="margin-top: 48px">
+    <div><span class="k">Choice 1</span><h3>The guest is the centre</h3><p>If a character asks something and there is no answer for 12 seconds, it offers an easier way, like "you don't have to say if you don't want to". It asks the guest's name, and checks when unsure.</p></div>
+    <div><span class="k">Choice 2</span><h3>Auntie's notebook and my diary</h3><p>Auntie's notebook keeps only what the guest said, and nothing sensitive. The diary belongs to the guest, so it is never sent to the AI. The line I drew: "Auntie's notebook is Auntie's notebook, and this is my private space."</p></div>
+    <div><span class="k">Choice 3</span><h3>Voice you can interrupt</h3><p>There is an always-listening mode and a push-to-talk mode, and the end of speech is detected from how Korean sentences end. If the guest speaks while a character is talking, the voice drops at 0.12 seconds and stops at 0.38.</p></div>
+    <div><span class="k">Choice 4</span><h3>Voice costs more</h3><p>"Talking with a voice can't cost the same as talking without one." I wrote down the cost of one message for each feature and priced voice separately, by the hour. Answers to questions the app itself asks, and nights in crisis, are free.</p></div>
+  </div>
+  <p class="cap">Built for the web, iOS and Android in Korean, English and Japanese. The web app is open as a beta and the store apps are in preparation, so there are no usage numbers here. Screens are the English store screenshots; all names and stories are examples.</p>
+  </div>
+</section>
+
+
+<section class="sec " id="kakao">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">03</span><span class="sec-label">Kakao</span></div>
+    <h2 class="sec-title">Meeting people inside the Kakao apps they already use.</h2></div>
+    
+  <div class="prose" style="margin-bottom: 24px"><p>Kakao is Korea's everyday messenger, with its own payments, sharing, channels and login. These are the Kakao features I built into my products.</p></div>
+  <table class="tbl wrap3">
+    <thead><tr><th>What</th><th>Where</th><th>Why, and what I saw</th></tr></thead>
+    <tbody>
+      <tr><td>KakaoPay direct checkout</td><td>Paldo Saju, TarotMasters</td><td>It skips the payment window and goes straight to the payment app. Of 180 people who tapped KakaoPay inside Instagram's and Facebook's in-app browsers, 71% completed payment.</td></tr>
+      <tr><td>KakaoTalk sharing</td><td>TarotMasters</td><td>65% of the people who saw the share sheet were in Instagram's in-app browser, where the phone's own share sheet does not work. So I added Send via KakaoTalk to the Korean share sheet.</td></tr>
+      <tr><td>KakaoTalk channel chatbot</td><td>Paldo Saju</td><td>Answers questions sent to the channel with the site's free information. No AI here, and the button labels fit Kakao's eight-character limit.</td></tr>
+      <tr><td>Morning channel message</td><td>Paldo Saju</td><td>One line sent through the channel at 8am every day. I chose not to use AlimTalk, Kakao's notification messages.</td></tr>
+      <tr><td>Kakao Login</td><td>Auntie Rabbit, PastLife</td><td>Optional on Auntie Rabbit: every conversation works without it, and it asks Kakao only for a nickname.</td></tr>
+    </tbody>
+  </table>
+  <p class="cap">I decided each of these and built them in myself with Claude Code.</p>
+  </div>
+</section>
+
+
+<section class="sec sec-learn" id="learn">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">What I learned</span></div>
+    <h2 class="sec-title">Five lessons from building services where the conversation is the product</h2></div>
+    <ol class="learn">
+  <li>
+    <span class="learn-n">01</span>
+    <div class="learn-body">
+      <h3>Memory is proof, not a feature</h3>
+      <p>Saying "I remember" does less than one line, in the first session, that brings back something the player actually said. So memory is stored as facts, checked for contradictions and shown inside the conversation.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">02</span>
+    <div class="learn-body">
+      <h3>A conversation lasts when the other side pays attention to me</h3>
+      <p>A well-written plot is still dull if the other side is not looking at me. React to me first, give a small win early, end where I want to know what comes next. I made that a rule the engine keeps every turn, not a wish in a prompt.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">03</span>
+    <div class="learn-body">
+      <h3>Almost everything inside the conversation</h3>
+      <p>When the menu, settings, payment and past conversations are things you say to a character or tap inside the chat, people do not have to learn a new screen. I think the same holds for AI inside a messenger.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">04</span>
+    <div class="learn-body">
+      <h3>Many listeners make a different conversation</h3>
+      <p>Auntie listens, the regulars chime in, and I can call in the character I want. It is designed to be an easier start than a one-to-one session. How long people stay is something to measure after launch.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">05</span>
+    <div class="learn-body">
+      <h3>Price and cost belong in the conversation design</h3>
+      <p>A conversation with a voice costs more to run than one in text. Each time I chose a feature, I wrote down the cost of one message, and voice is priced separately, by the hour. Nights in crisis are free.</p>
+    </div>
+  </li>
+</ol>
+  </div>
+</section>
+
+<nav class="case-nav"><div class="wrap case-nav-in">
+  <span></span>
+  <a class="next" href="wakeel.html"><span>Next case</span>Wakeel</a>
+</div></nav>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-kicker">More</p>
+    <h2 class="foot-title">The full archive of earlier work is at <a href="https://hyunsangcho.com/portfolio">hyunsangcho.com</a>,<br>and what I am building now is at <a href="https://raymind.ai">raymind.ai</a>.</h2>
+    <div class="foot-grid five">
+      <div><span>Email</span><a href="mailto:hi@raymind.ai">hi@raymind.ai</a></div>
+      <div><span>Phone</span><a href="tel:+821033325603">+82 10 3332 5603</a> (Korea)</div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ronincho">linkedin.com/in/ronincho</a></div>
+      <div><span>Full career</span><a href="https://hyunsangcho.com/about">hyunsangcho.com/about</a></div>
+      <div><span>Languages</span>Korean and English</div>
+    </div>
+    <p class="foot-note">© 2026 Hyunsang Cho</p>
+  </div>
+</footer>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="07:44 한국 시간 (두바이 02:44)"></script>
+</body>
+</html>
