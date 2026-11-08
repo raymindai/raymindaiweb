@@ -27,7 +27,7 @@
 <section class="hero dark">
   <div class="wrap hero-grid wide-media">
     <div class="hero-copy">
-      <p class="eyebrow"><span>Case 03</span><span>2026</span><span>Raymind.AI</span></p>
+      <p class="eyebrow"><span>Case 02</span><span>2026</span><span>Raymind.AI</span></p>
       <h1>memory.wiki<span>AI가 바뀌어도 맥락은 그대로</span></h1>
       <p class="lede">어떤 AI를 쓰든 내 자료와 맥락을 그대로 넘겨주는 지식 저장소입니다. 혼자 기획하고 디자인하고 개발해, 웹, Mac, iPhone, Android 앱, Chrome, Safari, VS Code 확장, CLI, MCP 서버까지 아홉 개 플랫폼에 출시했습니다.</p>
       <a class="live" href="https://memory.wiki" target="_blank" rel="noopener">memory.wiki<i>↗</i></a>
@@ -124,7 +124,7 @@
   <div class="three">
     <div><h3>사람은 한 AI에 머물지 않습니다</h3><p>AI마다 잘하는 일이 달라 일마다 다른 AI를 씁니다. 각 AI의 기억은 그 AI 안에만 있어서, 도구를 바꿀 때마다 맥락이 끊깁니다.</p></div>
     <div><h3>다시 설명하는 데 시간이 샙니다</h3><p>같은 배경을 매번 다시 붙여 넣는 일은 작아 보여도, AI를 많이 쓸수록 가장 많은 시간을 잡아먹는 반복 작업이 됩니다.</p></div>
-    <div><h3>같은 자료면 같은 답이어야 믿습니다</h3><p>같은 자료를 읽고도 AI마다 다르게 답하면 사람은 무엇을 믿어야 할지 모릅니다. 의료 AI도 마찬가지입니다. 답과 출처, 화면이 같은 근거를 보여 줘야 의료진이 믿습니다.</p></div>
+    <div><h3>같은 자료면 같은 답이어야 믿습니다</h3><p>같은 자료를 읽고도 AI마다 다르게 답하면 사람은 무엇을 믿어야 할지 모릅니다. </p></div>
   </div>
   </div>
 </section>
@@ -148,6 +148,27 @@
     <div><span class="k">선택 5</span><h3>권한 규칙은 데이터 쪽에서</h3><p>초안은 공개 주소로 나가지 않고, 권한은 문서를 내주는 곳에서 검사합니다. 읽는 쪽이 브라우저든 AI든 같은 규칙을 따릅니다. 그래프가 문서보다 오래되면 AI가 알 수 있게 표시합니다. 한 번 만든 주소는 만료되지 않습니다.</p></div>
     <div><span class="k">선택 6</span><h3>세 AI에게 같은 질문을</h3><p>같은 자료와 직접 만든 질문으로 Claude, <k-w>GPT-4o</k-w>, Gemini를 함께 평가하는 벤치마크를 만들었습니다. 한 AI의 점수보다, 세 AI가 같은 답을 내는지를 핵심으로 봤습니다.</p></div>
   </div>
+  <h3 class="sub" id="eval"><k-w>95%를</k-w> 믿지 않고, 평가를 다시 설계했습니다</h3>
+  <div class="prose">
+    <p>첫 평가에서 세 AI가 모두 <k-w>95%를</k-w> 냈지만, 질문이 공개 문서에 관한 것이라 모델이 이미 학습했을 수 있었고, 자료를 프롬프트에 직접 넣은 이상적인 조건이었습니다. 그래서 세 가지를 바꿨습니다. 학습 데이터에 있을 수 없는 가상 기업의 자료를 만들어 외워서 맞히는 길을 막았고, 채점하는 LLM이 답의 주장마다 원문 구절을 그대로 인용하게 해 근거 없는 주장을 셀 수 있게 했고, 자료에 없는 사실을 묻는 질문을 더했습니다.</p>
+    <p>다시 재자 문제가 보였습니다. 원문 전체를 주면 세 AI가 10문항씩 30개를 모두 맞혔지만, AI에게 실제로 건네는 압축 요약으로는 14개였고 답 19개가 <k-w>"자료에</k-w> <k-w>없다"였습니다.</k-w> AI는 지어내지 않았고, 원인은 요약 로직이었습니다. 핵심 사실 목록에서 첫 줄만 잡던 정규식과 섹션마다 첫 항목만 남기던 규칙을 고치자 30개를 모두 맞혔고, 답의 주장 117개가 모두 원문으로 확인됐습니다.</p>
+    <p>측정 도구도 의심했습니다. AI가 주소만 받아 직접 읽는 경로의 첫 측정에서 60건 중 26건이 빈 답이었는데, 평가 도구의 요청 횟수 한도 탓이었습니다. 도구를 고친 뒤 60건 중 59건이 정답이었습니다. 채점도 LLM이 하고 사람 검수는 없다는 한계는 결과와 함께 적어 둡니다.</p>
+  </div>
+  <div class="eval-tbl">
+    <table class="tbl wrap3">
+      <thead><tr><th>조건</th><th>결과</th><th>읽은 것</th></tr></thead>
+      <tbody>
+        <tr><td>공개 문서 71개를 프롬프트에 직접 넣음, 질문 20개</td><td>세 AI 각 95%</td><td>상한선. 모델이 이미 학습했을 수 있음</td></tr>
+        <tr><td>가상 기업 자료, 원문 전체, 10문항씩 세 AI</td><td>30/30</td><td>자료가 온전하면 세 AI 모두 찾음</td></tr>
+        <tr><td>가상 기업 자료, 압축 요약, 고치기 전</td><td>14/30</td><td>답 19개가 <k-w>"자료에</k-w> <k-w>없다".</k-w> 요약이 사실을 지움</td></tr>
+        <tr><td>요약 로직 두 곳을 고친 뒤</td><td>30/30</td><td>답의 주장 117개 모두 원문으로 확인</td></tr>
+        <tr><td>AI가 주소만 받아 직접 읽기, 첫 측정, 질문 20개씩 세 AI</td><td>빈 답 26/60</td><td>평가 도구의 요청 횟수 한도 탓</td></tr>
+        <tr><td>평가 도구를 고친 뒤</td><td>59/60</td><td>제품의 문제와 측정의 문제를 나눠 봄</td></tr>
+        <tr><td>자료에 없는 사실을 묻는 질문 5개, 세 AI</td><td>10/15 ~ 15/15</td><td>측정마다 흔들려 결론을 미룸. 문항을 늘려야 함</td></tr>
+      </tbody>
+    </table>
+    <p class="cap">2026년 5월 측정. 채점은 Claude가 맡고, 주장마다 원문 구절을 인용하지 못하면 근거 없음으로 셉니다.</p>
+  </div>
   </div>
 </section>
 
@@ -161,7 +182,7 @@
     <div class="biz">
       <div class="ev"><b>95%</b><p>Claude, <k-w>GPT-4o</k-w>, Gemini 각각의 정답률. 세 모델이 같은 점수를 냈습니다.</p></div>
       <div class="ev"><b>93.3%</b><p>같은 자료를 읽은 세 AI의 답이 서로 일치한 비율.</p></div>
-      <p class="cap">2026년 5월, 공개 문서 71개와 직접 만든 질문 20개로 측정했습니다. 자료를 프롬프트에 직접 넣은 조건이라 상한선입니다. AI가 주소만 받아 스스로 읽는 실제 경로는 다음 측정으로 남겨 두었습니다.</p>
+      <p class="cap">2026년 5월, 공개 문서 71개와 직접 만든 질문 20개로 측정했습니다. 자료를 프롬프트에 직접 넣은 조건이라 상한선입니다. 처음 보는 자료와 AI가 주소만 받아 직접 읽는 경로로 다시 잰 결과는 <a href="#eval">평가 설계</a>에 있습니다.</p>
     </div>
     <div>
       <p class="label">출시한 플랫폼</p>
@@ -221,8 +242,8 @@
 </section>
 
 <nav class="case-nav"><div class="wrap case-nav-in">
-  <a href="chat.html"><span>이전 케이스</span>채팅 제품</a>
-  <a class="next" href="paldosaju.html"><span>다음 케이스</span>팔도사주</a>
+  <a href="wakeel.html"><span>이전 케이스</span>Wakeel</a>
+  <a class="next" href="chat.html"><span>다음 케이스</span>채팅 제품</a>
 </div></nav>
 
 </main>
@@ -240,6 +261,6 @@
     <p class="foot-note">© 2026 조현상</p>
   </div>
 </footer>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="22:26 한국 시간 (두바이 17:26)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="23:37 한국 시간 (두바이 18:37)"></script>
 </body>
 </html>
