@@ -38,7 +38,7 @@
     </div>
     <div class="hero-phones">
       <img src="../assets/img/en-tk-chat.jpg" width="720" height="1280" alt="Auntie Rabbit in English: Auntie Rabbit and Dokkaebi reply to a guest, with reply choices and an input bar below" class="phone" decoding="async">
-      <img src="../assets/img/ch-is-turn.jpg" width="720" height="1366" alt="IsekaiPlay in Japanese: relationship stage 1 of 7 and mood at the top, the character's line, and replies to pick or type" class="phone" decoding="async">
+      <img src="../assets/img/is-en-turn.jpg" width="720" height="1226" alt="IsekaiPlay in English: heart, relationship stage 1 of 7 and how far he has opened up at the top, the character's line, and a reply to pick or type your own" class="phone" decoding="async">
     </div>
   </div>
 </section>
@@ -81,7 +81,7 @@
       <p>I used a number of AI character chat services and took the opposite position. Instead of endless improvisation that forgets what came before, memory is guaranteed and the story is designed. There are no ads, and love and endings are not for sale.</p>
       <p>On the day I reworked the feel of the conversation, my note was one line: "In the end it's conversation, and people." From then on, every decision on the screen and in the engine was judged by whether the player feels the other side is looking at them.</p>
     </div>
-    <figure class="phone-fig"><img src="../assets/img/ch-is-talk.jpg" width="720" height="1366" alt="IsekaiPlay in Japanese, a one-to-one talk: two character cards, the character's line and reply choices" loading="lazy" decoding="async"><figcaption>A one-to-one talk. Reply choices appear under the character's line, or you can type your own (Japanese edition).</figcaption></figure>
+    <figure class="phone-fig"><img src="../assets/img/ch-is-talk.jpg" width="720" height="1366" alt="IsekaiPlay in Japanese, a one-to-one talk: two character cards, the character's line and reply choices" loading="lazy" decoding="async"><figcaption>A one-to-one talk in the Japanese edition, where the numbers below were counted. Reply choices appear under the character's line, or you can type your own.</figcaption></figure>
   </div>
   <div class="choices">
     <div><span class="k">Choice 1</span><h3>Memory as facts, and as proof</h3><p>What the player says is stored as structured facts and checked for contradictions. Within the first session, the character brings back something the player actually said, so remembering is shown in the conversation rather than claimed.</p></div>
@@ -90,22 +90,19 @@
     <div><span class="k">Choice 4</span><h3>Judging and acting are separate</h3><p>One call judges what happened and another writes the character's lines. When a character says no, it never ends at no: it always closes with a promise of what comes next. Hard safety rules are kept in code, not in the prompt.</p></div>
     <div><span class="k">Choice 5</span><h3>The first reply faces the character</h3><p>Counting by first reply, 49% of sessions with a line that speaks to the character reached ten turns, while all 42 sessions with "I stand in front of them" stopped before ten. So I changed that line, and first-reply choices are now written to speak to the character.</p></div>
   </div>
-  <div class="split" style="margin-top: 48px">
-    <div>
+  <div style="margin-top: 48px; max-width: 760px">
       <p class="label">Conversation quality, in numbers</p>
-      <table class="tbl">
-        <thead><tr><th>What I measured</th><th>Result</th></tr></thead>
-        <tbody>
-          <tr><td>Sessions reaching ten turns: a first reply that speaks to the character (80 sessions)</td><td>49%</td></tr>
-          <tr><td>Sessions reaching ten turns: the old line that just stands there (42 sessions)</td><td>0%</td></tr>
-          <tr><td>Replies that picked up the player's words (check on the live service)</td><td>15/15</td></tr>
-          <tr><td>First three replies ending on the character reaching out (rule test, before and after)</td><td>6/15 → 15/15</td></tr>
-          <tr><td>Replies where a side character cut in (rule test, before and after)</td><td>2/15 → 0/15</td></tr>
-        </tbody>
-      </table>
-      <p class="cap">First-reply figures split 30 days of real user sessions, test accounts removed (August to September 2026). They are an observation, not a controlled experiment. Reply counts come from the first three replies in five Japanese stories, and the rule in the before-and-after test has not gone live yet.</p>
-    </div>
-    <figure class="phone-fig"><img src="../assets/img/ch-is-panel.jpg" width="560" height="2641" alt="IsekaiPlay character profile in Korean: character card, the state of the relationship, tokens of trust, mood and a list of moments built together" loading="lazy" decoding="async"><figcaption>The character profile (Korean edition): the state of the relationship, tokens of trust, mood and the moments built together.</figcaption></figure>
+    <table class="tbl">
+      <thead><tr><th>What I measured</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Sessions reaching ten turns: a first reply that speaks to the character (80 sessions)</td><td>49%</td></tr>
+        <tr><td>Sessions reaching ten turns: the old line that just stands there (42 sessions)</td><td>0%</td></tr>
+        <tr><td>Replies that picked up the player's words (check on the live service)</td><td>15/15</td></tr>
+        <tr><td>First three replies ending on the character reaching out (rule test, before and after)</td><td>6/15 → 15/15</td></tr>
+        <tr><td>Replies where a side character cut in (rule test, before and after)</td><td>2/15 → 0/15</td></tr>
+      </tbody>
+    </table>
+    <p class="cap">First-reply figures split 30 days of real user sessions, test accounts removed (August to September 2026). They are an observation, not a controlled experiment. Reply counts come from the first three replies in five Japanese stories, and the rule in the before-and-after test has not gone live yet.</p>
   </div>
   </div>
 </section>
@@ -149,7 +146,7 @@
     <h2 class="sec-title">Meeting people inside the Kakao apps they already use.</h2></div>
     
   <div class="prose" style="margin-bottom: 24px"><p>Kakao is Korea's everyday messenger, with its own payments, sharing, channels and login. These are the Kakao features I built into my products.</p></div>
-  <table class="tbl">
+  <table class="tbl wrap3">
     <thead><tr><th>What</th><th>Where</th><th>Why, and what I saw</th></tr></thead>
     <tbody>
       <tr><td>KakaoPay direct checkout</td><td>Paldo Saju, TarotMasters</td><td>It skips the payment window and goes straight to the payment app. Of 180 people who tapped KakaoPay inside Instagram's and Facebook's in-app browsers, 71% completed payment.</td></tr>
@@ -228,6 +225,6 @@
     <p class="foot-note">© 2026 Hyunsang Cho</p>
   </div>
 </footer>
-<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="06:23 한국 시간 (두바이 01:23)"></script>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="22:17 한국 시간 (두바이 17:17)"></script>
 </body>
 </html>

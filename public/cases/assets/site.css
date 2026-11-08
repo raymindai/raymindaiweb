@@ -249,6 +249,7 @@ h3.sub { font-family: var(--display); font-size: clamp(22px, 2.2vw, 28px); lette
 .tbl td { padding: 15px 12px 15px 0; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.6; color: var(--ink-2); }
 .tbl td:nth-child(2) { color: var(--ink); font-weight: 600; font-feature-settings: 'tnum' 1; white-space: nowrap; }
 .tbl td:nth-child(3) { white-space: nowrap; font-size: 13px; }
+.tbl.wrap3 td:nth-child(3) { white-space: normal; font-size: 14px; } /* long third column (EN chat, Kakao table) */
 .tbl tr.back td:nth-child(3) { color: var(--accent); font-weight: 700; }
 /* English rows are longer: give 'What changed' room and let results wrap. */
 html[lang="en"] .tbl td:first-child { width: 40%; }
