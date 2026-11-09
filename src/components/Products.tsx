@@ -156,6 +156,23 @@ const launched: Product[] = [
   },
 ];
 
+const tokkiimo: Product = {
+  name: "Auntie Rabbit",
+  domains: ["auntierabbit.com", "tokkiimo.com", "usagiobachan.com"],
+  url: "https://auntierabbit.com",
+  extraLinks: [
+    { href: "https://tokkiimo.com", label: "Korean", labelKo: "한국어판" },
+    { href: "https://usagiobachan.com", label: "Japanese", labelKo: "일본어판" },
+  ],
+  status: "Launched",
+  desc: "Auntie Rabbit's Snack Bar is a late-night street stall run by a rabbit auntie, with a counter full of AI regulars: a magpie, a dokkaebi, a reaper, a bear and more. Say one thing and the whole counter chimes in, and every one of them is on your side. Auntie remembers your story, and each night you talk turns into a diary only you can see. It runs in Korean, English and Japanese.",
+  descKo: "토끼이모의 수다분식은 토끼 이모가 여는 밤의 분식 포장마차다. 까치, 도깨비, 저승사자, 곰 같은 AI 단골들이 둘러앉아 있어서 한마디 하면 다 같이 받아 주고, 다들 내 편이 되어 준다. 이모는 지난번 얘기를 기억하고, 얘기한 날은 나만 보는 일기로 남는다. 한국어, 영어, 일본어로 즐길 수 있다.",
+  visualClass: styles.visualPastlife,
+  label: "tokkiimo",
+  image: "/productimages/tokkiimo_01.webp",
+  imagePosition: "left",
+};
+
 const dopaplay: Product = {
   name: "DOPAPLAY",
   domains: ["dopaplay.io"],
@@ -360,6 +377,7 @@ export default function Products() {
       <div className={`${styles.gameGrid} ${styles.gameGrid3}`}>
         {isekaiServices.map((g, i) => <GameCard key={g.label} game={g} delay={i * 0.08} />)}
       </div>
+      <ProductCard product={tokkiimo} />
       <ProductCard product={dopaplay} />
       <div className={styles.gameGrid}>
         {games.map((g, i) => <GameCard key={g.label} game={g} delay={(i % 2) * 0.08} />)}
