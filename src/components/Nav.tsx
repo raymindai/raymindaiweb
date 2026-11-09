@@ -44,6 +44,10 @@ export default function Nav() {
       </a>
       <div className={styles.links}>
         <a href="#products" onClick={(e) => handleClick(e, "#products")}>Products</a>
+        <a href={show ? "/cases/" : "/cases/en/"}>
+          <span className={styles.full}>Case studies</span>
+          <span className={styles.short}>Cases</span>
+        </a>
         <a href="#about" onClick={(e) => handleClick(e, "#about")}>About</a>
         <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>Contact</a>
         <button className={`${styles.langToggle} ${show ? styles.langActive : ""}`} onClick={toggle}>

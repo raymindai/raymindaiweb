@@ -29,7 +29,9 @@
 .logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
+.short { display: none; }
 .logoImg {
   height: 1.6rem;
   width: auto;
@@ -74,4 +76,10 @@
   .nav { padding: 2rem var(--page-pad-mobile); }
   .links { gap: 1.2rem; }
   .links a { font-size: 1rem; letter-spacing: 0.03em; }
+  .full { display: none; }
+  .short { display: inline; }
+}
+@media (max-width: 389px) {
+  .links { gap: 0.8rem; }
+  .logoImg { height: 1.3rem; }
 }
