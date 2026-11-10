@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>memory.wiki: switch AI tools, keep your context | Hyunsang Cho</title>
+<meta name="description" content="A case study on memory.wiki, a knowledge store that gives any AI the same material with the same context.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="case mw">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Hyunsang Cho</a>
+    <nav class="menu">
+      <a href="index.html#cases" aria-current="page">Case studies</a>
+      <a href="how-i-work.html">How I work</a>
+      <a href="index.html#earlier">Earlier work</a>
+      <a href="index.html#contact">Contact</a><a class="out" href="https://raymind.ai">raymind.ai</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero dark">
+  <div class="wrap hero-grid wide-media">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>Case 02</span><span>2026</span><span>Raymind.AI</span></p>
+      <h1>memory.wiki<span>Switch AI tools, keep your context</span></h1>
+      <p class="lede">A knowledge store that gives any AI the same material with the same context. I planned, designed and built it on my own, and shipped it to nine surfaces: the web, Mac, iPhone and Android apps, Chrome, Safari and VS Code extensions, a CLI and an MCP server.</p>
+      <a class="live" href="https://memory.wiki" target="_blank" rel="noopener">memory.wiki<i>↗</i></a>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Solo build. Planning, product design, development</dd></div>
+        <div><dt>Period</dt><dd>March to September 2026</dd></div>
+        <div><dt>Shipped on</dt><dd>App Store, Google Play, Chrome Web Store, VS Code Marketplace, npm</dd></div>
+        <div><dt>AIs that read it</dt><dd>Claude, ChatGPT, Gemini, Cursor and more</dd></div>
+      </dl>
+    </div>
+    <div class="hero-media"><img src="../assets/img/mw-card.jpg" width="1600" height="900" alt="Write from any surface. Read from any context. What you write in Chrome, VS Code, Cursor, Claude, the Mac app, CLI or MCP passes through one memory.wiki URL to Claude, ChatGPT, Gemini, Cursor, Codex and Copilot" class="screen" decoding="async"></div>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="Sections of this case"><div class="wrap subnav-in"><a href="#intro">Intro</a><a href="#summary">Summary</a><a href="#product">Product</a><a href="#problem">01 Problem</a><a href="#why">02 Why</a><a href="#process">03 Process and choices</a><a href="#result">04 Results</a><a href="#learn">05 What I learned</a></div></nav>
+
+<section class="intro" id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-text">
+      <p class="label">About the project</p>
+      <p>Documents gathered in memory.wiki go to any AI as they are, through one URL. Context built up in Claude does not have to be explained again from scratch in ChatGPT or Cursor.</p><p>I built it on my own, doing all of the planning, product design and development with Claude Code. I used it every day in my own work and added each surface as the need came up. Before anything else, I settled on one data layer and one renderer, so the experience would not split as surfaces multiplied.</p>
+    </div>
+    <dl class="intro-list">
+      <div><dt>Development</dt><dd>Solo build with Claude Code</dd></div><div><dt>One renderer</dt><dd>Web, the Chrome and VS Code extensions, CLI, MCP server and Mac app, all on one data layer and one renderer</dd></div><div><dt>MCP server</dt><dd>29 tools that AI uses directly</dd></div><div><dt>Distribution</dt><dd>App Store (Mac, iPhone, Safari extension), Google Play, VS Code Marketplace, Chrome Web Store, npm</dd></div><div><dt>Validation</dt><dd>A benchmark I designed that asks three AIs the same questions</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="summary" id="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <dl class="qa">
+        <div><dt>The user problem I set out to solve</dt><dd>Work done with an AI disappears the moment you close the tab. Users explain the same context to Claude, then to Cursor, then to Claude again a month later.</dd></div><div><dt>Why it mattered</dt><dd>People were doing more and more with AI, yet nothing was building up. For people and organisations that use several AIs, context is their biggest asset, and it was locked inside each tool.</dd></div><div><dt>How I went about it, and what I chose</dt><dd>I made a single URL the product, not an app. Material is captured where the work happens, AI organises it in the background, and any AI can read it from one URL.</dd></div><div><dt>Results and what I learned</dt><dd>Tested on the same material, all three AIs scored 95% accuracy, and their answers agreed with each other 93.3% of the time. I learned that consistency comes from data and rules, not from screens.</dd></div>
+      </dl>
+      <div class="stats">
+        <div class="stat"><b>9</b><span>Surfaces shipped<br>from the web to an MCP server</span></div><div class="stat"><b>29</b><span>MCP tools that<br>AI uses directly</span></div><div class="stat"><b>95%</b><span>Accuracy for each of three AIs,<br>material placed in the prompt</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec " id="product">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">00</span><span class="sec-label">Product</span></div>
+    <h2 class="sec-title">Write it once, and it is the same document wherever you open it.</h2></div>
+    
+  <div class="prose">
+    <p>A document gets its URL the moment you write it in the editor. You can open and edit the same document in VS Code, Chrome, the Mac app, the terminal or an AI tool, and wherever you open it, the same renderer shows it the same way. On the go, the iPhone and Android apps and the Safari extension capture and read.</p>
+  </div>
+  <figure class="wide shot-main"><img src="../assets/img/mw-editor.jpg" width="1800" height="1125" alt="The memory.wiki editor: library on the left, formatting toolbar on top, a document with a table, outline on the right" loading="lazy" decoding="async"><figcaption><b>Editor</b>What you write is the finished document. Your documents and bundles on the left, formatting tools on top, the outline on the right.</figcaption></figure>
+  <div class="shots two">
+    <figure><img src="../assets/img/mw-desktop.jpg" width="1600" height="1000" alt="Mac app: library on the left, a document with a table, outline on the right. Best Markdown reader and editor" loading="lazy" decoding="async"><figcaption><b>Mac app</b>Open Markdown files straight from a folder on your Mac, edit them, and publish them to a URL with one button.</figcaption></figure>
+    <figure><img src="../assets/img/mw-quicklook.jpg" width="1600" height="1000" alt="Quick Look preview: the flow diagram and formula in checkout-flow.md, styled like memory.wiki" loading="lazy" decoding="async"><figcaption><b>Quick Look</b>Select a Markdown file in Finder and press Space. Math, diagrams and code show up styled like memory.wiki.</figcaption></figure>
+    <figure><img src="../assets/img/mw-chrome.jpg" width="1280" height="800" alt="Chrome extension: the memory.wiki Clipper popup over a ChatGPT conversation, with Capture full conversation" loading="lazy" decoding="async"><figcaption><b>Chrome extension</b>Captures conversations with ChatGPT, Claude and Gemini, whole or just the part you choose, and opens Markdown files on GitHub straight in memory.wiki.</figcaption></figure>
+    <figure><img src="../assets/img/mw-safari.jpg" width="1600" height="1000" alt="Safari extension: the Capture with intent field for saying what to keep from a page" loading="lazy" decoding="async"><figcaption><b>Safari extension</b>Say in one line what you want from the page you are reading, and AI filters it into a document on the way in.</figcaption></figure>
+    <figure><img src="../assets/img/mw-vscode.jpg" width="1600" height="1000" alt="VS Code extension: Markdown source on the left, memory.wiki preview on the right" loading="lazy" decoding="async"><figcaption><b>VS Code extension</b>See and edit the document you are writing next to your code, in the same editor as memory.wiki.</figcaption></figure>
+    <figure><img src="../assets/img/mw-cli.jpg" width="1666" height="1032" alt="Terminal: mw ai returns the line to paste into any AI, mw read reads a document" loading="lazy" decoding="async"><figcaption><b>CLI</b>Publish and read documents from the terminal, and get the one line that hands your hub to any AI.</figcaption></figure>
+  </div>
+  <figure class="mw-phones">
+    <div class="flow four">
+      <figure><img src="../assets/img/mw-ios-1.jpg" width="660" height="1434" alt="iPhone app home: memory.wiki on your phone" loading="lazy" decoding="async"></figure>
+      <figure><img src="../assets/img/mw-ios-2.jpg" width="660" height="1434" alt="iPhone app capture: Paste anything from anywhere" loading="lazy" decoding="async"></figure>
+      <figure><img src="../assets/img/mw-ios-3.jpg" width="660" height="1434" alt="iPhone app chat: Chat with your own notes" loading="lazy" decoding="async"></figure>
+      <figure><img src="../assets/img/mw-ios-4.jpg" width="660" height="1434" alt="iPhone app settings: One URL for your whole hub" loading="lazy" decoding="async"></figure>
+    </div>
+    <figcaption><b>iPhone app</b>Capture text, links, photos, voice and PDFs on the go, ask your own documents, and paste one hub URL into any AI.</figcaption>
+  </figure>
+  </div>
+</section>
+
+
+<section class="sec " id="problem">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">01</span><span class="sec-label">The user problem I set out to solve</span></div>
+    <h2 class="sec-title">People were doing more with AI, but nothing was building up.</h2></div>
+    
+  <div class="split">
+    <div class="prose">
+      <p>Most of the work done with AI disappears the moment the tab closes. So we explain the same context to Claude again, then to Cursor, then to Claude once more a month later.</p>
+      <p>I am a case in point. I try every new model and tool as soon as it comes out, and I use a different AI for different jobs. Every time I switched tools, the context started again from scratch. The amount of work I did with AI kept growing, and the amount that built up was zero.</p>
+    </div>
+    <figure class="frame"><img src="../assets/img/mw-hub.jpg" width="1800" height="1125" alt="memory.wiki hub: all my knowledge at one URL" loading="lazy" decoding="async"><figcaption>The hub. It hands all of a person's documents and bundles to any AI through one URL.</figcaption></figure>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="why">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">02</span><span class="sec-label">Why the problem mattered</span></div>
+    <h2 class="sec-title">Context is an asset, and it was locked inside each tool.</h2></div>
+    
+  <div class="three">
+    <div><h3>People do not stay with one AI</h3><p>Each AI is good at different things, so people use different AIs for different jobs. Each AI's memory lives only inside that AI, so the context breaks every time the tool changes.</p></div>
+    <div><h3>Re-explaining eats time</h3><p>Pasting in the same background every time looks small, but the more you use AI, the more it becomes the task you repeat most.</p></div>
+    <div><h3>Same material should mean the same answer</h3><p>When AIs read the same material and answer differently, people do not know what to believe. The same goes for products. Trust comes when the app, the notifications and the AI's answers all give the same numbers in the same words.</p></div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="process">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">03</span><span class="sec-label">How I went about it, and what I chose</span></div>
+    <h2 class="sec-title">I made a single URL the product, not an app.</h2></div>
+    
+  <div class="choices four">
+    <div><span class="k">Choice 1</span><h3>One URL, a way in for any AI</h3><p>Paste a memory.wiki URL into an AI and a clean document comes back that the AI can read as it is. Nothing to install, no format to learn. Every other feature exists to make that document more useful.</p></div>
+    <div><span class="k">Choice 2</span><h3>Capture where the work happens</h3><p>Capture straight from Chrome, VS Code, Cursor, Claude, the Mac app, the CLI or MCP. I added each one as I needed it in my own daily use.</p></div>
+    <div><span class="k">Choice 3</span><h3>AI organises in the background, people set the structure</h3><p>There are three levels: documents, bundles and the hub. Each bundle gets topics and a relationship graph drawn out by AI, and the hub links the concepts across every bundle. People only decide the structure.</p></div>
+    <div><span class="k">Choice 4</span><h3>Every surface reads the same data</h3><p>The web, the extensions, the Mac app and the document an AI receives all use the same renderer and the same graph. The graph you see on screen is exactly what the AI receives.</p></div>
+  </div>
+  <div class="pair">
+    <figure class="frame"><img src="../assets/img/mw-bundle.jpg" width="1800" height="990" alt="A memory.wiki bundle: relationship graph and documents" loading="lazy" decoding="async"><figcaption>A bundle. On the left, the relationship graph drawn out by AI. On the right, the documents. The graph people see is the graph the AI receives.</figcaption></figure>
+  </div>
+  <div class="choices two">
+    <div><span class="k">Choice 5</span><h3>Trust rules live on the data side</h3><p>Drafts never go out on a public URL, and permissions are checked where documents are served. Whether the reader is a browser or an AI, the same rules apply. When a graph is older than its documents, it is marked so the AI can tell. A URL, once made, never expires.</p></div>
+    <div><span class="k">Choice 6</span><h3>The same questions to three AIs</h3><p>I built a benchmark that tests Claude, <k-w>GPT-4o</k-w> and Gemini together, on the same material and with questions I wrote myself. What mattered most was not any one AI's score, but whether the three gave the same answers.</p></div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="result">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">Results</span></div>
+    <h2 class="sec-title">Three AIs read the same material and gave the same answers.</h2></div>
+    
+  <div class="split">
+    <div class="biz">
+      <div class="ev"><b>95%</b><p>Accuracy for each of Claude, <k-w>GPT-4o</k-w> and Gemini. All three models scored the same.</p></div>
+      <div class="ev"><b>93.3%</b><p>How often the answers of the three AIs, reading the same material, agreed with each other.</p></div>
+      <p class="cap">Measured in May 2026 on 71 public documents and 20 questions I wrote. The material was placed directly in the prompt, so this is a ceiling. The real path, where an AI gets only the URL and reads it on its own, is left for the next measurement.</p>
+    </div>
+    <div>
+      <p class="label">Shipped surfaces</p>
+      <ul class="ship">
+        <li><b>Web</b>memory.wiki</li>
+        <li><b>Mac app and Quick Look</b>Mac App Store</li>
+        <li><b>iPhone app</b>App Store</li>
+        <li><b>Android app</b>Google Play</li>
+        <li><b>Chrome extension</b>Chrome Web Store</li>
+        <li><b>Safari extension</b>App Store</li>
+        <li><b>VS Code extension</b>Marketplace</li>
+        <li><b>CLI and MCP server</b>npm</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec sec-learn" id="learn">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">05</span><span class="sec-label">What I learned</span></div>
+    <h2 class="sec-title">Four things I learned keeping one experience across many surfaces and many AIs</h2></div>
+    <ol class="learn">
+  <li>
+    <span class="learn-n">01</span>
+    <div class="learn-body">
+      <h3>Delivery, more than technology, is the product</h3>
+      <p>Anyone can improve search accuracy, but I judged that a way of giving any AI the same context through one URL is hard to copy. So instead of keeping the graph inside the app, I put it inside the document the AI receives.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">02</span>
+    <div class="learn-body">
+      <h3>Consistency comes from data and rules, not screens</h3>
+      <p>Once the web, the extensions, the Mac app and the document an AI receives used the same renderer and read the same graph, the problem of the editor and the viewer looking different went away by design. Colour and spacing are managed as tokens, so light and dark modes come out of one system.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">03</span>
+    <div class="learn-body">
+      <h3>A score under ideal conditions is a ceiling</h3>
+      <p>95% was the score with the material placed directly in the prompt. I noted in the results table that the real path, where an AI gets only the URL and reads it on its own, has to be measured separately.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">04</span>
+    <div class="learn-body">
+      <h3>Trust rules are kept in the data layer</h3>
+      <p>Once permissions were checked where documents are served rather than on each screen, browsers, extensions and AIs all followed the same rules, and new surfaces did not open gaps in them.</p>
+    </div>
+  </li>
+</ol>
+  </div>
+</section>
+
+<nav class="case-nav"><div class="wrap case-nav-in">
+  <a href="wakeel.html"><span>Previous case</span>Wakeel</a>
+  <a class="next" href="chat.html"><span>Next case</span>Chat products</a>
+</div></nav>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-kicker">More</p>
+    <h2 class="foot-title">The full archive of earlier work is at <a href="https://hyunsangcho.com/portfolio">hyunsangcho.com</a>,<br>and what I am building now is at <a href="https://raymind.ai">raymind.ai</a>.</h2>
+    <div class="foot-grid five">
+      <div><span>Email</span><a href="mailto:hi@raymind.ai">hi@raymind.ai</a></div>
+      <div><span>Phone</span><a href="tel:+447525166102">+44 7525 166102</a> (UK)<br><a href="tel:+971509220639">+971 50 922 0639</a> (UAE)</div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ronincho">linkedin.com/in/ronincho</a></div>
+      <div><span>Full career</span><a href="https://hyunsangcho.com/about">hyunsangcho.com/about</a></div>
+      <div><span>Languages</span>Korean and English</div>
+    </div>
+    <p class="foot-note">© 2026 Hyunsang Cho</p>
+  </div>
+</footer>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="19:03 한국 시간 (두바이 14:03)"></script>
+</body>
+</html>
