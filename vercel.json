@@ -43,7 +43,7 @@
       "permanent": false
     },
     {
-      "source": "/cases/:ed(en|ai|wise|deel|beam|blackrock|youtube|deepmind|kurly|makinarocks|meta|monzo|granola|deliveroo|fin|toss|supercent|smilegate|kakao|naver|actai|actai-ko|sierra|bmw|orbital|faculty|hays|oliverwyman|nominal)",
+      "source": "/cases/:ed(en|ai|wise|deel|beam|blackrock|youtube|deepmind|kurly|makinarocks|meta|monzo|granola|deliveroo|fin|toss|supercent|smilegate|kakao|naver|actai|actai-ko|sierra|bmw|orbital|faculty|hays|oliverwyman|nominal|finda)",
       "destination": "/cases/:ed/",
       "permanent": false
     }

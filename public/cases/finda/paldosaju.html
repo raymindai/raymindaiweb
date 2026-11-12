@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>팔도사주: 결제 전에 신뢰를 주는 결제 흐름 | 조현상</title>
+<meta name="description" content="AI 사주 상담 팔도사주의 결제 흐름을 퍼널 분석과 A/B 테스트로 개선한 케이스 스터디.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="case paldo">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">조현상<span>Hyunsang Cho</span></a>
+    <nav class="menu">
+      <a href="index.html#cases" aria-current="page">케이스 스터디</a>
+      <a href="how-i-work.html">일하는 방식</a>
+      <a href="index.html#earlier">이전 작업</a>
+      <a href="index.html#contact">연락처</a><a class="out" href="https://raymind.ai">raymind.ai</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero dark">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>Case 03</span><span>2026</span><span>Raymind.AI</span></p>
+      <h1>팔도사주<span>결제 전에 신뢰를 주는 결제 흐름</span></h1>
+      <p class="lede">사람들의 고민을 먼저 듣고 사주를 대화로 풀이하는 AI 상담입니다. 단독으로 설계하고 개발해 출시했고, 역할과 권한을 나눈 AI 에이전트와 함께 운영하며, 첫 3주 동안 퍼널을 단계별로 측정하고 결제 화면을 A/B 테스트로 개선했습니다. 판매 이력이 없는 정가에 취소선을 긋던 표시를 없애고 가격을 있는 그대로 표기하자, 결제 화면 방문자 1명당 매출이 61% <k-w>올랐습니다(그룹당</k-w> 150명을 넘긴 시점, 사전에 정한 7일 전 <k-w>판정).</k-w></p>
+      <a class="live" href="https://paldosaju.com" target="_blank" rel="noopener">paldosaju.com<i>↗</i></a>
+      <dl class="facts">
+        <div><dt>역할</dt><dd>기획, UX와 UI 디자인, 지표 설계, 실험 판정, <k-w>개발(Claude</k-w> Code)</dd></div>
+        <div><dt>기간</dt><dd>2026년 10월 12일 출시, 첫 3주</dd></div>
+        <div><dt>플랫폼</dt><dd>모바일 웹, 로그인 없이 카카오페이, 네이버페이, 카드</dd></div>
+        <div><dt>팀</dt><dd>1인 개발, 운영은 역할과 권한을 나눈 AI 에이전트가 분담</dd></div>
+      </dl>
+    </div>
+    <div class="hero-phones">
+      <img src="../assets/img/flow1.jpg" width="780" height="1688" alt="팔도사주 첫 화면, 말순 할매" class="phone" decoding="async">
+      <img src="../assets/img/flow5.jpg" width="780" height="1688" alt="팔도사주 결제 화면" class="phone" decoding="async">
+    </div>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="이 케이스의 순서"><div class="wrap subnav-in"><a href="#intro">소개</a><a href="#summary">요약</a><a href="#product">제품</a><a href="#problem">01 문제</a><a href="#why">02 이유</a><a href="#process">03 과정과 선택</a><a href="#result">04 결과</a><a href="#learn">05 배운 것</a></div></nav>
+
+<section class="intro" id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-text">
+      <p class="label">프로젝트 소개</p>
+      <p>팔도사주는 사람들의 고민을 먼저 듣는 상담입니다. 사주라는 좁은 주제에서 시작해야 고민을 구체적으로 듣고 자세히 답할 수 있다고 판단했습니다. 팔도의 AI 마스터 캐릭터가 사연을 듣고, 생일 기반의 사주를 대화로 풀이합니다.</p><p>1인 개발로 진행하고 있습니다. 기획, 화면 설계, 지표 설계는 제가 직접 맡고, 운영은 AI 에이전트가 역할별로 분담합니다. 우선순위, 배포, 재무, 데이터, 퍼널, 가격, 광고를 각각 맡은 에이전트가 정해진 권한 안에서 작업하고, 모든 변경은 변경 로그에 기록됩니다. 에이전트마다 역할, 권한, 판단 기준을 먼저 설계했습니다.</p>
+    </div>
+    <dl class="intro-list">
+      <div><dt>제가 정하는 것</dt><dd>가격, 새 유료 채널, 예산 증액</dd></div><div><dt>에이전트가 하는 것</dt><dd>화면 변경, 실험 배분, 판정 계산, 광고 운영. 하루 광고 상한, 손실 상한, 예산 변동 폭 안에서만</dd></div><div><dt>결제 관련 화면</dt><dd>변경 전 제가 휴대폰 화면 캡처를 확인하고 직접 승인</dd></div><div><dt>기록</dt><dd>모든 변경과 실험을 변경 로그에, 매주 월요일 한 장으로 정리</dd></div><div><dt>AI 비용</dt><dd>무료 상담의 LLM 호출에 프롬프트 캐시를 적용해 호출당 비용 19.5% 절감</dd></div><div><dt>출시</dt><dd>2026년 10월 12일, 모바일 웹</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="summary" id="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <dl class="qa">
+        <div><dt>해결하려 했던 사용자 문제</dt><dd>무료 풀이를 끝까지 듣고도, 결제 화면을 본 사용자의 <k-w>87%가</k-w> 아무것도 누르지 않았습니다. 이 풀이가 결제할 만한지, 이 가격이 정직한지 결제하기 전에는 알 수 없기 때문이라고 판단했습니다.</dd></div><div><dt>왜 중요했나</dt><dd>광고로 사용자 한 명을 유치하는 비용이 그 사용자가 남기는 수익의 두세 배였습니다. 결제 흐름을 개선하지 않으면 사용자를 더 유치할수록 손실이 커졌습니다.</dd></div><div><dt>어떤 과정으로, 어떤 선택을 했나</dt><dd>지표 트리와 퍼널로 이탈이 가장 큰 단계를 찾고, 핵심 지표와 가드레일을 먼저 정한 뒤 결제 화면을 하나씩 A/B 테스트했습니다. 디자인 의견이 갈릴 때도 취향이 아니라 사용자의 행동으로 정했습니다.</dd></div><div><dt>결과와 배운 것</dt><dd>정가 표시를 없애고 가격을 있는 그대로 표기하자 결제 화면 방문자 1명당 매출이 61% <k-w>올랐습니다(사전에</k-w> 정한 7일 전, 그룹당 150명 시점의 <k-w>판정).</k-w> 하지만 사업은 아직 손익분기점에 이르지 못했고, 그 차이에서 다섯 가지를 배웠습니다.</dd></div>
+      </dl>
+      <div class="stats">
+        <div class="stat"><b>+61%</b><span>정가 표시를 없앤 뒤<br>결제 화면 방문자 1명당 매출</span></div><div class="stat"><b>9.2%</b><span>메일 주소를 받고 풀이 두 줄을 먼저<br>보여 준 뒤 결제율 <k-w>(이전</k-w> 5.8%, 표본이 작아 통계적 확정 <k-w>전)</k-w></span></div><div class="stat"><b>22%</b><span>셋째 주 광고 외 경로 신규 방문 비중<br><k-w>(둘째</k-w> 주 12%, 광고 축소로 신규 방문 31% <k-w>감소)</k-w></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec " id="product">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">00</span><span class="sec-label">제품</span></div>
+    <h2 class="sec-title">고민 하나와 생일이면, 마스터가 대화로 풀이합니다.</h2></div>
+    
+  <div class="prose">
+    <p>사주는 용어가 어렵고 정보가 많습니다. 팔도사주는 사주 표를 위에 작게 두고, 마스터가 사용자가 고른 고민에 맞춰 대화로 풀이합니다. 복잡한 정보를 사용자의 질문에서 시작해 필요한 만큼만 펼치는 구조입니다. 무료 풀이 뒤 풀이 목차를 거쳐 결제 화면으로 이어지고, 앱 설치나 로그인 없이 바로 결제합니다.</p>
+  </div>
+  <div class="flow">
+    <figure><img src="../assets/img/flow1.jpg" width="780" height="1688" alt="첫 화면" loading="lazy" decoding="async"><figcaption><b>첫 화면</b>마스터를 고르고 고민을 말합니다</figcaption></figure>
+    <figure><img src="../assets/img/flow2.jpg" width="780" height="1688" alt="생일 입력" loading="lazy" decoding="async"><figcaption><b>생일 입력</b>로그인 없이 생일만 받습니다</figcaption></figure>
+    <figure><img src="../assets/img/flow3.jpg" width="780" height="1688" alt="무료 풀이" loading="lazy" decoding="async"><figcaption><b>무료 풀이</b>사주 표는 위에, 풀이는 대화로</figcaption></figure>
+    <figure><img src="../assets/img/flow4.jpg" width="780" height="1688" alt="풀이 목차" loading="lazy" decoding="async"><figcaption><b>풀이 목차</b>풀이 항목을 보여 주고, 결제 전에는 잠가 둡니다</figcaption></figure>
+    <figure><img src="../assets/img/flow5.jpg" width="780" height="1688" alt="결제 화면" loading="lazy" decoding="async"><figcaption><b>결제 화면</b>무엇을 받는지, 얼마인지 한 화면에</figcaption></figure>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="problem">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">01</span><span class="sec-label">해결하려 했던 사용자 문제</span></div>
+    <h2 class="sec-title">무료 풀이를 끝까지 듣고도, 사용자는 결제 화면에서 멈췄습니다.</h2></div>
+    
+  <div class="split">
+    <div>
+      <p class="prose-p">사주 풀이는 결제 전에 내용을 미리 확인할 수 없는 상품입니다. 사용자는 이 풀이가 결제할 만한지, 이 가격이 정직한지 결제하기 전에는 알 수 없습니다. 그 망설임이 그대로 이탈이 됐습니다.</p>
+      <div class="funnel" role="img" aria-label="광고 유입 퍼널: 첫 화면에서 결제 완료까지 2.7%">
+    <div class="f-row"><span class="f-name">첫 화면</span><span class="f-track"><i style="width:100.0%"></i></span><span class="f-step">100</span></div><div class="f-row"><span class="f-name">생일 입력</span><span class="f-track"><i style="width:59.4%"></i></span><span class="f-step">59.4%</span></div><div class="f-row"><span class="f-name">풀이 목차</span><span class="f-track"><i style="width:54.4%"></i></span><span class="f-step">91.5%</span></div><div class="f-row"><span class="f-name">결제 화면</span><span class="f-track"><i style="width:31.1%"></i></span><span class="f-step">57.3%</span></div><div class="f-row hot"><span class="f-name">결제 버튼 클릭</span><span class="f-track"><i style="width:4.1%"></i></span><span class="f-step">13.1%</span></div><div class="f-row"><span class="f-name">결제 완료</span><span class="f-track"><i style="width:2.7%"></i></span><span class="f-step">66.7%</span></div>
+  </div>
+  <p class="cap">광고 유입 사용자, 10월 24일부터 30일까지 하루 평균. 막대는 첫 화면을 100으로 둔 값, 숫자는 앞 단계 대비 전환율입니다. 첫 화면에서 결제 완료까지는 <k-w>2.7%였습니다.</k-w></p>
+    </div>
+    <div class="evid">
+      <div class="ev"><b>87%</b><p>결제 화면을 본 사용자 가운데 아무것도 누르지 않고 떠난 비율. 다른 단계는 앞 단계의 <k-w>57~92%가</k-w> 넘어왔지만, 이 단계만 <k-w>13%였습니다.</k-w></p></div>
+      <div class="ev"><b>74%</b><p>생일 입력 후 결제 화면에 닿지 못한 사용자 가운데, 목차와 첫 가격을 보고 34초 안에 떠난 비율. 가격을 확인한 직후의 이탈이 가장 컸습니다.</p></div>
+      <div class="ev"><b>34%</b><p>상담을 시작하고 첫 답이 나오기 전에 떠난 비율. 그 가운데 <k-w>48%는</k-w> 5초 이내였습니다.</p></div>
+      <p class="cap"><k-w>74%와</k-w> <k-w>34%는</k-w> 메타 광고로 온 새 사용자, 10월 18일부터 31일까지.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="why">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">02</span><span class="sec-label">왜 그 문제가 중요했나</span></div>
+    <h2 class="sec-title">이 단계를 개선하지 않으면, 사용자를 더 유치할수록 손실이 커지는 구조였습니다.</h2></div>
+    
+  <div class="three">
+    <div><h3>이탈이 가장 큰 단계였습니다</h3><p>퍼널의 다른 단계는 앞 단계 사용자의 절반 이상이 넘어왔지만, 결제 버튼 클릭만 <k-w>13%였습니다.</k-w> 같은 노력으로 가장 크게 개선할 수 있는 단계였습니다.</p></div>
+    <div><h3>광고로는 메울 수 없었습니다</h3><p>광고로 사용자 한 명을 유치하는 비용이 그 사용자가 남기는 수익의 두세 배였습니다. 결제 흐름을 그대로 두고 광고를 늘리면 매출보다 손실이 먼저 커집니다.</p></div>
+    <div><h3>결제 전에는 신뢰가 먼저입니다</h3><p>결과를 미리 볼 수 없는 상품일수록 사용자는 가격과 말투에서 정직함을 찾습니다. 할인처럼 꾸민 가격이나 결제를 재촉하는 말은 당장 클릭을 올려도 신뢰를 해친다고 판단했습니다. 돈을 맡기고 빌리는 모든 화면이 같은 문제를 안고 있습니다.</p></div>
+  </div>
+  <div class="econ">
+    <div class="econ-label"><b>10월 광고비 대비 매출</b><span>매출을 광고비로 나눈 값. 손익분기점은 결제 수수료와 AI 비용 같은 원가를 빼고 광고비를 메우는 선입니다.</span></div>
+    <div class="econ-bars">
+      <div class="e-row"><span>10월 실제</span><span class="e-track"><i style="width:45.3%"></i></span><b>67%</b></div>
+      <div class="e-row"><span>손익분기점</span><span class="e-track line"><i style="width:100%"></i></span><b>148%</b></div>
+    </div>
+  </div>
+  <p class="decide">우선순위: 광고를 늘리기 전에 결제 흐름부터 개선합니다. 10월 22일에는 오히려 광고를 줄였습니다.</p>
+  </div>
+</section>
+
+
+<section class="sec " id="process">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">03</span><span class="sec-label">어떤 과정으로, 어떤 선택을 했나</span></div>
+    <h2 class="sec-title">볼 지표를 먼저 정하고, 변경 전에 기록했습니다.</h2></div>
+    
+  <div class="tree" role="img" aria-label="주 매출 = 신규 방문 × 결제율 × 건당 금액 × 1인당 구매 건수">
+    <span class="node root">주 매출</span><span class="op">=</span>
+    <span class="node">신규 방문</span><span class="op">×</span>
+    <span class="node on">결제율</span><span class="op">×</span>
+    <span class="node">건당 금액</span><span class="op">×</span>
+    <span class="node">1인당 구매 건수</span>
+  </div>
+  <p class="cap">매주 네 항목을 전주와 비교하고, 개선 여지가 가장 큰 항목부터 개선했습니다. 여기서 개선한 항목은 굵게 표시한 결제율, 그 가운데 결제 버튼 클릭 단계입니다.</p>
+  <div class="choices">
+    <div><span class="k">선택 1</span><h3>핵심 지표는 결제 화면 방문자 1명당 매출 하나</h3><p>결제율만 보면 가격 인하로, 건당 금액만 보면 판매가 줄어도 개선으로 판정될 수 있습니다. 둘을 함께 담는 지표 하나로 판정했습니다.</p></div>
+    <div><span class="k">선택 2</span><h3>가드레일은 결제율과 연락처 확인</h3><p>핵심 지표가 올라도 가드레일이 기준보다 내려가면 중단합니다. 매출을 올리려다 사용자를 잃는 일을 막는 선입니다.</p></div>
+    <div><span class="k">선택 3</span><h3>실험 전 기록, 매주 정리</h3><p>가설, 볼 지표, 판정 날짜, 중단 기준을 실험 시작 전에 변경 로그에 기록했습니다. 매주 월요일에는 변경 사항, 결과, 배운 점, 다음 할 일로 정리했습니다.</p></div>
+    <div><span class="k">선택 4</span><h3>표본이 작을 때는 방향이 모두 같을 때만 전체 적용</h3><p>트래픽 규모상 통계적으로 확정하려면 수 주가 필요했습니다. 핵심 지표와 가드레일이 모두 같은 방향일 때만 전체에 적용하고, 그 뒤에도 계속 점검했습니다.</p></div>
+    <div><span class="k">선택 5</span><h3>결정은 사람이, 실행은 AI 에이전트가</h3><p>가격, 새 유료 채널, 예산 증액은 제가 정했습니다. 화면 변경, 실험 배분, 결과 계산은 AI 에이전트가 변경 로그에 남기며 수행했고, 결제 관련 화면은 변경 전에 제가 캡처를 확인해 승인했습니다.</p></div>
+  </div>
+
+
+  <h3 class="sub">결제 화면의 설계</h3>
+  <div class="anatomy">
+    <figure><img src="../assets/img/flow5.jpg" width="780" height="1688" alt="팔도사주 결제 화면" loading="lazy" decoding="async"></figure>
+    <ol>
+      <li><b>무엇을 받는지 먼저</b>상품 설명 대신, 이 사용자가 받을 풀이 네 장의 제목을 보여 줍니다. 사용자는 가격을 보기 전에 무엇을 받는지 알게 됩니다. 이 순서는 디자인 시스템 규칙으로 정해 다른 상품의 결제 화면에도 씁니다.</li>
+      <li><b>가격은 있는 그대로</b>처음 한 번 가격과 두 번째부터 가격을 나란히 적습니다. 실제 판매 이력이 없는 정가는 쓰지 않습니다.</li>
+      <li><b>결제 수단은 같은 크기로</b>카카오페이, 네이버페이, 카드를 같은 크기로 나란히 둡니다. 로그인 없이 바로 결제합니다.</li>
+      <li><b>약속은 버튼 바로 아래</b>쓰지 않은 상담권 환불과 오류 환불을 결제 버튼 아래 한 줄로 적습니다.</li>
+    </ol>
+  </div>
+
+  <h3 class="sub">결제 화면 A/B 테스트</h3>
+  <div class="exp">
+    <article>
+      <h4>정가 취소선 제거</h4>
+      <p>출시 때 제가 적용한 반값 표시의 정가는 실제 판매 이력이 없는 가격이었습니다. 처음 한 번 가격과 두 번째부터 가격을 있는 그대로 표기한 안을 만들어 기존 표시와 비교 테스트했습니다. 가설은 <k-w>"있는</k-w> 그대로 표기해도 판매가 줄지 <k-w>않는다"였습니다.</k-w></p>
+      <div class="ab">
+        <span>전</span><img src="../assets/img/price-before.jpg" width="585" height="205" alt="전: 줄 그은 정가와 첫 복채 반값 배지" loading="lazy" decoding="async">
+        <span>후</span><img src="../assets/img/price-after.jpg" width="780" height="235" alt="후: 처음 한 번 가격과 두 번째부터 가격" loading="lazy" decoding="async">
+      </div>
+      <div class="res"><div><b>+61%</b>결제 화면 방문자 1명당 매출</div><div><b>17.8%</b>결제 버튼 클릭률<br><k-w>(이전</k-w> 15.6%)</div></div>
+      <p class="cap">버튼 클릭은 소폭 늘었지만, 결제 완료자가 46% 늘고 1명당 결제액도 소폭 올라 합계 61% 상승했습니다. 두 그룹 모두 실제 결제 가격은 같았고 표시만 달랐습니다. 사전에 정한 7일을 채우기 전, 그룹마다 150명을 넘긴 시점에 판정했습니다.</p>
+      <p class="cap">결정: 변경안을 전체에 적용하고, 가격 표시 규칙으로 정했습니다.</p>
+    </article>
+
+    <article class="exp-b">
+      <h4>요구하기 전에 먼저 주기</h4>
+      <div class="exp-b-in">
+        <img src="../assets/img/tease.jpg" width="540" height="906" alt="마지막 무료 답 끝의 흐린 두 줄과 메일 입력 칸" class="shot" loading="lazy" decoding="async">
+        <div>
+          <p>마지막 무료 답을 가장 궁금한 대목에서 끊고, 메일 주소를 남기면 풀이의 다음 두 줄을 바로 보여 주었습니다. 결제를 재촉하는 대신 계속 읽을 이유를 하나 더 제공했습니다.</p>
+          <div class="res col"><div><b>9.2%</b>결제율 <k-w>(이전</k-w> 5.8%)</div><div><b>+40%</b>1명당 매출</div></div>
+          <p class="cap">결정: 표본이 작아 통계로 확정되지는 않았지만, 1명당 매출, 결제율, 연락처 확인이 모두 같은 방향이라 전체에 적용했습니다.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+
+  <h3 class="sub">디자인 의견이 갈릴 때, 사용자의 행동으로 정했습니다</h3>
+  <div class="dd">
+    <article>
+      <div class="dd-text">
+        <h4>첫 화면은 빠를수록 좋은가</h4>
+        <p>광고로 유입된 사용자는 처음 몇 초 동안 마스터 캐릭터 말순 할매의 그림만 보고, 할매가 말을 건 뒤에야 생일 입력란이 나옵니다. 생일 입력란을 바로 보여 주면 전환이 늘 것이라는 시안이 나왔습니다. 마찰을 줄이라는 일반 원칙대로라면 타당한 안이었습니다.</p>
+        <div class="res"><div><b>78.7% → 67.6%</b>시안을 적용한 뒤, 생일 입력으로 넘어온 비율</div><div><b>87.5% → 88.3%</b>시안을 보지 않은 목록 유입은 그대로</div></div>
+        <p class="cap">결정: 당일 밤 롤백했습니다. 사용자는 생일을 입력하기 전에, 이 상대에게 털어놓아도 될지부터 판단한다고 해석했습니다. 할매가 먼저 말을 거는 몇 초는 마찰이 아니라 신뢰가 쌓이는 시간이라는 해석입니다. 전 약 280명, 후 약 220명을 같은 날 비교한 결과라, 범위를 좁혀 재테스트하고 있습니다.</p>
+      </div>
+      <div class="dd-phones two">
+        <figure><img src="../assets/img/flow1.jpg" width="780" height="1688" alt="지금: 처음 몇 초는 말순 할매 그림만" loading="lazy" decoding="async"><figcaption><b>지금, 처음 몇 초</b>할매 그림만, 말을 건 뒤에 생일 입력란</figcaption></figure>
+        <figure class="lost"><img src="../assets/img/flow2.jpg" width="780" height="1688" alt="시안: 처음부터 할매의 말과 생일 입력란" loading="lazy" decoding="async"><figcaption><b>시안, 처음부터</b>말과 생일 입력란을 바로<em>롤백</em></figcaption></figure>
+      </div>
+    </article>
+    <article>
+      <div class="dd-text">
+        <h4>목록 맨 위의 추천 카드 하나</h4>
+        <p>고민을 고르면 그 고민에 맞는 마스터 목록이 나타납니다. 맨 위에 1순위 마스터 카드와 <k-w>"무료로</k-w> 첫 <k-w>풀이"</k-w> 버튼을 하나 더 두는 안을, 기기 단위로 무작위 배정해 그룹당 약 400명으로 테스트했습니다.</p>
+        <div class="res"><div><b>66.6% → 76.9%</b>생일 입력으로 넘어온 비율, 통계적으로 유의</div><div><b>+20%</b>방문자 1명당 매출, 아직 유의하지는 않음</div></div>
+        <p class="cap">결정: 앞 단계가 뚜렷하게 개선됐고 매출도 같은 방향이라 전체에 적용했습니다. 다만 앞 단계 비율만으로 판정하지는 않습니다. 같은 광고에서도 직접 진입 링크와 목록 링크는 생일 입력이 <k-w>78.8%와</k-w> <k-w>47.3%로</k-w> 크게 갈렸지만, 유입 1명당 하루 매출은 비슷했습니다. 따라서 클릭만이 아니라 유입 1명당 매출을 함께 봅니다.</p>
+      </div>
+      <div class="dd-phones two">
+        <figure><img src="../assets/img/list-a.jpg" width="786" height="1420" alt="A: 마스터 목록만" loading="lazy" decoding="async"><figcaption><b>A, 목록만</b>첫 카드부터 마스터 목록</figcaption></figure>
+        <figure class="won"><img src="../assets/img/list-b.jpg" width="786" height="1420" alt="B: 맨 위에 1순위 마스터 카드와 무료로 첫 풀이 버튼" loading="lazy" decoding="async"><figcaption><b>B, 맨 위 추천 카드</b>버튼 하나로 바로 시작<em>전체 적용</em></figcaption></figure>
+      </div>
+    </article>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec " id="result">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">결과</span></div>
+    <h2 class="sec-title">결제 화면은 개선됐지만, 사업은 아직 손익분기점에 이르지 못했습니다.</h2></div>
+    
+  <div class="split result-split">
+    <div>
+      <p class="label">결제 흐름 A/B 테스트, 출시 뒤 3주</p>
+      <table class="tbl">
+        <thead><tr><th>바꾼 것</th><th>결과</th><th>결정</th></tr></thead>
+        <tbody><tr><td>정가 취소선 제거, 가격을 있는 그대로 표기</td><td>결제 버튼 클릭률 15.6% → 17.8%<br>결제 화면 방문자 1명당 매출 +61%</td><td>전체 적용</td></tr><tr><td>메일 주소 입력 시 풀이의 다음 두 줄을 먼저 공개</td><td>결제율 5.8% → 9.2%<br>1명당 매출 +40%</td><td>전체 적용</td></tr><tr><td>결제 화면에서 뒤로 갈 때, 방금 들은 풀이를 메일로 보관하는 시트</td><td>결제율 11.9% → 13.5%<br>1명당 매출 +19%</td><td>전체 적용</td></tr><tr><td>첫 화면의 고민 목록 순서 변경</td><td>결제 화면 방문자 1명당 매출 +48%</td><td>전체 적용</td></tr><tr><td>결제 직후 추가 구매 제안의 유지 시간을 20분에서 24시간으로</td><td>24시간 안 추가 구매 15.8% → 20.0%<br>1명당 순매출 +8.7%</td><td>24시간 유지</td></tr><tr><td>목차 상단 안내 문구 한 줄 추가</td><td>클릭률 20.6% → 22.0%, 유의하지 않음</td><td>악화 없어 유지</td></tr><tr class="back"><td>첫 결제의 기본 선택을 풀이 세 장 묶음으로</td><td>A/B 테스트에서 1명당 +78%<br>전체 적용 뒤 클릭률 반감</td><td>롤백</td></tr><tr class="back"><td>결제 화면 맨 위 고가 상품 카드</td><td>같은 날 가격 테스트와 겹쳐 결제 화면 방문자 1명당 매출 -72%<br>원인 특정 불가</td><td>롤백</td></tr></tbody>
+      </table>
+    </div>
+    <div class="biz">
+      <p class="label">사업 전체</p>
+      <div class="ev"><b>+87%</b><p>출시 둘째 주 매출, 첫 주 대비.</p></div>
+      <div class="ev"><b>67%</b><p>10월 광고비 대비 매출. 손익분기점은 <k-w>148%였고,</k-w> 매출 대비 공헌이익은 <k-w>-83%였습니다.</k-w></p></div>
+      <div class="ev"><b>-76%</b><p>10월 22일 광고를 줄인 뒤 일일 손실이 76% 줄었습니다. 대신 일일 매출도 65% 줄었습니다.</p></div>
+      <div class="ev"><b>-56%</b><p>셋째 주 매출. 광고를 줄여 신규 방문이 31% 줄었고, 결제율도 <k-w>5.8%에서</k-w> <k-w>4.0%로</k-w> 하락했습니다. 결제 버튼 클릭률이 <k-w>12%에서</k-w> <k-w>9%로</k-w> 떨어진 것이 가장 컸습니다.</p></div>
+      <div class="ev"><b>22%</b><p>셋째 주 신규 방문 가운데 광고 외 <k-w>경로(자연</k-w> 검색, 자체 <k-w>채널)로</k-w> 유입된 비중. 둘째 주에는 <k-w>12%였습니다.</k-w> 광고를 줄여 신규 방문 전체가 31% 줄어든 주의 값입니다.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="sec sec-learn" id="learn">
+  <div class="wrap">
+    <div class="sec-top"><div class="sec-head"><span class="sec-num">05</span><span class="sec-label">배운 것</span></div>
+    <h2 class="sec-title">이 3주 동안 배운 다섯 가지</h2></div>
+    <ol class="learn">
+  <li>
+    <span class="learn-n">01</span>
+    <div class="learn-body">
+      <h3>금전이 오가는 화면에서는 있는 그대로 보여 주어야 전환이 일어납니다</h3>
+      <p>판매 이력이 없는 정가에 취소선을 그어 할인처럼 보이던 표시를 없애고 가격을 있는 그대로 표기하자, 결제 화면 방문자 1명당 매출이 61% <k-w>올랐습니다(그룹당</k-w> 150명을 넘긴 시점, 사전에 정한 7일 전 <k-w>판정).</k-w> 이후 <k-w>"판매</k-w> 이력이 없는 가격은 비교 가격으로 쓰지 <k-w>않는다"를</k-w> 가격 표시 규칙으로 정했습니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">02</span>
+    <div class="learn-body">
+      <h3>화면의 성과와 사업의 성과는 다릅니다</h3>
+      <p>결제 화면 A/B 테스트에서는 대부분 개선안이 앞섰지만, 10월 광고비 대비 매출은 <k-w>67%로</k-w> 손익분기점인 <k-w>148%에</k-w> 못 미쳤습니다. 광고를 줄여 일일 손실을 76% 줄이고, 퍼널을 먼저 개선하는 순서로 바꿨습니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">03</span>
+    <div class="learn-body">
+      <h3>작은 표본에서 앞선 안은 전체 적용 뒤에도 재검증합니다</h3>
+      <p>세 장 묶음 기본은 A/B 테스트에서 1명당 78% 앞섰지만, 전체에 적용하자 결제 버튼 클릭률이 반으로 줄어 롤백했습니다. 셋째 주에는 이 지표가 <k-w>12%에서</k-w> <k-w>9%로</k-w> 하락했습니다. 작은 표본에서 앞선 안도 사용자 구성이 바뀌면 결과가 뒤집힐 수 있습니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">04</span>
+    <div class="learn-body">
+      <h3>한 화면에는 실험을 한 번에 하나만, 판정 기준은 실험 전에</h3>
+      <p>같은 날 결제 화면에 가격 테스트와 고가 상품 카드를 함께 적용했다가 결제 화면 방문자 1명당 매출이 72% 떨어졌고, 원인을 특정할 수 없었습니다. 이후 결제 관련 화면에는 실험을 하나만 두고, 판정이 끝날 때까지 다른 변경을 중단했습니다.</p>
+    </div>
+  </li>
+  <li>
+    <span class="learn-n">05</span>
+    <div class="learn-body">
+      <h3>요구하기 전에 먼저 줍니다</h3>
+      <p>메일 주소를 먼저 요구하지 않고, 가장 궁금한 대목에서 풀이의 다음 두 줄을 보여 주자 결제율이 <k-w>5.8%에서</k-w> <k-w>9.2%로</k-w> <k-w>올랐습니다(표본이</k-w> 작아 통계적 확정 <k-w>전).</k-w> 연락처를 받는 단계가 결제를 막지 않고 도왔습니다.</p>
+    </div>
+  </li>
+</ol>
+  </div>
+</section>
+
+<nav class="case-nav"><div class="wrap case-nav-in">
+  <a href="memory-wiki.html"><span>이전 케이스</span>memory.wiki</a>
+  <a class="next" href="chat.html"><span>다음 케이스</span>채팅 제품</a>
+</div></nav>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-kicker">더 보기</p>
+    <h2 class="foot-title">이전 작업 전체는 <a href="https://hyunsangcho.com/portfolio">hyunsangcho.com</a>에서,<br>지금 만드는 제품은 <a href="https://raymind.ai">raymind.ai</a>에서 <k-w>보실 수 있습니다.</k-w></h2>
+    <div class="foot-grid">
+      <div><span>메일</span><a href="mailto:hi@raymind.ai">hi@raymind.ai</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ronincho">linkedin.com/in/ronincho</a></div>
+      <div><span>경력 전체</span><a href="https://hyunsangcho.com/about">hyunsangcho.com/about</a></div>
+      <div><span>언어</span>한국어, <k-w>영어(업무</k-w> <k-w>능통)</k-w></div>
+    </div>
+    <p class="foot-note">© 2026 조현상</p>
+  </div>
+</footer>
+<script src="../assets/review.js" data-agent="linkedin" data-created="2026년 11월 2일 18:16 한국 시간 (두바이 13:16)" data-updated="20:07 한국 시간 (두바이 15:07)"></script>
+</body>
+</html>
